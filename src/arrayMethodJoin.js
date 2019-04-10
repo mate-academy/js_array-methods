@@ -5,8 +5,9 @@
  *
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function() {
+  [].__proto__.join2 = function(...theArgs) {
     // write code here
+    return this.join(...theArgs);
   };
 }
 
