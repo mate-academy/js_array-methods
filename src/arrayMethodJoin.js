@@ -8,9 +8,7 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(arg = ',') {
     let stringFromArray = '';
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        stringFromArray += '';
-      } else {
+      if (this[i] !== undefined && this[i] !== null) {
         stringFromArray += '' + this[i];
       }
       if (i < (this.length - 1)) {
