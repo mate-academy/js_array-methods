@@ -8,7 +8,7 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(inputStr) {
     let result = '';
     let separator;
-    inputStr === undefined ? separator = ',' : separator = String(inputStr);
+    const separator = inputStr === undefined ? ',' : String(inputStr);
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== undefined && this[i] !== null) {
