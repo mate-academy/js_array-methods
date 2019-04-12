@@ -5,12 +5,11 @@
  *
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(inputStr) {
     let result = '';
-    separator = separator + '';
-    if (separator === 'undefined') {
-      separator = ',';
-    }
+    let separator;
+    inputStr === undefined ? separator = ',' : separator = String(inputStr);
+
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== undefined && this[i] !== null) {
         result += this[i] + separator;
@@ -18,6 +17,7 @@ function applyCustomJoin() {
         result += separator;
       }
     }
+
     if (separator !== '') {
       result = result.slice(0, -(separator.length));
     }
