@@ -16,7 +16,9 @@ function applyCustomJoin() {
         str += element;
       } else if (i === this.length - 1) {
         str += this[i];
-      } else str += this[i] + element;
+      } else {
+        str += this[i] + element;
+      }
     }
     return str;
   };
