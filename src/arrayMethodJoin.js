@@ -7,7 +7,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(token = ',') {
     let str = '';
-    const element = token === null ? String(null) : String(token);
+    const element = String(token);
     for (let i = 0; i < this.length; i++) {
       if (
         this[i] === null
