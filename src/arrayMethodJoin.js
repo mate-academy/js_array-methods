@@ -7,11 +7,12 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(str) {
     let string = '';
-    if (str === undefined) {
-      str = ',';
+    let separator = str;
+    if (separator === undefined) {
+      separator = ',';
     }
-    if (str === null) {
-      str = 'null';
+    if (separator === null) {
+      separator = 'null';
     }
     if (this.length === 0) {
       return string;
@@ -21,7 +22,7 @@ function applyCustomJoin() {
           ? ''
           : currentValue;
         if (index !== array.length - 1) {
-          string += supplemented + str;
+          string += supplemented + separator;
         } else {
           string += supplemented;
         }
