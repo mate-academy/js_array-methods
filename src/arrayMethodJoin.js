@@ -20,7 +20,7 @@ function applyCustomJoin() {
       } else if (i !== (this.length - 1)) {
         resultingString += String(this[i]) + separator;
       } else {
-        resultingString += String(this[this.length - 1]);
+        resultingString += String(this[i]);
       };
     };
     return resultingString;
