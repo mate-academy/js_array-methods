@@ -8,8 +8,8 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
 
-    this.forEach(item => {
-      if (this.indexOf(item) < this.length - 1) {
+    this.forEach((item, index) => {
+      if (index < this.length - 1) {
         if (item !== null && item !== undefined) {
           str = str + item + separator;
         } else {
