@@ -9,17 +9,14 @@ function applyCustomJoin() {
     if (arg === null) { arg = 'null'; }
     let result = '';
     const arrayLength = this.length;
+    if (arrayLength === 0) return result;
     for (let i = 0; i < arrayLength; i++) {
-      if (arrayLength === 0) return result;
-      if (arrayLength > 0) {
-        if (i === arrayLength - 1) {
-          result += this[i];
-        } else {
-          if (this[i] === null || this[i] === undefined) {
-            this[i] = '';
-          }
-          result += this[i] + arg;
-        }
+      if (i === arrayLength - 1) {
+        result += this[i];
+      } else {
+        this[i] === null || this[i] === undefined
+          ? result += '' + arg
+          : result += this[i] + arg;
       }
     }
     return result;
