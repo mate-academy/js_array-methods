@@ -6,22 +6,23 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(arg) {
-    return this.reduce((str, item) => {
-      if (arg === undefined) {
-        arg = ',';
-      }
-      if (arg === null) {
-        arg += '';
-      }
+    let resString = '';
+    if (arg === undefined) {
+      arg = ',';
+    }
+    if (arg === null) {
+      arg += '';
+    }
+    for (let item of this) {
       if (this.indexOf(item) === this.length - 1 || !arg) {
-        return str + item;
+        resString += item;
+      } else if (item === null || item === undefined) {
+        resString += arg;
+      } else {
+        resString += item + arg;
       }
-      if (item === null || item === undefined) {
-        return str + arg;
-      }
-      return str + item + arg;
-    }, '');
+    }
+    return resString;
   };
 }
-
 module.exports = applyCustomJoin;
