@@ -6,22 +6,25 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(valueBetweenElements = ',') {
-    if (valueBetweenElements == null) {
-      valueBetweenElements = 'null';
+    const elementBetweenItem = valueBetweenElements + '';
+    let str = '';
+    if (!this.length) {
+      return str;
     }
-    let arrayToString = '';
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+      const itemOfArray = this[i];
+      if (itemOfArray === null || itemOfArray === undefined) {
+        str += elementBetweenItem;
+        continue;
       }
-      if (i === this.length - 1) {
-        arrayToString += this[i];
-        break;
+      if (i === 0) {
+        str += itemOfArray;
+        continue;
       }
-      arrayToString += this[i] + valueBetweenElements;
-    }
 
-    return arrayToString;
+      str += elementBetweenItem + itemOfArray;
+    }
+    return str;
   };
 }
 
