@@ -1,28 +1,28 @@
 'use strict';
 
-/**
+/*
  * Implement method join
  *
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(valueBetweenElements = ',') {
     const elementBetweenItem = valueBetweenElements + '';
+    const lengthOfArray = this.length;
     let str = '';
-    if (!this.length) {
+    if (!lengthOfArray) {
       return str;
     }
-    for (let i = 0; i < this.length; i++) {
+    for (let i = 0; i < lengthOfArray; i++) {
       const itemOfArray = this[i];
-      if (itemOfArray === null || itemOfArray === undefined) {
+      if (itemOfArray || itemOfArray === false ||
+        isNaN(itemOfArray) || itemOfArray === 0) {
+        if (itemOfArray !== undefined) {
+          str += itemOfArray;
+        }
+      }
+      if (i < lengthOfArray - 1) {
         str += elementBetweenItem;
-        continue;
       }
-      if (i === 0) {
-        str += itemOfArray;
-        continue;
-      }
-
-      str += elementBetweenItem + itemOfArray;
     }
     return str;
   };
