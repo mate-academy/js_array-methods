@@ -14,16 +14,15 @@ function applyCustomJoin() {
     }
     for (let i = 0; i < lengthOfArray; i++) {
       const itemOfArray = this[i];
-      if (itemOfArray || itemOfArray === false ||
-        isNaN(itemOfArray) || itemOfArray === 0) {
-        if (itemOfArray !== undefined) {
-          str += itemOfArray;
-        }
+
+      if (itemOfArray !== null && itemOfArray !== undefined) {
+        str += itemOfArray;
       }
       if (i < lengthOfArray - 1) {
         str += elementBetweenItem;
       }
     }
+
     return str;
   };
 }
