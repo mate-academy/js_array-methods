@@ -6,16 +6,16 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let strInsteadArray = '';
+    let result = '';
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== undefined && this[i] !== null) {
-        strInsteadArray += '' + this[i];
+        result += this[i];
       }
       if (i < (this.length - 1)) {
-        strInsteadArray += '' + separator;
+        result += separator;
       }
     }
-    return strInsteadArray;
+    return result;
   };
 }
 
