@@ -14,7 +14,7 @@ function applyCustomJoin() {
       arg += '';
     }
     for (let item of this) {
-      if (this.indexOf(item) === this.length - 1 || !arg) {
+      if (item === this[this.length - 1] || !arg) {
         resString += item;
       } else if (item === null || item === undefined) {
         resString += arg;
@@ -25,4 +25,5 @@ function applyCustomJoin() {
     return resString;
   };
 }
+
 module.exports = applyCustomJoin;
