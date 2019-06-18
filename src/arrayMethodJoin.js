@@ -13,7 +13,7 @@ function applyCustomJoin() {
     if (this.length < 1) {
       return '';
     }
-    if (this[0] !== null || this[0] !== undefined) {
+    if (this[0] !== null && this[0] !== undefined) {
       result += this[0];
     }
     for (let i = 1; i < this.length; i++) {
