@@ -12,9 +12,11 @@ function applyCustomJoin() {
     }
 
     for (let i = 1; i < this.length; i++) {
-      (this[i] === null || this[i] === undefined)
-        ? string += '' + separator
-        : string += '' + separator + this[i];
+      if (this[i] === null || this[i] === undefined) {
+        string += '' + separator;
+        continue;
+      }
+      string += '' + separator + this[i];
     }
 
     return string;
