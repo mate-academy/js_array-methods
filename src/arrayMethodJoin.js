@@ -25,6 +25,31 @@ function applyCustomJoin() {
   };
 }
 
-module.exports = applyCustomJoin;
+applyCustomJoin();
+const source = [0, 1, 2, 3];
+const testSeparator = -5;
+console.log(source.join2(-5));
+console.log(source.join(-5));
 
-// result[result.length] = this[i];
+console.log(source.join2(testSeparator));
+console.log(source.join(testSeparator));
+
+console.log(source.join2('-asd-'));
+console.log(source.join('-asd-'));
+
+console.log(source.join2(undefined));
+console.log(source.join(undefined));
+
+console.log(source.join2({}));
+console.log(source.join({}));
+
+console.log(source.join2([' ', 10, ' ']));
+console.log(source.join([' ', 10, ' ']));
+
+console.log(source.join2('-5'));
+console.log(source.join('-5'));
+
+console.log(source.join2(Boolean));
+console.log(source.join(Boolean));
+
+module.exports = applyCustomJoin;
