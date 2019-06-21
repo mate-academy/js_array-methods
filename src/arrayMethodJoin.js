@@ -5,19 +5,20 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let answer = '';
-    let correctValue = separator;
+    let result = '' + this[0];
+    const correctValue = '' + separator;
+    if (!this.length || this[0] === null || this[0] === undefined) {
+      result = '';
+    }
 
-    for(let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        answer += correctValue;
-      } else if (i !== this.length - 1) {
-        answer += this[i] + '' + correctValue;
+    for (let i = 1; i < this.length; i++) {
+      if (!this[i] && typeof this[i] !== 'number') {
+        result += correctValue;
       } else {
-        answer += this[i];
+        result += correctValue + this[i];
       }
     }
-    return answer;
+    return result;
   };
 }
 
