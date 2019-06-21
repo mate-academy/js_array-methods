@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function applyCustomJoin() {
+    [].__proto__.join2 = function(separator = ',') {
+
+      let result = '';
+      for (let i = 0; i < this.length; i++) {
+        if (i !== this.length - 1) {
+          result += this[i] + separator;
+        }
+      }
+      // [0, 1, 2, 3]
+      // separator
+      // 1. превращает массив в строку
+      // 2. он подставляет сепаратор вместо ' '
+      // [1, 2, 3] => join('-') => '1-2-3'
+      // 3.return result
+
+    };
+  }
+  console.log(applyCustomJoin());
+  console.log(+null)
+
+</script>
+</body>
+</html>
