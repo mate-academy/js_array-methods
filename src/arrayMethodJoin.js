@@ -8,8 +8,8 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
     for (const [index, elem] of this.entries()) {
-      if (typeof (elem) !== 'undefined' && elem !== null) { str += elem; } else { str += ''; }
-      if (index !== (this.length - 1)) { str += separator; }
+      (elem !== undefined && elem !== null) ? str += elem : str += '';
+      index !== (this.length - 1) ? str += separator : str += '';
     }
     return str;
   };
