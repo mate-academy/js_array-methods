@@ -6,8 +6,12 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let str = '';
-    const sep
-      = separator === undefined ? ',' : separator == null ? 'null' : separator;
+    let sep = '';
+    separator === undefined
+      ? (sep = ',')
+      : separator == null
+        ? (sep = 'null')
+        : (sep = separator);
 
     for (let i = 0; i < this.length; i++) {
       this[i] === undefined || this[i] === null
