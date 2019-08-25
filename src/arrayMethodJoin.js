@@ -17,7 +17,7 @@ function applyCustomJoin() {
         currentElement = '';
       }
 
-      (i !== this.length - 1)
+      i !== this.length - 1
         ? stringFromArray += currentElement + separatorForJoin
         : stringFromArray += currentElement;
     }
