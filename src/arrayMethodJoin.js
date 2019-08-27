@@ -13,15 +13,18 @@ function applyCustomJoin() {
     if (separator === null) {
       newSeparator = 'null';
     }
+    if (this.length === 0) {
+      return '';
+    }
     for (let i = 0; i < this.length; i++) {
       if (i === this.length - 1) {
         newString += this[i];
-        break;
+        return newString;
       }
-      this[i] === null || this[i] === undefined ? newString += ','
-        : newString += this[i] + newSeparator;
+      newString += this[i] === null || this[i] === undefined
+        ? ','
+        : this[i] + newSeparator;
     }
-    return newString;
   };
 }
 
