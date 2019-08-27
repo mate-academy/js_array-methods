@@ -17,9 +17,9 @@ function applyCustomJoin() {
         currentElement = '';
       }
 
-      i !== this.length - 1
-        ? stringFromArray += currentElement + separatorForJoin
-        : stringFromArray += currentElement;
+      stringFromArray += i !== this.length - 1
+        ? currentElement + separatorForJoin
+        : currentElement;
     }
 
     return stringFromArray;
