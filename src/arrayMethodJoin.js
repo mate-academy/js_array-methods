@@ -18,6 +18,7 @@ function applyCustomJoin() {
         stringJoin += `${this[i]}${joinSeparator}`;
       }
     }
+
     return stringJoin;
   };
 }
