@@ -8,6 +8,7 @@ function applyCustomJoin() {
     // write code here
     let stringJoin = '';
     const joinSeparator = (separator === undefined) ? ',' : separator;
+
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
         stringJoin += `${joinSeparator}`;
