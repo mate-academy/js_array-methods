@@ -6,7 +6,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     return separator === undefined ? this.toString()
-      : this.map(el => el, separator).toString().replace(/,/g, separator);
+      : this.toString().replace(/,/g, separator);
   };
 }
 
