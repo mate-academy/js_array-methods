@@ -6,7 +6,15 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let result = '';
-    const defaultSeparator = separator === undefined ? ',' : separator + '';
+    let defaultSeparator = separator;
+
+    if (defaultSeparator === undefined) {
+      defaultSeparator = ',';
+    } else if (defaultSeparator === null) {
+      defaultSeparator = 'null';
+    } else {
+      defaultSeparator.toString();
+    }
 
     for (let index = 0; index < this.length; index++) {
       if (this[index] === null || this[index] === undefined) {
