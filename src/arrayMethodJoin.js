@@ -5,8 +5,8 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    return (separator === undefined)
+      ? this.toString() : this.toString().replace(/,/g, separator);
   };
 }
-
 module.exports = applyCustomJoin;
