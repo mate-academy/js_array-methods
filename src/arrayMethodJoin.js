@@ -8,7 +8,7 @@ function applyCustomJoin() {
     let joinedString = '';
 
     if (separator !== undefined) {
-      String(separator)
+      separator = String(separator);
     }
 
     for (let i = 0; i < this.length; i++) {
