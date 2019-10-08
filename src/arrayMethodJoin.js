@@ -4,14 +4,10 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let resultStr = '';
 
-    if (separator === undefined) {
-      separator = ',';
-    }
-
-    separator = separator === null ? 'null' : separator.toString();
+    separator = String(separator);
 
     for (const str of this) {
       if (str === undefined || str === null) {
