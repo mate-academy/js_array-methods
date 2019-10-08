@@ -11,7 +11,7 @@ function applyCustomJoin() {
       separator = ',';
     }
 
-    separator = '' + separator;
+    separator = separator === null ? 'null' : separator.toString();
 
     for (const str of this) {
       if (str === undefined || str === null) {
