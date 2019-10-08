@@ -18,12 +18,8 @@ function applyCustomJoin() {
         result += this[i] + separate;
       }
     }
-
-    if (separate === null) {
-      return result;
-    } else {
-      return result.slice(0, result.length - separate.length);
-    }
+    
+    return result.slice(0, result.length - separate.length);
   }
 }
 
