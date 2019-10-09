@@ -5,8 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // write code here
-    const checkedSeparator = separatorCheck(separator);
+    const checkedSeparator = String(separator);
     let string = '';
     for (let i = 0; i < this.length; i++) {
       const checkedElement = arrayElementCheck(this[i]);
@@ -20,9 +19,6 @@ function applyCustomJoin() {
   };
 }
 
-function separatorCheck(separator) {
-  return separator == null ? 'null' : separator;
-}
 function arrayElementCheck(element) {
   return element == null || element === undefined ? '' : element;
 }
