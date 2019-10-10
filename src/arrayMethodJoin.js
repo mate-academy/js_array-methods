@@ -11,10 +11,11 @@ function applyCustomJoin() {
     let newString = '';
     const newSeparator = String(separator);
     for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+      let str = String(this[i]);
+      if (str === 'null' || str === 'undefined') {
+        str = '';
       }
-      newString += (this[i] + newSeparator);
+      newString += (str + newSeparator);
     };
 
     return newString + this[this.length - 1];
