@@ -18,7 +18,6 @@ function applyCustomJoin() {
         result += this[i] + separate;
       }
     }
-    
     return result.slice(0, result.length - separate.length);
   }
 }
