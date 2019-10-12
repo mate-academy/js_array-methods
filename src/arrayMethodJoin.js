@@ -3,24 +3,20 @@
 /**
  * Implement method join
  */
+
 function applyCustomJoin() {
-
   [].__proto__.join2 = function(separator = ',') {
-
     let result = '';
-    const separate = String(separator);
-
+    const divider = String(separator);
     for (let i = 0; i < this.length; i++) {
-
       if (this[i] === null || this[i] === undefined) {
-        result += separate;
+        result += divider;
       } else {
-        result += this[i] + separate;
+        result += this[i] + divider;
       }
     }
-    
-    return result.slice(0, result.length - separate.length);
-  }
+    return result.slice(0, result.length - divider.length);
+  };
 }
 
 module.exports = applyCustomJoin;
