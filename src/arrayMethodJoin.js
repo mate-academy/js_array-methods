@@ -17,11 +17,11 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
-        result += separator;
+        result += delimeter;
       } else if (i === this.length - 1) {
         result += this[i];
       } else {
-        result += this[i].toString() + separator;
+        result += this[i].toString() + delimeter;
       }
     }
 
