@@ -7,7 +7,7 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let symbol = '';
     if (separator === undefined) {
-      symbol += ',';
+      symbol = ',';
     } else {
       symbol = separator;
     }
