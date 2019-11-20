@@ -4,21 +4,15 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = [];
+    let sep = separator;
 
-    if (separator === undefined) {
-      // eslint-disable-next-line no-param-reassign
-      separator = ',';
+    if (Object.is(sep, null)) {
+      sep = 'null';
     }
 
-    if (separator === null) {
-      // eslint-disable-next-line no-param-reassign
-      separator = 'null';
-    }
-
-    // eslint-disable-next-line no-param-reassign
-    separator = separator.toString();
+    sep = sep.toString();
 
     if (this.length === 0) {
       return '';
@@ -26,9 +20,9 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
-        result += '' + separator;
+        result += '' + sep;
       } else {
-        result += this[i] + separator;
+        result += this[i] + sep;
       }
     }
 
