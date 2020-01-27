@@ -1,25 +1,20 @@
 'use strict';
 
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
     const len = this.length - 1;
+    const stringSeparator = String(separator);
 
     for (let i = 0; i < len; i++) {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
 
-      if (separator === null) {
-        result = result + this[i] + 'null';
-      } else if (separator === undefined) {
-        result = result + this[i] + ',';
-      } else {
-        result = result + this[i] + separator;
-      }
+      result = result + this[i] + stringSeparator;
     }
 
-    if (this.length === 0) {
+    if (!this.length) {
       return '';
     }
 
