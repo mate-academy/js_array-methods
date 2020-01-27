@@ -22,13 +22,11 @@ function applyCustomJoin() {
       }
     }
 
-    this.forEach((item, index) => {
-      if (item === null || item === undefined) {
-        this[index] = str;
-      }
-    });
-
     for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
+        this[i] = '';
+      }
+
       if (i === this.length - 1) {
         str += this[i].toString();
       } else {
