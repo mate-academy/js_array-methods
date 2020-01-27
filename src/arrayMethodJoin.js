@@ -15,7 +15,7 @@ function applyCustomJoin() {
       if (this[i] === null || this[i] === undefined) {
         result += '';
       } else {
-        result += '';
+        result += this[i];
       }
 
       if (i !== this.length - 1) {
