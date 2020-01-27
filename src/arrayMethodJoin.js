@@ -12,10 +12,11 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      (this[i] === null
-        || this[i] === undefined)
-        ? result += ''
-        : result += this[i];
+      if (this[i] === null || this[i] === undefined) {
+        result += '';
+      } else {
+        result += '';
+      }
 
       if (i !== this.length - 1) {
         result += symbol;
