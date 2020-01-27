@@ -4,10 +4,10 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = ``;
 
-    if (this.length === 0) {
+    if (!this.length) {
       return '';
     }
 
