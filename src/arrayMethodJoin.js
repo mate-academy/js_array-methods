@@ -8,17 +8,13 @@ function applyCustomJoin() {
     const arr = this;
     let joined = '';
 
+    const separatorStr = String(separator);
+
     for (let i = 0; i < arr.length; i++) {
-      if (String(separator) === 'null') {
-        if (i < arr.length - 1) {
-          joined += arr[i] + 'null';
-        } else {
-          joined += arr[i];
-        }
-      } else if (arr[i] === null || arr[i] === undefined) {
-        joined += '' + separator;
+      if (arr[i] === null || arr[i] === undefined) {
+        joined += '' + separatorStr;
       } else if (i < arr.length - 1) {
-        joined += arr[i] + separator;
+        joined += arr[i] + separatorStr;
       } else {
         joined += arr[i];
       }
