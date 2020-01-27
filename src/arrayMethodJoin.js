@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let outStr = '';
+    let joinedString = '';
     const stringSeparator = String(separator);
 
     if (!this.length) {
@@ -14,15 +14,15 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
-        outStr += stringSeparator;
+        joinedString += stringSeparator;
       } else if (i !== this.length - 1) {
-        outStr += this[i] + stringSeparator;
+        joinedString += this[i] + stringSeparator;
       } else {
-        outStr += this[i];
+        joinedString += this[i];
       }
     }
 
-    return outStr;
+    return joinedString;
   };
 }
 
