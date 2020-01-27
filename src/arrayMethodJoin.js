@@ -8,10 +8,6 @@ function applyCustomJoin() {
     let newString = '';
     let itemSeparator = separator;
 
-    if (itemSeparator === undefined) {
-      itemSeparator = ',';
-    }
-
     if (itemSeparator === null) {
       itemSeparator = 'null';
     }
