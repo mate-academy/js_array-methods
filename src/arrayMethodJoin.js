@@ -20,7 +20,7 @@ function applyCustomJoin() {
         this[i] = '';
       }
 
-      const point = String(separator) + this[i];
+      const point = `${String(separator)}${this[i]}`;
 
       string += point;
     }
