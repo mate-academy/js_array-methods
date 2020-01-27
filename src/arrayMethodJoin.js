@@ -2,25 +2,25 @@
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let arrayJoin = '';
+    let joinedArray = '';
 
     if (!this.length) {
-      return arrayJoin;
+      return joinedArray;
     }
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
-        arrayJoin += separator;
+        joinedArray += separator;
       } else if (i === this.length - 1) {
-        arrayJoin += String(this[i]);
+        joinedArray += `${this[i]}`;
 
-        return arrayJoin;
+        return joinedArray;
       } else {
-        arrayJoin += String(this[i]) + separator;
+        joinedArray += `${this[i]}` + separator;
       }
     }
 
-    return arrayJoin;
+    return joinedArray;
   };
 }
 
