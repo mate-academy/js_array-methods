@@ -28,9 +28,9 @@ function applyCustomJoin() {
       }
 
       if (i === this.length - 1) {
-        str += this[i].toString();
+        str += `${this[i]}`;
       } else {
-        str += this[i].toString() + mySeparator;
+        str += `${this[i]}${mySeparator}`;
       }
     }
 
