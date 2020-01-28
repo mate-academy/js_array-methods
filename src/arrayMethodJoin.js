@@ -1,8 +1,7 @@
 'use strict';
 
 function applyCustomJoin() {
-  // eslint-disable-next-line no-extend-native
-  Array.prototype.join2 = function(separator = ',') {
+  [].__proto__.join2 = function(separator = ',') {
     let joinedArray = '';
 
     if (!this.length) {
