@@ -17,7 +17,7 @@ function applyCustomJoin() {
 
         return joinedArray;
       } else {
-        joinedArray += `${this[i]}` + separator;
+        joinedArray += `${this[i]}${separator}`;
       }
     }
 
