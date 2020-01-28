@@ -2,15 +2,15 @@
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let result = '';
-    const len = this.length - 1;
-    const stringSeparator = String(separator);
-
     if (!this.length) {
       return '';
     }
 
-    for (let i = 0; i < len; i++) {
+    let result = '';
+    const length = this.length - 1;
+    const stringSeparator = String(separator);
+
+    for (let i = 0; i < length; i++) {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
@@ -18,7 +18,7 @@ function applyCustomJoin() {
       result = result + this[i] + stringSeparator;
     }
 
-    return result + this[len];
+    return result + this[length];
   };
 }
 
