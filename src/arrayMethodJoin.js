@@ -6,16 +6,16 @@ function applyCustomJoin() {
     const len = this.length - 1;
     const stringSeparator = String(separator);
 
+    if (!this.length) {
+      return '';
+    }
+
     for (let i = 0; i < len; i++) {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
 
       result = result + this[i] + stringSeparator;
-    }
-
-    if (!this.length) {
-      return '';
     }
 
     return result + this[len];
