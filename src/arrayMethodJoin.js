@@ -4,7 +4,7 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
     let innerSeparator;
 
@@ -12,9 +12,7 @@ function applyCustomJoin() {
       return result;
     }
 
-    if (separator === undefined) {
-      innerSeparator = ',';
-    } else if (separator === null) {
+    if (separator === null) {
       innerSeparator = 'null';
     } else {
       innerSeparator = separator;
