@@ -10,7 +10,7 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
-        string += '' + stringSeparator;
+        string += String(stringSeparator);
       } else if (i !== this.length - 1) {
         string += this[i] + stringSeparator;
       } else {
