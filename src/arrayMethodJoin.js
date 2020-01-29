@@ -8,6 +8,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
+    const strSeparator = String(separator);
 
     for (const element of this) {
       switch (element) {
@@ -19,7 +20,7 @@ function applyCustomJoin() {
           str += ',';
           break;
         default:
-          str = str + element + separator;
+          str += element + strSeparator;
       }
     }
 
