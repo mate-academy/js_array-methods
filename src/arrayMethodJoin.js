@@ -6,12 +6,8 @@
  */
 
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let str = '';
-
-    if (separator === undefined) {
-      separator = ',';
-    }
 
     for (const element of this) {
       switch (element) {
@@ -19,15 +15,11 @@ function applyCustomJoin() {
           str += element;
           break;
         case null:
-          str += '';
-          str += ',';
-          break;
         case undefined:
           str += ',';
           break;
         default:
-          str += element;
-          str += separator;
+          str = str + element + separator;
       }
     }
 
