@@ -17,7 +17,7 @@ function applyCustomJoin() {
           break;
         case null:
         case undefined:
-          str += ',';
+          str += strSeparator;
           break;
         default:
           str += element + strSeparator;
