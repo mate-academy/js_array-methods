@@ -1,21 +1,16 @@
 'use strict';
 
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    let thisSeparator = separator;
+  [].__proto__.join2 = function(separator = ',') {
     let thisResult = '';
-
-    if (separator === undefined) {
-      thisSeparator = ',';
-    }
 
     for (const i of this) {
       if (i === undefined || i === null) {
-        thisResult += thisSeparator;
+        thisResult += separator;
       } else if (i === this[this.length - 1]) {
         thisResult += i;
       } else {
-        thisResult += '' + i + thisSeparator;
+        thisResult += '' + i + separator;
       }
     }
 
