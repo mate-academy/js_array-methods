@@ -20,11 +20,11 @@ function applyCustomJoin() {
       const item = arr[i];
 
       if (item !== null && item !== undefined) {
-        res += item.toString();
+        res += `${item}`;
       }
 
       if (i + 1 < arr.length) {
-        res += sep.toString();
+        res += `${sep}`;
       }
     }
 
