@@ -6,27 +6,18 @@
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let resultString = '';
-    let firstElem = '';
-    let lastElem = '';
+    let resulString = '';
 
-    switch (this.length) {
-      case 0 :
-        return resultString;
-      case 1:
-        return String(this[0]);
-
-      default:
-        firstElem = isNullOrUndefined(this[0]);
-        lastElem = `${separator}${isNullOrUndefined(this[this.length - 1])}`;
-
-        for (let i = 1; i <= this.length - 2; i++) {
-          resultString += `${separator}${isNullOrUndefined(this[i])}`;
-        }
+    for (let i = 0; i < this.length; i++) {
+      if (i !== this.length - 1) {
+        resulString += isNullOrUndefined(this[i]) + String(separator);
+      } else {
+        resulString += isNullOrUndefined(this[i]);
+      }
     }
 
-    return firstElem + resultString + lastElem;
-  };
+    return resulString;
+}
 }
 
 function isNullOrUndefined(value) {
