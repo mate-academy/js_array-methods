@@ -7,10 +7,10 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     const arr = this;
     let str = '';
+    let separator1 = separator;
 
     for (let i = 0; i < arr.length; i++) {
       let str1 = arr[i];
-      let separator1 = separator;
 
       if (arr[i] === null || arr[i] === undefined) {
         str1 = '';
