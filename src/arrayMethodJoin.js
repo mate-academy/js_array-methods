@@ -9,20 +9,20 @@ function applyCustomJoin() {
       return '';
     }
 
-    let str = '';
+    let string = '';
     const checkItem = item => (item === null || item === undefined) ? '' : item;
 
     for (let i = 0; i < this.length; i++) {
       if (i === 0) {
-        str = `${checkItem(this[i])}`;
+        string = `${checkItem(this[i])}`;
         continue;
       }
 
-      str += `${separator
+      string += `${separator
         !== undefined ? separator : ','}${checkItem(this[i])}`;
     }
 
-    return str;
+    return string;
   };
 }
 
