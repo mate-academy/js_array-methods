@@ -12,9 +12,9 @@ function applyCustomJoin() {
         joinedString += `${separator}`;
         continue;
       } else if (i !== this.length - 1) {
-        joinedString += this[i] + `${separator}`;
+        joinedString += `${this[i]}${separator}`;
       } else {
-        joinedString += this[i];
+        joinedString += `${this[i]}`;
         break;
       }
     }
