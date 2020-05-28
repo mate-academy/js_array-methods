@@ -10,21 +10,21 @@ function applyCustomJoin() {
     }
 
     let result = '';
-    let sep = '';
+    let joint = '';
 
     if (separator === undefined) {
-      sep = ',';
+      joint = ',';
     } else if (separator === null) {
-      sep = 'null';
+      joint = 'null';
     } else {
-      sep = separator.toString();
+      joint = separator.toString();
     }
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
-        result += '' + sep;
+        result += '' + joint;
       } else if (i !== this.length - 1 && this.length !== 1) {
-        result += this[i] + sep;
+        result += this[i] + joint;
       } else {
         result += this[i];
       }
