@@ -5,11 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let splittedThis = '';
-
-    if (this.length === 1) {
-      return `${this}`;
-    }
+    let joinedString = '';
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
@@ -17,11 +13,11 @@ function applyCustomJoin() {
       }
 
       (i === this.length - 1)
-        ? splittedThis += `${this[i]}`
-        : splittedThis += `${this[i]}${separator}`;
+        ? joinedString += `${this[i]}`
+        : joinedString += `${this[i]}${separator}`;
     }
 
-    return splittedThis;
+    return joinedString;
   };
 }
 module.exports = applyCustomJoin;
