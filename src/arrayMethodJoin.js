@@ -25,8 +25,4 @@ function applyCustomJoin() {
   };
 }
 
-// console.log(applyCustomJoin([0, 1, 2, 3]));
-// console.log(applyCustomJoin([]));
-// console.log(applyCustomJoin([]));
-
 module.exports = applyCustomJoin;
