@@ -9,15 +9,12 @@ function applyCustomJoin() {
       return '';
     }
 
-    let string = '';
     const getItem = item => (item === null || item === undefined) ? '' : item;
 
-    for (let i = 0; i < this.length; i++) {
-      if (i === 0) {
-        string = `${getItem(this[i])}`;
-      } else {
-        string += `${separator}${getItem(this[i])}`;
-      }
+    let string = `${getItem(this[0])}`;
+
+    for (let i = 1; i < this.length; i++) {
+      string += `${separator}${getItem(this[i])}`;
     }
 
     return string;
