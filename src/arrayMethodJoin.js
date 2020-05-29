@@ -6,10 +6,10 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let output = '';
-    let correctSeparator = separator;
+    let validSeparator = separator;
 
     if (separator === undefined) {
-      correctSeparator = ',';
+      validSeparator = ',';
     }
 
     for (let i = 0; i < this.length; i++) {
@@ -18,7 +18,7 @@ function applyCustomJoin() {
       }
 
       if (i < this.length - 1) {
-        output += correctSeparator;
+        output += validSeparator;
       }
     }
 
