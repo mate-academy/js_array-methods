@@ -8,10 +8,6 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (Number.isNaN(this[i])) {
-        this[i] = 'NaN';
-      };
-
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       };
