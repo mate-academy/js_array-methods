@@ -15,10 +15,9 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       if (i === 0) {
         string = `${getItem(this[i])}`;
-        continue;
+      } else {
+        string += `${separator}${getItem(this[i])}`;
       }
-
-      string += `${separator}${getItem(this[i])}`;
     }
 
     return string;
