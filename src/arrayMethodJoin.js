@@ -13,11 +13,11 @@ function applyCustomJoin() {
 
     for (let index = 0; index < this.length; index++) {
       if (separator === '' || index === this.length - 1) {
-        result += String(this[index]);
+        result += `${this[index]}`;
       } else if (this[index] === null || this[index] === undefined) {
         result += separator;
       } else {
-        result += String(this[index]) + separator;
+        result += `${this[index]}` + separator;
       }
     }
 
