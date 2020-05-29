@@ -5,9 +5,15 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const regEx = /,/g;
+    // eslint-disable-next-line max-len
+    const getElement = element => (element === null || element === undefined) ? '' : element;
+    let string = `${getElement(this[0])}`;
 
-    return this.toString().replace(regEx, separator);
+    for (let i = 1; i < this.length; i++) {
+      string += `${separator}${getElement(this[i])}`;
+    }
+
+    return string;
   };
 }
 
