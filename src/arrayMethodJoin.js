@@ -12,9 +12,9 @@ function applyCustomJoin() {
         this[i] = '';
       };
 
-      result += i !== this.length - 1
-        ? this[i] + `${separator}`
-        : this[i];
+      i !== this.length - 1
+        ? result += this[i] + `${separator}`
+        : result += this[i];
     }
 
     return result;
