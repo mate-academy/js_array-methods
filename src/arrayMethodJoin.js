@@ -13,20 +13,16 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
-        newString += separator;
+        newString = newString + separator;
       } else {
-        if (separator === null) {
-          newString += this[i] + 'null';
-        } else if (separator === '') {
-          newString += this[i];
-        } else if (separator === undefined) {
-          newString += this[i] + ',';
+        if (separator === undefined) {
+          newString = newString + this[i] + ',';
         } else {
-          newString += this[i] + separator;
+          newString = newString + this[i] + separator;
         }
       }
     }
-    newString += this[this.length - 1];
+    newString = newString + this[this.length - 1];
 
     return newString;
   };
