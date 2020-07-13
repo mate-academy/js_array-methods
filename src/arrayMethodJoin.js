@@ -9,20 +9,15 @@ function applyCustomJoin() {
     let joinString = '';
 
     for (let i = 0; i < this.length; i++) {
-      if ((this[i] || this[i] === 0 || this[i] === false || isNaN(this[i]))
-      && this[i] !== undefined) {
-        joinString += this[i];
-      } else {
+      if (this[i] === undefined || this[i] === null) {
         joinString += '';
+      } else {
+        joinString += this[i];
       }
 
       if (i !== this.length - 1) {
-        if (separator) {
+        if (separator || separator === null || separator === '') {
           joinString += separator;
-        } else if (separator === null) {
-          joinString += null;
-        } else if (separator === '') {
-          joinString += '';
         } else {
           joinString += ',';
         }
