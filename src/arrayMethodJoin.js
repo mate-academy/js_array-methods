@@ -29,10 +29,8 @@ function applyCustomJoin() {
       }
 
       if (this.length > 0 && i !== this.length - 1) {
-        if (this[i] !== null) {
-          if (this[i] !== undefined) {
-            str += this[i] + `${symbol}`;
-          }
+        if (this[i] !== undefined && this[i] !== null) {
+          str += this[i] + `${symbol}`;
         }
       }
     }
