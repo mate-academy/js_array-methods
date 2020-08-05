@@ -10,20 +10,14 @@ function applyCustomJoin() {
     }
 
     let result = '';
-    let separatorCopy = '';
-
-    if (separator === null) {
-      separatorCopy += 'null';
-    } else {
-      separatorCopy += separator;
-    }
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] !== null && this[i] !== undefined) {
-        result += this[i] + separatorCopy;
+        result += this[i];
       } else {
-        result += separatorCopy;
+        result += '';
       }
+      result += separator;
     }
     result += this[this.length - 1];
 
