@@ -15,10 +15,10 @@ function applyCustomJoin() {
         element = this[i];
       }
 
+      result += element;
+
       if (i !== this.length - 1) {
-        result = result + element + separator;
-      } else {
-        result = result + element;
+        result += separator;
       }
     }
 
