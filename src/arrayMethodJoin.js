@@ -8,8 +8,6 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      // const adder = (this[i] && this[i] !== 0 && this[i] !== false)
-      // ? this[i] : '';
       const adder = (this[i] !== undefined && this[i] !== null)
         ? this[i] : '';
 
