@@ -25,8 +25,4 @@ function applyCustomJoin() {
   };
 }
 
-applyCustomJoin();
-
-console.log([null, null, 1, undefined, 0, NaN, ''].join2(','));
-
 module.exports = applyCustomJoin;
