@@ -22,7 +22,6 @@ function applyCustomJoin() {
 
     return str;
   };
-}
-
+};
 
 module.exports = applyCustomJoin;
