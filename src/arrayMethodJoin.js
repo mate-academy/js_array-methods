@@ -28,10 +28,4 @@ function applyCustomJoin() {
   };
 };
 
-const source = [null, null, 1, 2, undefined, null];
-
-applyCustomJoin();
-
-source.join2(',');
-
 module.exports = applyCustomJoin;
