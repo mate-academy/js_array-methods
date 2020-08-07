@@ -17,7 +17,8 @@ function applyCustomJoin() {
         continue;
       }
 
-      str += '' + this[i] + separator;
+      str += this[i];
+      str += separator;
     }
 
     str += this[this.length - 1];
