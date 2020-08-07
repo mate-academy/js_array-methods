@@ -6,18 +6,17 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const len = this.length;
     let result = '';
     let valueToAdd;
 
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < this.length; i++) {
       if (this[i] == null || typeof this[i] === 'undefined') {
         valueToAdd = '';
       } else {
         valueToAdd = this[i];
       }
 
-      if (i !== len - 1) {
+      if (i !== this.length - 1) {
         result += valueToAdd + String(separator);
       } else {
         result += valueToAdd;
