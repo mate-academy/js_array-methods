@@ -9,7 +9,9 @@ function applyCustomJoin() {
 
     for (let index = 0; index < this.length; index++) {
       if (this[index] === null || this[index] === undefined) {
-        result += separator;
+        if (index !== this.length + 1) {
+          result += separator;
+        }
         continue;
       }
 
