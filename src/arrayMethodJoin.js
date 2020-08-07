@@ -13,9 +13,10 @@ function applyCustomJoin() {
       }
 
       if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+        result += '';
+      } else {
+        result += this[i];
       }
-      result += this[i];
     }
 
     return result;
