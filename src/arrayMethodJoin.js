@@ -5,8 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const altSeparator = separator;
-
     let resultString = '';
 
     for (let i = 0; i < this.length; i++) {
@@ -17,7 +15,7 @@ function applyCustomJoin() {
       }
 
       if (i < this.length - 1) {
-        resultString += altSeparator;
+        resultString += separator;
       }
     }
 
