@@ -5,7 +5,9 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let result = (this[0] === null) ? '' : `${this[0]}`;
+    let result = (this[0] === null || this[0] === undefined)
+      ? ''
+      : `${this[0]}`;
 
     if (this.length === 0) {
       return '';
