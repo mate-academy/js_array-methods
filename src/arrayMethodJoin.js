@@ -7,15 +7,15 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
 
-    for (let a = 0; a < this.length; a++) {
-      if (this[a] === null || this[a] === undefined) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
         result += separator;
         continue;
       }
 
-      result += this[a];
+      result += this[i];
 
-      if (a === this.length - 1) {
+      if (i === this.length - 1) {
         break;
       }
 
