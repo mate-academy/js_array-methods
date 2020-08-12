@@ -11,10 +11,10 @@ function applyCustomJoin() {
       if (this[i] === null || this[i] === undefined) {
         str += separator;
         continue;
+      } else {
+        str += this[i];
       }
-      str += this[i];
-
-      if (i === this.length - 1) {
+     if (i === this.length - 1) {
         break;
       }
       str += separator;
@@ -22,6 +22,6 @@ function applyCustomJoin() {
 
     return str;
   };
-};
+}
 
 module.exports = applyCustomJoin;
