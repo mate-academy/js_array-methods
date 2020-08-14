@@ -21,7 +21,11 @@ function applyCustomJoin() {
       result += separator;
     }
 
-    result += this[this.length - 1];
+    if (this[this.length - 1] === null || this[this.length - 1] === undefined) {
+      result += '';
+    } else {
+      result += this[this.length - 1];
+    }
 
     return result;
   };

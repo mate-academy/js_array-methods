@@ -56,8 +56,8 @@ test(`Should skip separator when array has only one element`, () => {
 });
 
 test(`Should work when array have null and undefined`, () => {
-  expect([false, null, 1, undefined, 0, NaN, ''].join2(','))
-    .toBe('false,,1,,0,NaN,');
+  expect([false, null, 1, undefined, 0, NaN, '', undefined].join2(','))
+    .toBe('false,,1,,0,NaN,,');
 });
 
 test(`Should work when array has null as a first element`, () => {
