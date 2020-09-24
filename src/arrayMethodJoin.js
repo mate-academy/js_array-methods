@@ -16,7 +16,7 @@ function applyCustomJoin() {
       separatorValue = 'null';
     }
 
-    if (typeof this === 'object' && this.length > 0) {
+    if (this.length > 0) {
       for (let i = 0; i < this.length - 1; i++) {
         if (this[i] === null) {
           result += separatorValue;
