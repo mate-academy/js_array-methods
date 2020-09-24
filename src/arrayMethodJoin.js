@@ -7,18 +7,18 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let string = '';
 
-    for (const el of this) {
-      if (el === null || el === undefined) {
+    for (const element of this) {
+      if (element === null || element === undefined) {
         string += ',';
         continue;
       }
 
-      if (el === this[this.length - 1]) {
-        string += el;
+      if (element === this[this.length - 1]) {
+        string += element;
         continue;
       }
 
-      string += el + `${separator}`;
+      string += element + `${separator}`;
     }
 
     return string;
