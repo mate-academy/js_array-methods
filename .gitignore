@@ -7,3 +7,11 @@ node_modules
 
 # MacOS
 .DS_Store
+
+.editorconfig
+.eslintrc.js
+.github/workflows/test.yml
+.gitignore
+LICENSE
+package-lock.json
+package.json
