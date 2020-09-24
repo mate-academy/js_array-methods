@@ -9,7 +9,7 @@ function applyCustomJoin() {
 
     for (const element of this) {
       if (element === null || element === undefined) {
-        string += ',';
+        string += `${separator}`;
         continue;
       }
 
