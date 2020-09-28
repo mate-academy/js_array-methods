@@ -15,10 +15,10 @@ function applyCustomJoin() {
       }
 
       if (this.length - 1 !== indexOfElement) {
-        if (arguments[0] === undefined) {
+        if (separator === undefined) {
           finalString += ',';
         } else {
-          finalString += arguments[0];
+          finalString += separator;
         }
       }
     }
