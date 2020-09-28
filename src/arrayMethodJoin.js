@@ -10,9 +10,7 @@ function applyCustomJoin() {
     for (let indexOfElement = 0;
       indexOfElement < this.length;
       indexOfElement++) {
-      if (this[indexOfElement] === undefined || this[indexOfElement] === null) {
-        finalString += '';
-      } else {
+      if (this[indexOfElement] !== undefined && this[indexOfElement] !== null) {
         finalString += this[indexOfElement];
       }
 
