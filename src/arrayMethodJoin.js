@@ -4,10 +4,20 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  const original = Array.prototype.join;
+  [].__proto__.join2 = function(separator = ',') {
+    let strJoined = '';
 
-  [].__proto__.join2 = function(separator) {
-    return original.apply(this, arguments);
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== undefined && this[i] !== null) {
+        strJoined += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        strJoined += separator;
+      }
+    }
+
+    return strJoined;
   };
 }
 
