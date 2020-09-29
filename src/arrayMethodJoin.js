@@ -11,12 +11,12 @@ function applyCustomJoin() {
     const joinSeparator = `${separator}`;
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] !== this[this.length - 1]) {
+      if (i !== this.length - 1) {
         if (this[i] === null || this[i] === undefined) {
           this[i] = '';
         }
         valueArray = this[i] + joinSeparator;
-      } else if (this[i] === this[this.length - 1]) {
+      } else if (i === this.length - 1) {
         valueArray = this[i];
       }
       joinString += valueArray;
