@@ -6,8 +6,8 @@
 function applyCustomJoin() {
   let str = '';
 
-  [].__proto__.join2 = function(separator) {
-    let symbol = separator;
+  [].__proto__.join2 = function(separator = ',') {
+    const symbol = separator;
 
     str = '';
 
@@ -16,22 +16,17 @@ function applyCustomJoin() {
         str += this[i];
       }
 
-      if (this[i] === '') {
+      if (this[i] === '' && this.length - 1) {
         continue;
-      }
-
-      if (symbol === undefined) {
-        symbol = ',';
       }
 
       if (this[i] === undefined || this[i] === null) {
         str += `${symbol}`;
+        continue;
       }
 
       if (this.length > 0 && i !== this.length - 1) {
-        if (this[i] !== undefined && this[i] !== null) {
-          str += this[i] + `${symbol}`;
-        }
+        str += this[i] + `${symbol}`;
       }
     }
 
