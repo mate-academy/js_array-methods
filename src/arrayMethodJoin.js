@@ -5,103 +5,90 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let str = '';
+    let sep = separator;
+    let result = '';
 
     if (this.length === 0) {
-      return str;
+      return result;
     } else if (this.length === 1) {
-      str = String(this[0]);
+      result = String(this[0]);
 
-      return str;
-    } else {
-      switch (separator) {
-        case undefined: {
-          this.forEach((element, index) => {
-            const sep = ',';
+      return result;
+    }
 
-            if (element === null || element === undefined) {
-              if (index === this.length - 1) {
-                str += `${''}`;
-              } else {
-                str += `${''}${sep}`;
-              }
-            } else {
-              if (index === this.length - 1) {
-                str += `${String(element)}`;
-              } else {
-                str += `${String(element)}${sep}`;
-              }
-            }
-          });
+    switch (sep) {
+      case undefined: {
+        sep = ',';
 
-          return str.trim();
+        for (let inDX = 0; inDX < this.length; inDX++) {
+          if (this[inDX] === null || this[inDX] === undefined) {
+            result += (inDX === this.length - 1)
+              ? `${''}` : `${''}${sep}`;
+            continue;
+          }
+
+          result += (inDX === this.length - 1)
+            ? `${String(this[inDX])}`
+            : `${String(this[inDX])}${sep}`;
+        }
+        break;
+      }
+
+      case null: {
+        for (let inDX = 0; inDX < this.length; inDX++) {
+          if (this[inDX] === null || this[inDX] === undefined) {
+            result += (inDX === this.length - 1)
+              ? `${''}` : `${''}${sep}`;
+            continue;
+          }
+
+          result += (inDX === this.length - 1)
+            ? `${String(this[inDX])}` : `${String(this[inDX])}${sep}`;
+        }
+        break;
+      }
+
+      case ' ': {
+        for (let inDX = 0; inDX < this.length; inDX++) {
+          if (this[inDX] === null || this[inDX] === undefined) {
+            result += (inDX === this.length - 1)
+              ? `${''}` : `${''}${sep}`;
+            continue;
+          }
+
+          result += (inDX === this.length - 1)
+            ? `${String(this[inDX])}` : `${String(this[inDX])}${sep}`;
+        }
+        break;
+      }
+
+      case '': {
+        for (let inDX = 0; inDX < this.length; inDX++) {
+          result += (this[inDX] === null || this[inDX] === undefined)
+            ? `${''}`
+            : `${String(this[inDX])}`;
         }
 
-        case null: {
-          this.forEach((element, index) => {
-            if (index === this.length - 1) {
-              str += `${String(element)}`;
-            } else {
-              str += `${String(element)}${String(separator)}`;
+        break;
+      }
+
+      default: {
+        for (let inDX = 0; inDX < this.length; inDX++) {
+          if (this[inDX] === null || this[inDX] === undefined) {
+            if (inDX === this.length - 1) {
+              result += `${''}`;
             }
-          });
+            result += `${''}${sep}`;
+            continue;
+          }
 
-          return str.trim();
-        }
-
-        case '': {
-          this.forEach(element => {
-            if (element === null || element === undefined) {
-              str += `${''}`;
-            } else {
-              str += `${String(element)}`;
-            }
-          });
-
-          return str.trim();
-        }
-
-        case ' ': {
-          this.forEach((element, index) => {
-            if (element === null || element === undefined) {
-              if (index === this.length - 1) {
-                str += `${''}`;
-              } else {
-                str += `${''}${' '}`;
-              }
-            } else {
-              if (index === this.length - 1) {
-                str += `${String(element)}`;
-              } else {
-                str += `${String(element)}${' '}`;
-              }
-            }
-          });
-
-          return str.trim();
-        }
-
-        default: {
-          this.forEach((element, index) => {
-            if (element === null || element === undefined) {
-              if (index === this.length - 1) {
-                str += `${''}`;
-              } else {
-                str += `${''}${separator}`;
-              }
-            } else {
-              if (index === this.length - 1) {
-                str += `${String(element)}`;
-              } else {
-                str += `${String(element)}${separator}`;
-              }
-            }
-          });
-
-          return str.trim();
+          result += (inDX === this.length - 1)
+            ? `${String(this[inDX])}` : `${String(this[inDX])}${sep}`;
         }
       }
     }
+
+    return result;
   };
 };
 
