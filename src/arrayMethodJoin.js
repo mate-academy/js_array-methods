@@ -16,76 +16,20 @@ function applyCustomJoin() {
       return result;
     }
 
-    switch (sep) {
-      case undefined: {
-        sep = ',';
+    if (sep === undefined) {
+      sep = ',';
+    }
 
-        for (let inDX = 0; inDX < this.length; inDX++) {
-          if (this[inDX] === null || this[inDX] === undefined) {
-            result += (inDX === this.length - 1)
-              ? `${''}` : `${''}${sep}`;
-            continue;
-          }
-
-          result += (inDX === this.length - 1)
-            ? `${String(this[inDX])}`
-            : `${String(this[inDX])}${sep}`;
-        }
-        break;
+    for (let inDX = 0; inDX < this.length; inDX++) {
+      if (this[inDX] === null || this[inDX] === undefined) {
+        result += (inDX === this.length - 1)
+          ? `${''}` : `${''}${sep}`;
+        continue;
       }
 
-      case null: {
-        for (let inDX = 0; inDX < this.length; inDX++) {
-          if (this[inDX] === null || this[inDX] === undefined) {
-            result += (inDX === this.length - 1)
-              ? `${''}` : `${''}${sep}`;
-            continue;
-          }
-
-          result += (inDX === this.length - 1)
-            ? `${String(this[inDX])}` : `${String(this[inDX])}${sep}`;
-        }
-        break;
-      }
-
-      case ' ': {
-        for (let inDX = 0; inDX < this.length; inDX++) {
-          if (this[inDX] === null || this[inDX] === undefined) {
-            result += (inDX === this.length - 1)
-              ? `${''}` : `${''}${sep}`;
-            continue;
-          }
-
-          result += (inDX === this.length - 1)
-            ? `${String(this[inDX])}` : `${String(this[inDX])}${sep}`;
-        }
-        break;
-      }
-
-      case '': {
-        for (let inDX = 0; inDX < this.length; inDX++) {
-          result += (this[inDX] === null || this[inDX] === undefined)
-            ? `${''}`
-            : `${String(this[inDX])}`;
-        }
-
-        break;
-      }
-
-      default: {
-        for (let inDX = 0; inDX < this.length; inDX++) {
-          if (this[inDX] === null || this[inDX] === undefined) {
-            if (inDX === this.length - 1) {
-              result += `${''}`;
-            }
-            result += `${''}${sep}`;
-            continue;
-          }
-
-          result += (inDX === this.length - 1)
-            ? `${String(this[inDX])}` : `${String(this[inDX])}${sep}`;
-        }
-      }
+      result += (inDX === this.length - 1)
+        ? `${String(this[inDX])}`
+        : `${String(this[inDX])}${sep}`;
     }
 
     return result;
