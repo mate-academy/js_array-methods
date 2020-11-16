@@ -10,15 +10,15 @@ function applyCustomJoin() {
 
     let res = '';
 
-    for (let el of this) {
-      if (el === null || el === undefined || el === []) {
-        el = '';
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
+        this[i] = '';
       }
 
       if (separator === null) {
-        res += el <= this.length - 2 ? el + 'null' : el;
+        res += i <= this.length - 2 ? String(this[i]) + separator : this[i];
       } else {
-        res += el <= this.length - 2 ? el + separator : el;
+        res += i <= this.length - 2 ? this[i] + separator : this[i];
       }
     }
 
