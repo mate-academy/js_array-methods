@@ -19,7 +19,7 @@ function applyCustomJoin() {
       trueSeparator = separator;
     }
 
-    for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length; i++) {
       let trueItem;
 
       if (this[i] === null || this[i] === undefined) {
@@ -28,10 +28,12 @@ function applyCustomJoin() {
         trueItem = this[i];
       }
 
-      result += trueItem + trueSeparator;
-    }
+      result += trueItem;
 
-    result += this[this.length - 1];
+      if (i !== this.length - 1) {
+        result += trueSeparator;
+      }
+    }
 
     return result;
   };
