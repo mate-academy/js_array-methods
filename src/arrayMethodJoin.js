@@ -6,11 +6,6 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let res = '';
-    let sep = separator;
-
-    if (separator == null) {
-      sep = 'null';
-    }
 
     for (let i = 0; i < this.length; i++) {
       let element = this[i];
@@ -20,7 +15,7 @@ function applyCustomJoin() {
       }
 
       if (i !== 0) {
-        res += sep + element;
+        res += separator + element.toString();
       } else {
         res += element;
       }
