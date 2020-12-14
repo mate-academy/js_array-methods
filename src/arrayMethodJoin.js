@@ -5,6 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
+    // write code here
     let result = '';
 
     const testInput = (inputElement) => {
@@ -27,7 +28,7 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (i < this.length - 1) {
-        result += testInput(this[i]) + testSeparator(separator);
+        result += testInput(this[i]) + testSeparator(separator).toString();
       } else {
         result += testInput(this[i]);
       }
