@@ -16,15 +16,21 @@ function applyCustomJoin() {
       sepp = 'null';
     }
 
-    for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] == null || this[i] === undefined) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === this[this.length - 1]) {
+        if (this[i] === null || this[i] === undefined) {
+          return string;
+        } else {
+          string += this[i];
+        }
+      } else if (this[i] === null || this[i] === undefined) {
         string += sepp;
       } else {
         string += this[i] + sepp;
       }
     }
 
-    return string + this[this.length - 1];
+    return string;
   };
 }
 
