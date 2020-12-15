@@ -5,43 +5,29 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let str = '';
-
-    if (separator === undefined) {
-      for (let i = 0; i < this.length; i++) {
-        if (i === this.length - 1) {
-          if (this[i] === undefined || this[i] === null) {
-            str += ',';
-          } else {
-            str += `${this[i]}`;
-          }
-        } else {
-          if (this[i] === undefined || this[i] === null) {
-            str += ',';
-          } else {
-            str += `${this[i]}` + ',';
-          }
-        }
-      }
-    } else {
-      for (let i = 0; i < this.length; i++) {
-        if (i === this.length - 1) {
-          if (this[i] === undefined || this[i] === null) {
-            str += separator;
-          } else {
-            str += `${this[i]}`;
-          }
-        } else {
-          if (this[i] === undefined || this[i] === null) {
-            str += separator;
-          } else {
-            str += `${this[i]}` + separator;
-          }
-        }
-      }
+    if (this.length === 0) {
+      return '';
     }
 
-    return str;
+    let str = '';
+    let div = separator;
+
+    if (separator === undefined) {
+      div = ',';
+    }
+
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === undefined || this[i] === null) {
+        str += div;
+      } else {
+        str += `${this[i]}`;
+
+        if (i === this.length - 1) {
+          return str;
+        }
+        str += div;
+      }
+    }
   };
 }
 
