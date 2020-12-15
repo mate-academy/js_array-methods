@@ -2,19 +2,6 @@
 
 /**
  * Implement method join
- *
- * console.log(elements.join());
- *
- * const elements = ['Fire', 'Air', 'Water'];
-
-// expected output: "Fire,Air,Water"
-
-console.log(elements.join(''));
-// expected output: "FireAirWater"
-
-console.log(elements.join('-'));
-// expected output: "Fire-Air-Water"
-
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
