@@ -17,16 +17,14 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1) {
-        if (this[i] === null || this[i] === undefined) {
-          return string;
-        } else {
+      if (this[i] !== null && this[i] !== undefined) {
+        if (i === this.length - 1) {
           string += this[i];
+        } else {
+          string += this[i] + sepp;
         }
-      } else if (this[i] === null || this[i] === undefined) {
-        string += sepp;
       } else {
-        string += this[i] + sepp;
+        string += sepp;
       }
     }
 
