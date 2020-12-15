@@ -11,27 +11,13 @@ function applyCustomJoin() {
       return result;
     }
 
-    let trueSeparator;
-
-    if (separator === null) {
-      trueSeparator = 'null';
-    } else {
-      trueSeparator = separator;
-    }
-
     for (let i = 0; i < this.length; i++) {
-      let trueItem;
-
-      if (this[i] === null || this[i] === undefined) {
-        trueItem = '';
-      } else {
-        trueItem = this[i];
+      if (this[i] !== null && this[i] !== undefined) {
+        result += this[i];
       }
 
-      result += trueItem;
-
       if (i !== this.length - 1) {
-        result += trueSeparator;
+        result += separator;
       }
     }
 
