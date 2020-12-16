@@ -5,18 +5,24 @@
  */
 
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    const result = String(this);
+  [].__proto__.join2 = function(separator = ',') {
+    let result = '';
 
-    if (separator === '') {
-      return result.replace(/,/g, '');
-    } else if (separator) {
-      return result.replace(/,/g, separator);
-    } else if (separator === undefined) {
+    if (this.length === 0) {
       return result;
-    } else if (separator == null) {
-      return result.replace(/,/g, 'null');
     }
+
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== null && this[i] !== undefined) {
+        result += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        result += separator;
+      }
+    }
+
+    return result;
   };
 }
 
