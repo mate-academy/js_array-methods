@@ -21,7 +21,7 @@ function applyCustomJoin() {
       value = `${this[i]}${separator}`;
 
       if (i === this.length - 1) {
-        value = `${this[i]}`;
+        value = this[i];
       }
 
       string += value;
