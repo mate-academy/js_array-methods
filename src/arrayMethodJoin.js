@@ -4,16 +4,12 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let string = '';
     let input = separator;
 
     if (!this || this.length === 0) {
       return string;
-    }
-
-    if (input === undefined) {
-      input = ',';
     }
 
     input = '' + input;
@@ -22,15 +18,13 @@ function applyCustomJoin() {
 
     for (let i = 0; i < numbersMaxIndex; i++) {
       if (this[i] === null || this[i] === undefined) {
-        string += '' + input;
+        string += input;
       } else {
         string += this[i] + input;
       }
     }
 
-    const result = string + this[numbersMaxIndex];
-
-    return result;
+    return string + this[numbersMaxIndex];
   };
 }
 
