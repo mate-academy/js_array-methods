@@ -4,18 +4,9 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     // write code here
     let str = '';
-    let separNew = separator;
-
-    if (arguments.length === 0 || separator === undefined) {
-      separNew = ',';
-    }
-
-    if (separator === null) {
-      separNew = 'null';
-    }
 
     for (let i = 0; i < this.length; i++) {
       let item = this[i];
@@ -29,7 +20,7 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        str = str + item + separNew;
+        str = str + item + separator;
       }
     }
 
