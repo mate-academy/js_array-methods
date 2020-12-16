@@ -20,9 +20,9 @@ function applyCustomJoin() {
         if (this[i] === null || this[i] === undefined) {
           arrValue = '';
         } else {
-          arrValue = `${this[i]}`;
+          arrValue = this[i];
         }
-        str += separator + arrValue;
+        str += `${separator}` + arrValue;
       }
 
       return str;
