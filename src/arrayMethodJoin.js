@@ -8,10 +8,18 @@ function applyCustomJoin() {
     let res = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (i + 1 === this.length) {
-        res += this[i];
+      if (separator === undefined) {
+        if (i + 1 === this.length) {
+          res += this[i];
+        } else {
+          res += this[i] + ',';
+        }
       } else {
-        res += this[i] + separator;
+        if (i + 1 === this.length) {
+          res += this[i];
+        } else {
+          res += this[i] + separator;
+        }
       }
     }
 
