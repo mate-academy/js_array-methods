@@ -7,21 +7,21 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
     let result = '';
-    const x = this.length;
+    const length = this.length;
 
-    if (x === 0) {
+    if (length === 0) {
       result = '';
 
       return result;
     }
 
-    if (x === 1) {
-      result = this[x - 1];
+    if (length === 1) {
+      result = this[length - 1];
 
       return result.toString();
     }
 
-    if (x > 1) {
+    if (length > 1) {
       for (let key of this) {
         if (key === null || key === undefined) {
           key = '';
@@ -29,7 +29,7 @@ function applyCustomJoin() {
 
         result += String(key);
 
-        if (key < x - 1) {
+        if (key < length - 1) {
           result += separator;
         }
       }
