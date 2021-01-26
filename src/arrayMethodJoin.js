@@ -5,56 +5,35 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let res = '';
+    let str = '';
 
-    for (let i = 0; i < this.length; i++) {
-      if (separator === undefined) {
-        if (i + 1 === this.length) {
-          if (this[i] === null || this[i] === undefined) {
-            res += ',';
-          } else {
-            res += this[i];
-          }
+    if (this.length === 0) {
+      return str;
+    } else {
+      for (let i = 0; i < this.length; i++) {
+        if (this[i] === undefined || this[i] === null) {
+          str += '';
         } else {
-          if (this[i] === null || this[i] === undefined) {
-            res += ',';
-          } else {
-            res += this[i] + ',';
-          }
+          str += this[i];
         }
-      } else if (separator === null) {
-        if (i + 1 === this.length) {
-          if (this[i] === null || this[i] === undefined) {
-            res += ',';
-          } else {
-            res += this[i];
-          }
-        } else {
-          if (this[i] === null || this[i] === undefined) {
-            res += ',';
-          } else {
-            res += this[i] + 'null';
-          }
-        }
-      } else {
-        if (i + 1 === this.length) {
-          if (this[i] === null || this[i] === undefined) {
-            res += ',';
-          } else {
-            res += this[i];
-          }
-        } else {
-          if (this[i] === null || this[i] === undefined) {
-            res += ',';
-          } else {
-            res += this[i] + separator;
+
+        if (i < this.length - 1) {
+          switch (separator) {
+            case undefined:
+              str += ',';
+              break;
+            case null:
+              str += 'null';
+              break;
+            default:
+              str += separator;
           }
         }
       }
-    }
 
-    return res;
+      return str;
+    }
   };
-};
+}
 
 module.exports = applyCustomJoin;
