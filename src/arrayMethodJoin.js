@@ -7,7 +7,7 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let str = '';
 
-    if (this.length === 0) {
+    if (!this.length) {
       return str;
     } else {
       for (let i = 0; i < this.length; i++) {
