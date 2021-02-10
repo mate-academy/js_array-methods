@@ -4,8 +4,8 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    if (!this || !this.length) {
+  [].__proto__.join2 = function(separator = ',') {
+    if (!this) {
       return '';
     }
 
@@ -21,10 +21,8 @@ function applyCustomJoin() {
           this[i] = '';
         }
 
-        if (separator === null || separator === '') {
+        if (separator === null) {
           firstElement += `${separator}` + this[i];
-        } else if (!separator) {
-          firstElement += ',' + this[i];
         } else {
           firstElement += separator + this[i];
         }
