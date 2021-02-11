@@ -5,33 +5,29 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    if (!this) {
+    if (!this.length) {
       return '';
     }
 
-    let firstElement = this[0];
+    let resultOfMerger = this[0];
 
-    if (this.length > 1) {
-      for (let i = 1; i < this.length; i++) {
-        if (firstElement === null) {
-          firstElement = '';
-        }
-
-        if (this[i] === null || this[i] === undefined) {
-          this[i] = '';
-        }
-
-        if (separator === null) {
-          firstElement += `${separator}` + this[i];
-        } else {
-          firstElement += separator + this[i];
-        }
+    for (let i = 1; i < this.length; i++) {
+      if (resultOfMerger === null) {
+        resultOfMerger = '';
       }
 
-      return firstElement;
-    } else {
-      return this.toString();
+      if (this[i] === null || this[i] === undefined) {
+        this[i] = '';
+      }
+
+      if (separator === null) {
+        resultOfMerger += `${separator}` + this[i];
+      } else {
+        resultOfMerger += separator + this[i];
+      }
     }
+
+    return resultOfMerger.toString();
   };
 }
 
