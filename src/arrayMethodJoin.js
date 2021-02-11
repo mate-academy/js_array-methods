@@ -9,11 +9,11 @@ function applyCustomJoin() {
       return '';
     }
 
-    let resultOfMerger = this[0];
+    let initialWord = this[0];
 
     for (let i = 1; i < this.length; i++) {
-      if (resultOfMerger === null) {
-        resultOfMerger = '';
+      if (initialWord === null) {
+        initialWord = '';
       }
 
       if (this[i] === null || this[i] === undefined) {
@@ -21,13 +21,13 @@ function applyCustomJoin() {
       }
 
       if (separator === null) {
-        resultOfMerger += `${separator}` + this[i];
+        initialWord += `${separator}` + this[i];
       } else {
-        resultOfMerger += separator + this[i];
+        initialWord += separator + this[i];
       }
     }
 
-    return resultOfMerger.toString();
+    return initialWord.toString();
   };
 }
 
