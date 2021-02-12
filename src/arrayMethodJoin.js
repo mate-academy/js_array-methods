@@ -8,11 +8,7 @@ function applyCustomJoin() {
     // write code here
     let result = '';
 
-    if (this.length === 1) {
-      result += this;
-    }
-
-    if (this.length > 1) {
+    if (this.length) {
       if (this[0] !== null) {
         result += this[0];
       }
