@@ -7,6 +7,11 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joined = '';
     let change;
+    let divine = separator;
+
+    if (divine === null) {
+      divine = 'null';
+    }
 
     for (let i = 0; i < this.length; i++) {
       if (typeof this[i] === 'undefined' || this[i] === null) {
@@ -16,11 +21,7 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        if (separator !== null) {
-          joined += change + separator;
-        } else {
-          joined += change + 'null';
-        }
+        joined += change + divine;
       } else {
         joined += change;
       }
