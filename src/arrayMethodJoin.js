@@ -3,9 +3,10 @@
 /**
  * Implement method join
  */
+
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    if (this === []) {
+    if (this.length === 0) {
       return '';
     }
 
@@ -27,7 +28,6 @@ function applyCustomJoin() {
     return string;
   };
 }
-
-/* console.log(applyCustomJoin()); */
+applyCustomJoin();
 
 module.exports = applyCustomJoin;
