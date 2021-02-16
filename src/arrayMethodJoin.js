@@ -6,24 +6,24 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joined = '';
-    let change;
-    let divine = separator;
+    let joiningElement;
+    let separation = separator;
 
-    if (divine === null) {
-      divine = 'null';
+    if (separation === null) {
+      separation = 'null';
     }
 
     for (let i = 0; i < this.length; i++) {
       if (typeof this[i] === 'undefined' || this[i] === null) {
-        change = '';
+        joiningElement = '';
       } else {
-        change = this[i];
+        joiningElement = this[i];
       }
 
       if (i !== this.length - 1) {
-        joined += change + divine;
+        joined += joiningElement + separation;
       } else {
-        joined += change;
+        joined += joiningElement;
       }
     }
 
