@@ -16,7 +16,7 @@ function applyCustomJoin() {
     }
 
     for (let i = 1; i < this.length; i++) {
-      if (separator == null) {
+      if (separator === null) {
         joinedString += null + this[i].toString();
       } else if (this[i] === null || this[i] === undefined) {
         joinedString += separator;
