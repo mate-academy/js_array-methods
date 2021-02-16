@@ -8,15 +8,15 @@ function applyCustomJoin() {
     // write code here
     let joinWithSeparator = '';
 
-    for (const elem of this) {
-      if (elem == null || elem === undefined) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] == null || this[i] === undefined) {
         joinWithSeparator += separator;
-      } else if (this.indexOf(elem) === this.length - 1) {
-        joinWithSeparator += elem;
+      } else if (i === this.length - 1) {
+        joinWithSeparator += this[i];
       } else if (separator == null) {
-        joinWithSeparator += elem + 'null';
+        joinWithSeparator += this[i] + 'null';
       } else {
-        joinWithSeparator += elem + separator;
+        joinWithSeparator += this[i] + separator;
       }
     }
 
