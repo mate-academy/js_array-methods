@@ -6,7 +6,6 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    const valuesArray = [...this];
 
     if (this.length === 0) {
       return result;
@@ -20,7 +19,7 @@ function applyCustomJoin() {
       result = result + this[i] + separator;
     }
 
-    result = result + valuesArray[valuesArray.length - 1];
+    result = result + this[this.length - 1];
 
     return result;
   };
