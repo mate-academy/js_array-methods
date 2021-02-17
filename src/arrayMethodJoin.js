@@ -19,8 +19,6 @@ function applyCustomJoin() {
 
     return string;
   };
-
-  return this;
 }
 
 module.exports = applyCustomJoin;
