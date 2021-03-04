@@ -13,7 +13,7 @@ function applyCustomJoin() {
       this[0] = '';
     }
 
-    let result = this[0];
+    let result = this[0].toString();
 
     for (let i = 1; i < this.length; i++) {
       if ((this[i] === null) || (this[i] === undefined)) {
@@ -23,7 +23,7 @@ function applyCustomJoin() {
       }
     }
 
-    return result.toString();
+    return result;
   };
 }
 
