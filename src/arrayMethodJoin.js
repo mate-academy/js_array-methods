@@ -7,34 +7,27 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let result = '';
 
-    for (let a of this) {
-      if (this.indexOf(null) === 0
-      || (this.includes(null) && this.includes(undefined))) {
-        if (a === null || a === undefined) {
-          a = '';
-        }
+    if (this.length === 0) {
+      return '';
+    }
+
+    for (let a = 0; a < this.length - 1; a++) {
+      if (this[a] === null || this[a] === undefined) {
+        this[a] = '';
       }
 
       if (separator === undefined) {
-        result += (a + ',');
+        result += (this[a] + ',');
       } else if (separator === '') {
-        result += a;
+        result += this[a];
       } else if (separator === null) {
-        result += (a + 'null');
+        result += (this[a] + 'null');
       } else {
-        result += (a + separator);
+        result += (this[a] + separator);
       }
     };
 
-    if (separator === null) {
-      result = result.slice(0, result.length - 4);
-    } else if (typeof separator === 'object') {
-      result = result.slice(0, result.length - 15);
-    } else if (separator !== '') {
-      result = result.slice(0, result.length - 1);
-    }
-
-    return result;
+    return result + this[this.length - 1];
   };
 }
 
