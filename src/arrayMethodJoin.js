@@ -20,10 +20,9 @@ function applyCustomJoin() {
         result += (this[a] + ',');
       } else if (separator === '') {
         result += this[a];
-      } else if (separator === null) {
-        result += (this[a] + 'null');
       } else {
-        result += (this[a] + separator);
+        result += this[a];
+        result += separator;
       }
     };
 
