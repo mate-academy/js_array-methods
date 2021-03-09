@@ -18,8 +18,6 @@ function applyCustomJoin() {
 
       if (separator === undefined) {
         result += (this[a] + ',');
-      } else if (separator === '') {
-        result += this[a];
       } else {
         result += this[a];
         result += separator;
