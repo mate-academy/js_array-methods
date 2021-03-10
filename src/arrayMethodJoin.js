@@ -9,7 +9,7 @@ function applyCustomJoin() {
     let string = '';
 
     for (const item of this) {
-      if (item !== null && item !== undefined && item !== '') {
+      if (item !== null && item !== undefined) {
         string += `${item}`;
       }
 
