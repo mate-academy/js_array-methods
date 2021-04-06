@@ -8,7 +8,7 @@ function applyCustomJoin() {
     let string = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (typeof separator === 'undefined' || separator === undefined) {
+      if (separator === undefined) {
         if (i === this.length - 1) {
           string = `${string}${this[i]}`;
           break;
