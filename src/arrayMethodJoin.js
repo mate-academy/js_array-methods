@@ -5,12 +5,12 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let joinedStr = '';
-    let sepCopy = separator;
+    let joinedString = '';
+    let separatorCopy = separator;
 
     for (let element of this) {
-      if (typeof sepCopy === 'undefined') {
-        sepCopy = ',';
+      if (typeof separatorCopy === 'undefined') {
+        separatorCopy = ',';
       };
 
       if (typeof element === 'undefined') {
@@ -18,14 +18,14 @@ function applyCustomJoin() {
       } else if (`${element}` === 'null') {
         element = '';
       };
-      joinedStr += `${element}` + `${sepCopy}`;
+      joinedString += `${element}` + `${separatorCopy}`;
     };
 
-    if (sepCopy === '') {
-      return joinedStr;
+    if (separatorCopy === '') {
+      return joinedString;
     };
 
-    return joinedStr.slice(0, -`${sepCopy}`.length);
+    return joinedString.slice(0, -`${separatorCopy}`.length);
   };
 };
 
