@@ -5,17 +5,14 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const elementsToJoin = [...this];
-
     let joinedElements = '';
 
-    for (let i = 0; i < elementsToJoin.length; i++) {
-      if (elementsToJoin[i] === null || elementsToJoin[i] === undefined) {
-        elementsToJoin[i] = '';
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== null && this[i] !== undefined) {
+        joinedElements += this[i];
       }
-      joinedElements += elementsToJoin[i];
 
-      if (i !== elementsToJoin.length - 1) {
+      if (i !== this.length - 1) {
         joinedElements += separator;
       }
     }
