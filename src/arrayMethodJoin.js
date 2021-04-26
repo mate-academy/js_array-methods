@@ -4,50 +4,38 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let resultString = '';
+    const lastElement = this[this.length - 1];
 
     if (this.length === 0) {
       return '';
     }
 
-    if (separator === '') {
-      for (let i = 0; i < this.length; i++) {
-        resultString += this[i];
-      }
+    switch (separator) {
+      case '':
+        for (const element of this) {
+          resultString += element;
+        };
+        break;
 
-      return resultString;
-    }
-
-    if (separator === null) {
-      for (let i = 0; i < this.length - 1; i++) {
-        if (this[i] === undefined || this[i] === null) {
-          resultString += '' + 'null';
-          continue;
+      case null:
+        for (let i = 0; i < this.length - 1; i++) {
+          resultString += `${this[i]}null`;
         }
-        resultString += `${this[i]}null`;
-      }
-      resultString += `${this[this.length - 1]}`;
+        resultString += lastElement;
+        break;
 
-      return resultString;
-    }
-
-    if (!separator) {
-      for (let i = 0; i < this.length - 1; i++) {
-        resultString += `${this[i]},`;
-      }
-      resultString += `${this[this.length - 1]}`;
-    }
-
-    if (separator) {
-      for (let i = 0; i < this.length - 1; i++) {
-        if (this[i] === undefined || this[i] === null) {
-          resultString += '' + separator;
-          continue;
+      default:
+        for (let i = 0; i < this.length - 1; i++) {
+          if (this[i] === undefined || this[i] === null) {
+            resultString += '' + separator;
+            continue;
+          }
+          resultString += `${this[i]}${separator}`;
         }
-        resultString += `${this[i]}${separator}`;
-      }
-      resultString += `${this[this.length - 1]}`;
+        resultString += lastElement;
+        break;
     }
 
     return resultString;
