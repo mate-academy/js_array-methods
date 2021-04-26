@@ -5,17 +5,16 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const arr = this;
     let resultStr = '';
 
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === null || arr[i] === undefined) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
         resultStr += '';
       } else {
-        resultStr += arr[i];
+        resultStr += this[i];
       }
 
-      if (i < arr.length - 1) {
+      if (i < this.length - 1) {
         resultStr += separator;
       }
     }
