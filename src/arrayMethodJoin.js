@@ -5,29 +5,27 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const resArr = [];
-    let res = '';
+    const resultArray = [];
+    let result = '';
 
     for (let i = 0; i < this.length; i++) {
       if (i === (this.length - 1)) {
-        resArr.push(this[i]);
+        resultArray.push(this[i]);
       } else {
-        if (this[i] === undefined) {
-          resArr.push(separator);
-        } else if (this[i] === null) {
-          resArr.push(separator);
+        if (this[i] === undefined || this[i] === null) {
+          resultArray.push(separator);
         } else {
-          resArr.push(this[i]);
-          resArr.push(separator);
+          resultArray.push(this[i]);
+          resultArray.push(separator);
         }
       }
     }
 
-    for (const el of resArr) {
-      res += el;
+    for (const el of resultArray) {
+      result += el;
     }
 
-    return res;
+    return result;
   };
 }
 
