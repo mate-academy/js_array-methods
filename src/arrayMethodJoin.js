@@ -6,8 +6,8 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let sep = separator;
-    let res = '';
-    const tmp = '';
+    let joinedString = '';
+    const emptyElement = '';
 
     if (separator === null) {
       sep = 'null';
@@ -18,23 +18,23 @@ function applyCustomJoin() {
         this[index] === null
         || this[index] === undefined
       ) {
-        res += tmp + sep;
+        joinedString += emptyElement + sep;
         continue;
       }
 
-      res += this[index] + sep;
+      joinedString += this[index] + sep;
     }
 
     if (
       this[this.length - 1] === null
       || this[this.length - 1] === undefined
     ) {
-      res += tmp;
+      joinedString += emptyElement;
     } else {
-      res += this[this.length - 1];
+      joinedString += this[this.length - 1];
     }
 
-    return res;
+    return joinedString;
   };
 }
 
