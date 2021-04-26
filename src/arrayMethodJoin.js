@@ -5,15 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // write code here
-    let separatorString = separator;
-
-    if (separator === null) {
-      separatorString = 'null';
-    } else {
-      separatorString = '' + separator;
-    }
-
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
@@ -22,7 +13,7 @@ function applyCustomJoin() {
       }
 
       if (i < this.length - 1) {
-        result += separatorString;
+        result += separator;
       }
     }
 
