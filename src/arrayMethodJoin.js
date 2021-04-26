@@ -12,31 +12,14 @@ function applyCustomJoin() {
       return '';
     }
 
-    switch (separator) {
-      case '':
-        for (const element of this) {
-          resultString += element;
-        };
-        break;
-
-      case null:
-        for (let i = 0; i < this.length - 1; i++) {
-          resultString += `${this[i]}null`;
-        }
-        resultString += lastElement;
-        break;
-
-      default:
-        for (let i = 0; i < this.length - 1; i++) {
-          if (this[i] === undefined || this[i] === null) {
-            resultString += '' + separator;
-            continue;
-          }
-          resultString += `${this[i]}${separator}`;
-        }
-        resultString += lastElement;
-        break;
+    for (let i = 0; i < this.length - 1; i++) {
+      if (this[i] === undefined || this[i] === null) {
+        resultString += '' + separator;
+        continue;
+      }
+      resultString += `${this[i]}${separator}`;
     }
+    resultString += lastElement;
 
     return resultString;
   };
