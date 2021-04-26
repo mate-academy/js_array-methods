@@ -8,7 +8,7 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || String(this[i]) === 'undefined') {
+      if (String(this[i]) === 'undefined' || this[i] === null) {
         result += '';
       } else {
         result += this[i];
