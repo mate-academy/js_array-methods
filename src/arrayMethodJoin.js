@@ -3,29 +3,23 @@
 /**
  * Implement method join
  */
+
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let joinedString = '';
-    let separatorCopy = separator;
 
-    for (let element of this) {
-      if (typeof separatorCopy === 'undefined') {
-        separatorCopy = ',';
-      };
-
-      if (typeof element === 'undefined') {
-        element = '';
-      } else if (`${element}` === 'null') {
-        element = '';
-      };
-      joinedString += `${element}` + `${separatorCopy}`;
-    };
-
-    if (separatorCopy === '') {
+    if (this.length === 0) {
       return joinedString;
     };
 
-    return joinedString.slice(0, -`${separatorCopy}`.length);
+    for (let i = 0; i < this.length - 1; i++) {
+      if (typeof this[i] === 'undefined' || `${this[i]}` === 'null') {
+        this[i] = '';
+      }
+      joinedString += `${this[i]}` + `${separator}`;
+    };
+
+    return joinedString + `${this[this.length - 1]}`;
   };
 };
 
