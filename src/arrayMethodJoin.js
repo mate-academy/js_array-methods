@@ -7,13 +7,12 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
     let joinedArr = '';
-    const length = this.length;
 
-    const sep = typeof (separator) === 'object'
+    const calculatedSeparator = typeof (separator) === 'object'
       ? String(separator)
       : separator;
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < this.length; i++) {
       let element;
 
       if (this[i] === undefined || this[i] === null) {
@@ -22,11 +21,11 @@ function applyCustomJoin() {
         element = this[i];
       }
 
-      joinedArr += element + sep;
+      joinedArr += element + calculatedSeparator;
     }
 
-    return sep
-      ? joinedArr.slice(0, -sep.length)
+    return calculatedSeparator
+      ? joinedArr.slice(0, -calculatedSeparator.length)
       : joinedArr;
   };
 }
