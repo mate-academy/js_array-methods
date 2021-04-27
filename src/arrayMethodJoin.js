@@ -13,7 +13,6 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
-        newString += '';
         newString += separator;
         continue;
       }
