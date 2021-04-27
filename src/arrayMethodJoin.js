@@ -7,11 +7,11 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
 
-    for (const i of this) {
-      if (i !== undefined && i !== null) {
-        str += i + '' + separator;
+    for (const element of this) {
+      if (element !== undefined && element !== null) {
+        str += element + '' + separator;
       } else {
-        str += ',';
+        str += separator;
       }
     }
     str = str.substring(0, str.length - (separator + '').length);
