@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let res = '';
+    let result = '';
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
@@ -13,13 +13,13 @@ function applyCustomJoin() {
       }
 
       if (i === 0) {
-        res += this[i];
+        result += this[i];
       } else {
-        res += `${separator}${this[i]}`;
+        result += `${separator}${this[i]}`;
       }
     }
 
-    return res;
+    return result;
   };
 }
 
