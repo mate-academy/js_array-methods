@@ -21,10 +21,4 @@ function applyCustomJoin() {
   };
 }
 
-const source = [false, null, 1, undefined, 0, NaN, ''];
-
-applyCustomJoin();
-
-source.join2(',');
-
 module.exports = applyCustomJoin;
