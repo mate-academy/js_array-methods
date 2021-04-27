@@ -12,17 +12,17 @@ function applyCustomJoin() {
       validSeparator = 'null';
     }
 
-    for (const char of this) {
-      let validChar = char;
+    for (let i = 0; i < this.length; i++) {
+      let validElement = this[i];
 
-      if (validChar === null || validChar === undefined) {
-        validChar = '';
+      if (validElement === null || validElement === undefined) {
+        validElement = '';
       }
 
-      if (this.lastIndexOf(char) !== this.length - 1) {
-        result += validChar + validSeparator;
+      if (i < this.length - 1) {
+        result += validElement + validSeparator;
       } else {
-        result += validChar;
+        result += validElement;
       }
     }
 
