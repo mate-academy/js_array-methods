@@ -15,6 +15,13 @@ test(`join2 doesn't call default join`, () => {
     .toBe(false);
 });
 
+it(`should not modify original array`, () => {
+  source.join2(2);
+
+  expect(source)
+    .toEqual([0, 1, 2, 3]);
+});
+
 test(`Should work with special character as a separator`, () => {
   expect(source.join2('-'))
     .toBe('0-1-2-3');
@@ -63,6 +70,11 @@ test(`Should work when array have null and undefined`, () => {
 test(`Should work when array has null as a first element`, () => {
   expect([null, null, 1, undefined, 0, NaN, ''].join2(','))
     .toBe(',,1,,0,NaN,');
+});
+
+test(`Should work when array contains a string 'null'`, () => {
+  expect([null, null, 1, undefined, 0, 'null', NaN, ''].join2(','))
+    .toBe(',,1,,0,null,NaN,');
 });
 
 test(`Should work with object as a separator`, () => {
