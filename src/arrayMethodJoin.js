@@ -17,11 +17,7 @@ function applyCustomJoin() {
       result += word + string;
     }
 
-    if (separator === '') {
-      return result.slice(0, result.length);
-    } else {
-      return result.slice(0, result.length - string.length);
-    }
+    return result.slice(0, result.length - string.length);
   };
 }
 
