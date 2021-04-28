@@ -7,28 +7,19 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let strJoin = '';
 
-    if (this.length === 0) {
-      return strJoin;
-    }
-
-    for (let value of this) {
-      if (this.length === 1) {
-        strJoin += value;
-
-        return strJoin;
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
+        this[i] = '';
       }
 
-      if (value === undefined || value === null) {
-        value = '';
-        strJoin += `${separator}${value}`;
+      if (i === 0) {
+        strJoin += `${this[i]}`;
       } else {
-        strJoin += `${separator}${value}`;
+        strJoin += `${separator}${this[i]}`;
       }
     }
 
-    const strJoinFix = strJoin.slice(`${separator}`.length, strJoin.length);
-
-    return strJoinFix;
+    return strJoin;
   };
 }
 
