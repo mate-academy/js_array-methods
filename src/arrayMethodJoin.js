@@ -6,18 +6,22 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    const string = `${separator}`;
 
     for (const word of this) {
-      if (word === null || word === undefined) {
-        result += string;
+      if (word === this[this.length - 1]) {
+        result += word;
         continue;
       }
 
-      result += word + string;
+      if (word === null || word === undefined) {
+        result += `${separator}`;
+        continue;
+      }
+
+      result += word + `${separator}`;
     }
 
-    return result.slice(0, result.length - string.length);
+    return result;
   };
 }
 
