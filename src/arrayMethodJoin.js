@@ -14,8 +14,6 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== null && this[i] !== undefined) {
         result += this[i];
-      } else {
-        result += '';
       }
 
       if (i < this.length - 1) {
