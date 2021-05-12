@@ -4,35 +4,21 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let delim = separator;
     let resString = '';
-
-    function getNullUndefined(value) {
-      let string;
-
-      if (value === undefined || value === null) {
-        string = '';
-
-        return string;
-      }
-
-      return value;
-    }
-
-    if (delim === undefined) {
-      delim = ',';
-    }
 
     if (delim === null) {
       delim = 'null';
     }
 
     for (let i = 0; i < this.length; i++) {
+      const value = (this[i] !== null && this[i] !== undefined) ? this[i] : '';
+
       if (i !== this.length - 1) {
-        resString += getNullUndefined(this[i]) + delim;
+        resString += value + delim;
       } else {
-        resString += getNullUndefined(this[i]);
+        resString += value;
       }
     }
 
