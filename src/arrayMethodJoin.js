@@ -8,23 +8,18 @@ function applyCustomJoin() {
     // write code here
     let joinedSeparator = '';
 
-    for (let i = 0; i < this.length; i++) {
+    if (this.length === 0) {
+      return joinedSeparator;
+    }
+
+    for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
-        if (i === 0) {
-          joinedSeparator = '';
-          continue;
-        } else {
-          joinedSeparator += `${separator}${''}`;
-          continue;
-        }
+        joinedSeparator += `${separator}`;
       } else {
-        if (i === 0) {
-          joinedSeparator = `${this[0]}`;
-          continue;
-        }
-        joinedSeparator += `${separator}${this[i]}`;
+        joinedSeparator += `${this[i]}${separator}`;
       }
     }
+    joinedSeparator += this[this.length - 1];
 
     return joinedSeparator;
   };
