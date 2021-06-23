@@ -19,7 +19,7 @@ function applyCustomJoin() {
       joinedCharacters += `${this[i]}` + separator;
     }
 
-    joinedCharacters += this[this.length - 1];
+    joinedCharacters += `${this[this.length - 1]}`;
 
     return joinedCharacters;
   };
