@@ -15,10 +15,10 @@ function applyCustomJoin() {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
-      joinedString = joinedString + this[i] + separator;
+      joinedString += this[i] + separator;
     }
 
-    joinedString = joinedString + this[this.length - 1];
+    joinedString += this[this.length - 1];
 
     return joinedString;
   };
