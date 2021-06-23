@@ -12,13 +12,14 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] === null || this[i] === undefined) {
+      if (this[i] === undefined || this[i] === null) {
         this[i] = '';
       }
-      joinedString += this[i] + separator;
+
+      joinedString += `${this[i]}` + separator;
     }
 
-    joinedString += this[this.length - 1];
+    joinedString += `${this[this.length - 1]}`;
 
     return joinedString;
   };
