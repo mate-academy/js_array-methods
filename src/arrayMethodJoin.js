@@ -7,15 +7,13 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let resultOfJoinMethod = '';
 
-    if (typeof (this) === 'object') {
-      for (const key of this) {
-        if (key !== undefined && key !== null) {
-          resultOfJoinMethod += key;
-        }
+    for (const key of this) {
+      if (key !== undefined && key !== null) {
+        resultOfJoinMethod += key;
+      }
 
-        if (key !== this[this.length - 1]) {
-          resultOfJoinMethod += separator;
-        }
+      if (key !== this[this.length - 1]) {
+        resultOfJoinMethod += separator;
       }
     }
 
