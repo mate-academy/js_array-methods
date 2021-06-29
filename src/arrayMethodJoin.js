@@ -4,32 +4,20 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    // eslint-disable-next-line no-unused-vars
-    let result = '';
+  [].__proto__.join2 = function(separator = ',') {
+    let joined = '';
 
-    if (!separator && separator !== ' '
-      && separator !== '' && separator !== null) {
-      for (const element of this) {
-        if (element === this[this.length - 1]) {
-          result += element;
-        } else {
-          result += element + ',';
-        }
+    for (const char of this) {
+      if (char !== undefined && char !== null) {
+        joined += char;
       }
-    } else if (separator === null || separator.toString().length >= 0) {
-      for (const element of this) {
-        if (element === this[this.length - 1]) {
-          result += element;
-        } else if (element === null || element === undefined) {
-          result += String(separator);
-        } else {
-          result += element + String(separator);
-        }
+
+      if (char !== this[this.length - 1]) {
+        joined += separator;
       }
     }
 
-    return result;
+    return joined;
   };
 }
 
