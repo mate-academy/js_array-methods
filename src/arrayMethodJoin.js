@@ -12,14 +12,10 @@ function applyCustomJoin() {
         this[i] = '';
       }
 
-      switch (i) {
-        case this.length - 1:
-          newString += this[i];
-          break;
-
-        default:
-          newString += this[i] + `${element}`;
-          break;
+      if (i === this.length - 1) {
+        newString += this[i];
+      } else {
+        newString += this[i] + `${element}`;
       }
     }
 
