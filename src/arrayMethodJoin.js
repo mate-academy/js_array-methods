@@ -5,8 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(element = ',') {
-    const newElement = element;
-
     let newString = '';
 
     for (let i = 0; i < this.length; i++) {
@@ -20,7 +18,7 @@ function applyCustomJoin() {
           break;
 
         default:
-          newString += this[i] + `${newElement}`;
+          newString += this[i] + `${element}`;
           break;
       }
     }
