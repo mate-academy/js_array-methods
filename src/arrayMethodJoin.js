@@ -7,10 +7,6 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joined = '';
 
-    if (!this.length) {
-      return '';
-    }
-
     for (const char of this) {
       if (char !== undefined && char !== null) {
         joined += char;
