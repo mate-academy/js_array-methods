@@ -6,24 +6,15 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let concatenatedString = '';
-    const nullSeparator = 'null';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        concatenatedString += separator;
-        continue;
-      }
-
-      if (this.length - i === 1) {
+      if (this[i] !== undefined && this[i] !== null) {
         concatenatedString += this[i];
-        continue;
       }
 
-      if (separator === null) {
-        concatenatedString += this[i] + nullSeparator;
-        continue;
+      if (this.length - i !== 1) {
+        concatenatedString += separator;
       }
-      concatenatedString += this[i] + separator;
     }
 
     return concatenatedString;
