@@ -9,12 +9,13 @@ function applyCustomJoin() {
 
     for (let i = 0; i <= this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
-        result = result + separator;
+        result += separator;
       } else {
         if (i === this.length - 1) {
-          result = result + this[i];
+          result += this[i];
         } else {
-          result = result + this[i] + separator;
+          result += this[i];
+          result += separator;
         }
       }
     }
