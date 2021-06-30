@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let joinedArray = '';
+    let joinedValues = '';
 
     if (!this) {
       return '';
@@ -13,15 +13,15 @@ function applyCustomJoin() {
 
     for (const char of this) {
       if (char !== null && char !== undefined) {
-        joinedArray += char;
+        joinedValues += char;
       }
 
       if (char !== this[this.length - 1]) {
-        joinedArray += separator;
+        joinedValues += separator;
       }
     }
 
-    return joinedArray;
+    return joinedValues;
   };
 }
 
