@@ -17,19 +17,15 @@ function applyCustomJoin() {
       k += 2;
     }
 
-    if (separator === null || separator === undefined || separator === '') {
-      for (let i = 0; i < arr.length - 1; i++) {
-        resultStr += arr[i];
-      }
-    }
-
-    if (separator) {
-      for (let i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (separator) {
         if (arr[i] === null || arr[i] === undefined) {
           resultStr += '';
         } else {
           resultStr += arr[i];
         }
+      } else {
+        resultStr += arr[i];
       }
     }
 
