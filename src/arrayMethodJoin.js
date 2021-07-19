@@ -17,13 +17,11 @@ function applyCustomJoin() {
       }
 
       if (i === this.length - 1) {
-        stringResult += this[i];
-      } else if (separator) {
-        stringResult += elementThis + separator;
+        stringResult += elementThis;
       } else if (separator === null) {
         stringResult += elementThis + 'null';
-      } else if (separator === '') {
-        stringResult += elementThis + '';
+      } else {
+        stringResult += elementThis + separator;
       }
     }
 
