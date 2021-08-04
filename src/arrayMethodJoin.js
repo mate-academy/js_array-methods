@@ -14,9 +14,8 @@ function applyCustomJoin() {
 
     return this.reduce((string, current, index) => {
       let currentInner = current;
-      const typeofVal = typeof currentInner;
 
-      if (typeofVal === 'undefined' || typeofVal === 'object') {
+      if (typeof current === 'undefined' || current === null) {
         currentInner = '';
       }
 
