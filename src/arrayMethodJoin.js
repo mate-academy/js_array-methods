@@ -6,21 +6,14 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
-    const length = this.length;
-
-    if (length === 0) {
-      return '';
-    }
-
     return this.reduce((string, current, index) => {
       let currentInner = current;
-      const typeofVal = typeof currentInner;
 
-      if (typeofVal === 'undefined' || typeofVal === 'object') {
+      if (typeof current === 'undefined' || current === null) {
         currentInner = '';
       }
 
-      if (index === length - 1) {
+      if (index === this.length - 1) {
         return string + currentInner;
       }
 
