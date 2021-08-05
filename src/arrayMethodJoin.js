@@ -9,10 +9,12 @@ function applyCustomJoin() {
     let newString = '';
 
     for (let i = 0; i < this.length; i++) {
+      let partOfString = this[i];
+
       if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+        partOfString = '';
       }
-      newString += this[i];
+      newString += partOfString;
 
       if (i !== this.length - 1) {
         newString += separator;
