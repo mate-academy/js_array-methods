@@ -14,7 +14,7 @@ function applyCustomJoin() {
       }
       joined += item;
 
-      if (this.indexOf(item) !== this.length - 1) {
+      if (this.lastIndexOf(item) !== this.length - 1) {
         joined += separator;
       }
     }
