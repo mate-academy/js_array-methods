@@ -17,7 +17,7 @@ function applyCustomJoin() {
       string += stringSeparator + item;
     }
 
-    return string.slice(-string.length + stringSeparator.length);
+    return string.slice(stringSeparator.length);
   };
 }
 
