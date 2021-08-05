@@ -9,6 +9,7 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       const length = this.length;
+      let element = this[i];
 
       if (i === length - 1) {
         result += this[i];
@@ -16,10 +17,10 @@ function applyCustomJoin() {
       }
 
       if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+        element = '';
       }
 
-      result += this[i] + (separator + '');
+      result += element + (separator + '');
     }
 
     return result;
