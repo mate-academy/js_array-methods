@@ -8,9 +8,13 @@ function applyCustomJoin() {
     let joinedString = '';
 
     for (let i = 0; i < this.length; i++) {
-      joinedString += this[i] === undefined || this[i] === null
-        ? separator : i === this.length - 1
-          ? this[i] : `${this[i]}${separator}`;
+      if (this[i] === undefined || this[i] === null) {
+        joinedString += separator;
+      } else if (i === this.length - 1) {
+        joinedString += `${this[i]}`;
+      } else {
+        joinedString += `${this[i]}${separator}`;
+      }
     };
 
     return joinedString;
