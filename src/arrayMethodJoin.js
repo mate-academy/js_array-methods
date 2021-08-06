@@ -10,20 +10,6 @@ function applyCustomJoin() {
       return '';
     }
 
-    let separatorCopy = separator;
-
-    if (separator === null) {
-      separatorCopy = 'null';
-    }
-
-    if (separator === undefined) {
-      separatorCopy = 'undefined';
-    }
-
-    if (typeof separatorCopy === 'object') {
-      separatorCopy = '[object Object]';
-    }
-
     if (this.length > 1) {
       let output = '';
 
@@ -31,14 +17,15 @@ function applyCustomJoin() {
         if (item === null || item === undefined) {
           item = '';
         }
-        output += item + separatorCopy;
+
+        output += `${item}${separator}`;
       }
 
       if (separator === '') {
         return output;
       }
 
-      return output.slice(0, -separatorCopy.length);
+      return output.slice(0, -`${separator}`.length);
     }
 
     return String(this[0]);
