@@ -7,7 +7,7 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
     let arrayToString = '';
-    const cloneElements = this.concat();
+    const cloneElements = [ ...this ];
     const separatorToString = separator + '';
 
     for (let i = 0; i < cloneElements.length; i++) {
