@@ -6,7 +6,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
-    let result = '';
+    let arrayToString = '';
     const cloneElements = this.concat();
     const separatorToString = separator + '';
 
@@ -18,10 +18,10 @@ function applyCustomJoin() {
       if (element === null || element === undefined) {
         continue;
       }
-      result += element;
+      arrayToString += element;
     }
 
-    return result;
+    return arrayToString;
   };
 }
 
