@@ -8,9 +8,10 @@ function applyCustomJoin() {
     // write code here
     let result = '';
     const cloneElements = this.concat();
+    const separatorToString = separator + '';
 
-    for (let i = 0; i < cloneElements.length - 1; i += 2) {
-      cloneElements.splice(i + 1, 0, (separator + ''));
+    for (let i = 1; i < cloneElements.length; i += 2) {
+      cloneElements.splice(i, 0, separatorToString);
     }
 
     for (const element of cloneElements) {
