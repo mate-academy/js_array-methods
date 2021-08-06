@@ -10,15 +10,18 @@ function applyCustomJoin() {
     const cloneElements = this.concat();
     const separatorToString = separator + '';
 
-    for (let i = 1; i < cloneElements.length; i += 2) {
-      cloneElements.splice(i, 0, separatorToString);
-    }
-
-    for (const element of cloneElements) {
-      if (element === null || element === undefined) {
+    for (let i = 0; i < cloneElements.length; i++) {
+      if (cloneElements[i] === null || cloneElements[i] === undefined) {
+        arrayToString += separatorToString;
         continue;
       }
-      arrayToString += element;
+
+      if (i === cloneElements.length - 1) {
+        arrayToString += cloneElements[i];
+        break;
+      }
+
+      arrayToString += cloneElements[i] + separatorToString;
     }
 
     return arrayToString;
