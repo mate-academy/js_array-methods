@@ -8,11 +8,10 @@ function applyCustomJoin() {
     // write code here
     let arrayToString = '';
     const cloneElements = [ ...this ];
-    const separatorToString = separator + '';
 
     for (let i = 0; i < cloneElements.length; i++) {
       if (cloneElements[i] === null || cloneElements[i] === undefined) {
-        arrayToString += separatorToString;
+        arrayToString += `${separator}`;
         continue;
       }
 
@@ -21,7 +20,7 @@ function applyCustomJoin() {
         break;
       }
 
-      arrayToString += cloneElements[i] + separatorToString;
+      arrayToString += cloneElements[i] + `${separator}`;
     }
 
     return arrayToString;
