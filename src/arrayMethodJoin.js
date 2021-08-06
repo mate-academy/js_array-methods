@@ -12,20 +12,12 @@ function applyCustomJoin() {
     let newStr = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (i < this.length - 1
-        && this[i] !== null
-        && this[i] !== undefined) {
+      if (this[i] !== null && this[i] !== undefined) {
         newStr += this[i];
-        newStr += separator;
       }
 
-      if (i < this.length - 1
-        && (this[i] === null || this[i] === undefined)) {
+      if (i !== this.length - 1) {
         newStr += separator;
-      }
-
-      if (i === this.length - 1) {
-        newStr += this[i];
       }
     }
 
