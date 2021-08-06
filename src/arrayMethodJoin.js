@@ -12,9 +12,9 @@ function applyCustomJoin() {
       if (this[i] === undefined || this[i] === null) {
         string += separator;
         continue;
-      } else {
-        string += this[i];
       }
+
+      string += this[i];
 
       if (i !== this.length - 1) {
         string += separator;
