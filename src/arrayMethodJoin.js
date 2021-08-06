@@ -15,7 +15,7 @@ function applyCustomJoin() {
 
       resultString += this[i];
 
-      if (i + 1 < this.length) {
+      if (i < this.length - 1) {
         resultString += separator;
       }
     }
