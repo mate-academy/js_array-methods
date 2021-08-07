@@ -5,20 +5,31 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // write code here
-    return this.reduce((string, current, index) => {
-      let currentInner = current;
+    const arr = this;
+    const length = this.length;
+    const innerSeparator = `${separator}`;
+    let result = '';
 
-      if (typeof current === 'undefined' || current === null) {
-        currentInner = '';
+    for (let i = 0; i < length; i++) {
+      if (i !== length - 1 && (arr[i] === undefined || arr[i] === null)) {
+        result += innerSeparator;
+        continue;
       }
 
-      if (index === this.length - 1) {
-        return string + currentInner;
+      if (arr[i] === undefined || arr[i] === null) {
+        result += innerSeparator;
+        continue;
       }
 
-      return string + currentInner + separator;
-    }, '');
+      if (i === length - 1) {
+        result += arr[i];
+        continue;
+      };
+
+      result += arr[i] + innerSeparator;
+    }
+
+    return result;
   };
 }
 
