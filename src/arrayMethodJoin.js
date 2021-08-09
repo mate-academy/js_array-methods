@@ -4,7 +4,7 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     if (this.length === 0) {
       return '';
     }
@@ -15,36 +15,24 @@ function applyCustomJoin() {
 
     let string = '';
 
-    if ((separator === undefined)) {
-      for (let i = 0; i < this.length; i++) {
-        if (i !== this.length - 1) {
-          string += this[i] + ',';
-        } else {
-          string += this[i];
-        }
-      }
-    }
-
-    if (typeof separator === 'string') {
-      for (let i = 0; i < this.length; i++) {
+    for (let i = 0; i < this.length; i++) {
+      if (typeof separator === 'string') {
         if ((this[i] === undefined) || (this[i] === null)) {
           this[i] = '';
         }
 
-        if (i !== this.length - 1) {
-          string += this[i] + `${separator}`;
-        } else {
+        if (i === this.length - 1) {
           string += this[i];
+        } else {
+          string += this[i] + `${separator}`;
         }
       }
-    }
 
-    if (typeof separator === 'object') {
-      for (let i = 0; i < this.length; i++) {
-        if (i !== this.length - 1) {
-          string += this[i] + `${separator}`;
-        } else {
+      if (typeof separator === 'object') {
+        if (i === this.length - 1) {
           string += this[i];
+        } else {
+          string += this[i] + `${separator}`;
         }
       }
     }
