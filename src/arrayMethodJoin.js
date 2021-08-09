@@ -7,20 +7,19 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
     let arrayToString = '';
-    const cloneElements = [ ...this ];
 
-    for (let i = 0; i < cloneElements.length; i++) {
-      if (cloneElements[i] === null || cloneElements[i] === undefined) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
         arrayToString += `${separator}`;
         continue;
       }
 
-      if (i === cloneElements.length - 1) {
-        arrayToString += cloneElements[i];
+      if (i === this.length - 1) {
+        arrayToString += this[i];
         break;
       }
 
-      arrayToString += cloneElements[i] + `${separator}`;
+      arrayToString += this[i] + `${separator}`;
     }
 
     return arrayToString;
