@@ -20,20 +20,12 @@ function applyCustomJoin() {
         if ((this[i] === undefined) || (this[i] === null)) {
           this[i] = '';
         }
-
-        if (i === this.length - 1) {
-          string += this[i];
-        } else {
-          string += this[i] + `${separator}`;
-        }
       }
 
-      if (typeof separator === 'object') {
-        if (i === this.length - 1) {
-          string += this[i];
-        } else {
-          string += this[i] + `${separator}`;
-        }
+      if (i === this.length - 1) {
+        string += this[i];
+      } else {
+        string += this[i] + `${separator}`;
       }
     }
 
