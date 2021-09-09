@@ -4,11 +4,11 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
 
-    if (this.length === 0) {
-      return result;
+    if (this.length <= 1) {
+      return `${this}`;
     }
 
     for (let i = 0; i < this.length; i++) {
@@ -16,7 +16,7 @@ function applyCustomJoin() {
         result += this[i];
       }
 
-      if (i < this.length - 1) {
+      if (i !== this.length - 1) {
         result += separator;
       }
     }
