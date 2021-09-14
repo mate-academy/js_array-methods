@@ -14,8 +14,6 @@ function applyCustomJoin() {
 
     if (this.length === 0) {
       return '';
-    } else if (this.length === 1) {
-      return this.toString();
     }
 
     for (let i = 0; i < this.length - 1; i++) {
@@ -25,8 +23,9 @@ function applyCustomJoin() {
         result += this[i] + subSeparator;
       }
     }
+    result += this[this.length - 1];
 
-    return result + this[this.length - 1];
+    return result;
   };
 }
 
