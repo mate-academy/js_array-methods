@@ -6,38 +6,25 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
+    let newSeparator = separator;
 
     if (this.length === 0) {
       return '';
     }
 
     if (separator === null) {
-      // eslint-disable-next-line no-param-reassign
-      separator = 'null';
-
-      for (const key of this) {
-        str += `${key}${separator}`;
-      }
-
-      return (str.substr(0, str.length - separator.length));
+      newSeparator = 'null';
     }
 
-    if (typeof (separator) === 'object') {
-      // eslint-disable-next-line no-param-reassign
-      separator = '[object Object]';
-
-      for (const key of this) {
-        str += `${key}${separator}`;
-      }
-
-      return str.substr(0, str.length - separator.length);
+    if (typeof (separator) === 'object' && separator !== null) {
+      newSeparator = '[object Object]';
     }
 
     for (const key of this) {
-      str += `${[key]}${[separator]}`;
+      str += `${[key]}${[newSeparator]}`;
     }
 
-    return str.substr(0, str.length - separator.length);
+    return str.substr(0, str.length - newSeparator.length);
   };
 }
 
