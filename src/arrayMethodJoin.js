@@ -5,7 +5,11 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    if (separator !== undefined) {
+      return this.toString().replace(/,/g, separator);
+    } else {
+      return this.toString();
+    };
   };
 }
 
