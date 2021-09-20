@@ -14,11 +14,7 @@ function applyCustomJoin() {
     }
 
     for (let i of this) {
-      if (i === null) {
-        i = '';
-      }
-
-      if (i === undefined) {
+      if (i === null || i === undefined) {
         i = '';
       }
 
