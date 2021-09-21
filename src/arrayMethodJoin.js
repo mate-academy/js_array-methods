@@ -2,31 +2,20 @@
 
 /**
  * Implement method join
- */
+*/
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    let spliter = separator;
 
-    if (spliter !== {}) {
-      spliter += '';
-    }
-
-    for (let i of this) {
-      if (i === null || i === undefined) {
-        i = '';
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== null && this[i] !== undefined) {
+        result += this[i];
       }
 
-      result += i;
-
-      if (spliter.length > 0) {
-        result += spliter;
+      if (i < this.length - 1) {
+        result += separator;
       }
-    }
-
-    if (spliter.length > 0) {
-      return result.slice(0, -spliter.length);
     }
 
     return result;
