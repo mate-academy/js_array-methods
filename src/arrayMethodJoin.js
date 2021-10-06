@@ -8,7 +8,8 @@ function applyCustomJoin() {
     let string = '';
     const length = this.length;
 
-    this.forEach((x, i) => {
+    for (let i = 0; i < length; i++) {
+      const x = this[i];
       let elem = x;
 
       if (x === undefined || x === null) {
@@ -20,7 +21,7 @@ function applyCustomJoin() {
       } else {
         string += `${elem}`;
       }
-    });
+    };
 
     return string;
   };
