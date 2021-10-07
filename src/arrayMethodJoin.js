@@ -19,7 +19,11 @@ function applyCustomJoin() {
       }
     }
 
-    result += this[this.length - 1];
+    if (this[this.length - 1] === undefined || this[this.length - 1] === 0) {
+      result += '';
+    } else {
+      result += this[this.length - 1];
+    }
 
     return result;
   };
