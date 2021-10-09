@@ -20,7 +20,7 @@ function applyCustomJoin() {
       }
     }
 
-    return word + `${this[this.length - 1]}`;
+    return word.concat(`${this[this.length - 1]}`);
   };
 }
 
