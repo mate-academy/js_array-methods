@@ -5,22 +5,22 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let joinedStr = '';
+    let string = '';
     const arrayLength = this.length;
 
     for (let i = 0; i < arrayLength; ++i) {
       if (this[i] !== null && this[i] !== undefined) {
         if (i < arrayLength - 1) {
-          joinedStr += `${this[i]}${separator}`;
+          string += `${this[i]}${separator}`;
         } else {
-          joinedStr += `${this[i]}`;
+          string += `${this[i]}`;
         }
       } else {
-        joinedStr += `${separator}`;
+        string += `${separator}`;
       }
     }
 
-    return joinedStr;
+    return string;
   };
 }
 
