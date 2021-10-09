@@ -9,7 +9,7 @@ function applyCustomJoin() {
     let word = '';
 
     if (this.length === 0) {
-      return '';
+      return word;
     }
 
     for (let i = 0; i < this.length - 1; i++) {
@@ -20,7 +20,7 @@ function applyCustomJoin() {
       }
     }
 
-    return word.concat(`${this[this.length - 1]}`);
+    return word + `${this[this.length - 1]}`;
   };
 }
 
