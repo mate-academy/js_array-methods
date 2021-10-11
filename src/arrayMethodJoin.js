@@ -9,10 +9,8 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] == null || this[i] === undefined) {
-        this[i] = '';
-      }
-
-      if (i !== this.length - 1) {
+        result += separator;
+      } else if (i !== this.length - 1) {
         result += this[i] + `${separator}`;
       } else {
         result += `${this[i]}`;
@@ -22,5 +20,4 @@ function applyCustomJoin() {
     return result;
   };
 }
-
 module.exports = applyCustomJoin;
