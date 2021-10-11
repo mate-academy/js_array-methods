@@ -91,6 +91,8 @@ test(`Should not mutate original array`, () => {
   const trickyArray = [1, 2, 5, undefined, 42, null, 'string'];
   const copyOfTrickyArray = [...trickyArray];
 
+  trickyArray.join2();
+
   expect(copyOfTrickyArray.every((element, index) => (
     trickyArray[index] === element
   )));
