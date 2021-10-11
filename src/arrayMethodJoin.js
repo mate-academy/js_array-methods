@@ -6,17 +6,16 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let resultString = '';
-    const arrayCopy = [...this];
 
-    for (let i = 0; i < arrayCopy.length; i++) {
-      if (arrayCopy[i] === null || arrayCopy[i] === undefined) {
-        arrayCopy[i] = '';
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === null || this[i] === undefined) {
+        this[i] = '';
       }
 
-      if (i !== arrayCopy.length - 1) {
-        resultString += arrayCopy[i] + `${separator}`;
+      if (i !== this.length - 1) {
+        resultString += this[i] + `${separator}`;
       } else {
-        resultString += arrayCopy[i];
+        resultString += this[i];
       }
     }
 
