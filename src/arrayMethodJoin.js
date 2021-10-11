@@ -12,12 +12,14 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        string += '' + separator;
+      const char = this[i];
+
+      if (char === undefined || char === null) {
+        string += separator;
       } else if (i !== this.length - 1) {
-        string += this[i].toString() + separator;
+        string += char.toString() + separator;
       } else {
-        string += this[i].toString();
+        string += char.toString();
       }
     }
 
