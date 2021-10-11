@@ -62,9 +62,14 @@ test(`Should skip separator when array has only one element`, () => {
     .toBe('1');
 });
 
-test(`Should work when array have null and undefined`, () => {
+test(`Should work when array has null and undefined`, () => {
   expect([false, null, 1, undefined, 0, NaN, ''].join2(','))
     .toBe('false,,1,,0,NaN,');
+});
+
+test(`Should work when array has undefined as last element`, () => {
+  expect([1, 2, 3, 4, undefined].join2(','))
+    .toBe('1,2,3,4,');
 });
 
 test(`Should work when array has null as a first element`, () => {
@@ -80,4 +85,15 @@ test(`Should work when array contains a string 'null'`, () => {
 test(`Should work with object as a separator`, () => {
   expect(source.join2({}))
     .toBe('0[object Object]1[object Object]2[object Object]3');
+});
+
+test(`Should not mutate original array`, () => {
+  const trickyArray = [1, 2, 5, undefined, 42, null, 'string'];
+  const copyOfTrickyArray = [...trickyArray];
+
+  trickyArray.join2();
+
+  expect(copyOfTrickyArray.every((element, index) => (
+    trickyArray[index] === element
+  )));
 });
