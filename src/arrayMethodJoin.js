@@ -16,12 +16,10 @@ function applyCustomJoin() {
     }
 
     for (let i = 1; i < this.length; i++) {
-      if (separator === undefined) {
-        result += ',' + String(this[i]);
-      } else if (this[i] === null || this[i] === undefined) {
-        result += (String(separator) + '');
+      if (this[i] === null || this[i] === undefined) {
+        result += (separator + '');
       } else {
-        result += (String(separator) + String(this[i]));
+        result += (separator + String(this[i]));
       }
     }
 
