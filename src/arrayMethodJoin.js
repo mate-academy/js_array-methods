@@ -13,13 +13,11 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < input.length; i++) {
-      let item = input[i];
-
-      if (item === null || item === undefined) {
-        item = '';
+      if (input[i] === null || input[i] === undefined) {
+        input[i] = '';
       }
 
-      string += item;
+      string += input[i];
 
       if (i === input.length - 1) {
         break;
