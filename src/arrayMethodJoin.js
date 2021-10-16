@@ -7,40 +7,40 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let newString = '';
 
-    if (this.length === 0) {
-      return '';
-    }
-
-    if (separator === null) {
-      // eslint-disable-next-line no-param-reassign
-      separator = 'null';
-
+    if (this.length === 0 || this.length === 1) {
       for (const el of this) {
-        newString += this[el];
-        newString += separator;
+        newString += el;
       }
 
-      return newString.substr(0, newString.length - separator.length);
+      /* if length is zero return empty str, if length is one
+      return str without a separator
+      */
+      return '' || newString;
     }
 
-    if (typeof separator === 'object') {
-      // eslint-disable-next-line no-param-reassign
-      separator = '[object Object]';
-
-      for (const el of this) {
-        newString += this[el];
-        newString += separator;
+    for (let i = 0; i < this.length - 1; i++) {
+      /* eslint valid-typeof: ["error", { "requireStringLiterals": true}]
+      */
+      if ((this[i] === undefined || this[i] === null)) {
+        this[i] = '';
       }
 
-      return newString.substr(0, newString.length - separator.length);
+      if (this[this.length - 1] === undefined) {
+        this[this.length - 1] = '';
+      }
+
+      if (separator === null) {
+        // eslint-disable-next-line no-param-reassign
+        separator = 'null';
+      }
+
+      newString += this[i] + separator;
     }
 
-    for (let el = 0; el < this.length; el++) {
-      newString += [this[el]];
-      newString += [separator];
-    }
+    /* remove separator after the last element in the string */
+    newString += this[this.length - 1];
 
-    return newString.substr(0, newString.length - separator.length);
+    return newString;
   };
 }
 
