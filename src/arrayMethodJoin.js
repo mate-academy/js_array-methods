@@ -8,18 +8,20 @@ function applyCustomJoin() {
     if (this.length) {
       let joinedString = '';
 
-      for (let element = 0; element < this.length; element++) {
-        if (this[element] == null) {
-          this[element] = '';
+      for (let i = 0; i < this.length; i++) {
+        let buff = this[i];
+
+        if (this[i] == null) {
+          buff = '';
         }
 
-        if (element + 1 === this.length) {
-          joinedString += this[element];
+        if (i === this.length - 1) {
+          joinedString += buff;
 
           return joinedString;
         }
 
-        joinedString += this[element] + `${separator}`;
+        joinedString += buff + `${separator}`;
       }
     }
 
