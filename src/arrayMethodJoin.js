@@ -8,17 +8,17 @@ function applyCustomJoin() {
     let joinToString = '';
     const arrayLength = this.length;
 
-    if (!this.length) {
+    if (!arrayLength) {
       return '';
     }
 
-    for (let i = 0; i < arrayLength; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+    for (let iteration = 0; iteration < arrayLength; iteration++) {
+      if (this[iteration] === null || this[iteration] === undefined) {
+        this[iteration] = '';
       }
-      joinToString += this[i];
+      joinToString += this[iteration];
 
-      if (i !== arrayLength - 1) {
+      if (iteration !== arrayLength - 1) {
         joinToString += separator;
       }
     }
