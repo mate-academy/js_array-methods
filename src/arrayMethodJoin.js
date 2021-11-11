@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const splitter = typeof separator === 'string' ? separator : separator + '';
+    const splitter = String(separator);
     let joined = '';
 
     for (let i = 0; i < this.length; i++) {
