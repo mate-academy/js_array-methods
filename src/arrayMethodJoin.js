@@ -10,13 +10,7 @@ function applyCustomJoin() {
       return '';
     }
 
-    let resultStr;
-
-    if (this[0] !== null) {
-      resultStr = `${this[0]}`;
-    } else {
-      resultStr = '';
-    }
+    let resultStr = this[0] !== null ? `${this[0]}` : '';
 
     for (let i = 1; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
