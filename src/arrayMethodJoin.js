@@ -9,15 +9,15 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== null && this[i] !== undefined) {
-        joinMethod += this[i];
+        joinedString += this[i];
       }
 
       if (i !== this.length - 1) {
-        joinMethod += separator;
+        joinedString += separator;
       }
     }
 
-    return joinMethod;
+    return joinedString;
   };
 }
 
