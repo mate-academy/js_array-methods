@@ -16,6 +16,8 @@ function applyCustomJoin() {
         newStr += '';
       } else if (this[n] === 'null') {
         newStr += 'null';
+      } else if (Number.isNaN(this[n])) {
+        newStr += 'NaN';
       } else if (this[n] === null || this[n] === undefined) {
         newStr += '';
       } else {
