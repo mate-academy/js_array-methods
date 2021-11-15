@@ -16,7 +16,6 @@ function applyCustomJoin() {
       } else {
         if (i == null) {
           newStr += '' + separator;
-          continue;
         } else {
           newStr += String(i) + separator;
         }
