@@ -9,17 +9,11 @@ function applyCustomJoin() {
     const separator = String(separationString);
 
     for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1) {
-        if (this[i] === null || this[i] === undefined) {
-          break;
-        }
+      if (this[i] !== null && this[i] !== undefined) {
         joinedString += this[i];
-        break;
       }
 
-      if (this[i] !== null && this[i] !== undefined) {
-        joinedString += this[i] + separator;
-      } else {
+      if (i !== this.length - 1) {
         joinedString += separator;
       }
     }
