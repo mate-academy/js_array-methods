@@ -4,7 +4,7 @@
 
 BAD EXAMPLE:
 ```
-let a = 1;
+let a = 1;fdgdfg
 
 a = a + 2;
 ```
