@@ -4,9 +4,9 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let str = '';
 
-    for (let element of this) {
-      if (element === this[this.length - 1]) {
-        str += element;
+    for (let i = 0; i < this.length; i++) {
+      if (i === this.length - 1) {
+        str += this[i];
         break;
       }
 
@@ -14,14 +14,14 @@ function applyCustomJoin() {
         this[this.length - 1] = '';
       }
 
-      if (element === null || element === undefined) {
-        element = '';
+      if (this[i] === null || this[i] === undefined) {
+        this[i] = '';
       }
 
       if (separator === undefined) {
-        str += element + ',';
+        str += this[i] + ',';
       } else {
-        str += element + String(separator);
+        str += this[i] + String(separator);
       }
     };
 
