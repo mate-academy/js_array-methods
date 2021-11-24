@@ -3,25 +3,26 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let str = '';
+    let newArray = [...this];
 
-    for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1) {
-        str += this[i];
+    for (let i = 0; i < newArray.length; i++) {
+      if (i === newArray.length - 1) {
+        str += newArray[i];
         break;
       }
 
-      if (this[this.length - 1] === undefined) {
-        this[this.length - 1] = '';
+      if (newArray[newArray.length - 1] === undefined) {
+        newArray[newArray.length - 1] = '';
       }
 
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+      if (newArray[i] === null || newArray[i] === undefined) {
+        newArray[i] = '';
       }
 
       if (separator === undefined) {
-        str += this[i] + ',';
+        str += newArray[i] + ',';
       } else {
-        str += this[i] + String(separator);
+        str += newArray[i] + String(separator);
       }
     };
 
