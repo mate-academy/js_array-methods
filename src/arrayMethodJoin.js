@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // TEST PR5
+    // TEST PR5 - updated
   };
 }
 
