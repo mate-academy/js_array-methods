@@ -11,10 +11,9 @@ function applyCustomJoin() {
         str += this[i];
       }
 
-      if (this[i] !== this[this.length - 1]) {
+      if (i !== this.length - 1) {
         str += String(separator);
       }
-
     };
 
     return str;
