@@ -13,10 +13,10 @@ function applyCustomJoin() {
     }
 
     for (let i = 1; i < this.length; i++) {
+      resultStr += `${separator}`;
+
       if (!notAllowed.includes(this[i])) {
-        resultStr += `${separator}` + `${this[i]}`;
-      } else {
-        resultStr += `${separator}`;
+        resultStr += `${this[i]}`;
       }
     }
 
