@@ -6,24 +6,17 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
-    const newSeperator = '' + separator;
 
     for (let i = 0; i < this.length; i++) {
-      let item = this[i];
-
-      if (item === undefined) {
-        item = '';
-      }
-
-      if (item === null) {
-        item = '';
+      if (this[i] !== null && this[i] !== undefined) {
+        str += this[i];
       }
 
       if (i === this.length - 1) {
-        str += item;
         break;
       }
-      str += item + newSeperator;
+
+      str += `${separator}`;
     }
 
     return str;
