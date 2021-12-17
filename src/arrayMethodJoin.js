@@ -4,24 +4,35 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let str = '';
-    let innerSeparator = separator;
+    const innerSeparator = separator;
 
-    if (separator === undefined) {
-      innerSeparator = ',';
-    }
+    // for (const key of this) {
+    //   if (key === undefined || key === null) {
+    //     if (this.indexOf(key) !== (this.length) - 1) {
+    //       str += innerSeparator;
+    //     }
+    //     continue;
+    //   } else {
+    //     str += key;
 
-    for (const key of this) {
-      if (key === undefined || key === null) {
-        if (this.indexOf(key) !== (this.length) - 1) {
+    //     if (this.indexOf(key) !== (this.length) - 1) {
+    //       str += innerSeparator;
+    //     }
+    //   }
+    // }
+
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === undefined || this[i] === null) {
+        if (i !== (this.length) - 1) {
           str += innerSeparator;
         }
         continue;
       } else {
-        str += key;
+        str += this[i];
 
-        if (this.indexOf(key) !== (this.length) - 1) {
+        if (i !== (this.length) - 1) {
           str += innerSeparator;
         }
       }
