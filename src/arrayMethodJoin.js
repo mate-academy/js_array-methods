@@ -6,7 +6,6 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joined = '';
-    const separ = separator + '';
 
     for (let i = 0; i < this.length; i++) {
       let nextItem = '';
@@ -16,7 +15,7 @@ function applyCustomJoin() {
       }
 
       if (this.length > 1 && i !== this.length - 1) {
-        joined = joined + nextItem + separ;
+        joined = joined + nextItem + separator;
       } else if (this.length >= 1) {
         joined = joined + nextItem;
       }
