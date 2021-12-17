@@ -12,11 +12,9 @@ function applyCustomJoin() {
         str += this[i];
       }
 
-      if (i === this.length - 1) {
-        break;
+      if (i !== this.length - 1) {
+        str += `${separator}`;
       }
-
-      str += `${separator}`;
     }
 
     return str;
