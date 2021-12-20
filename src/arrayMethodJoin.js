@@ -17,7 +17,8 @@ function applyCustomJoin() {
         : this[i];
 
       if (i !== this.length - 1) {
-        str += (expression + separator);
+        str += expression;
+        str += separator;
       } else {
         str += expression;
       }
