@@ -16,11 +16,10 @@ function applyCustomJoin() {
         ? ''
         : this[i];
 
+      str += expression;
+
       if (i !== this.length - 1) {
-        str += expression;
         str += separator;
-      } else {
-        str += expression;
       }
     }
 
