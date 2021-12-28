@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    // TEST PR29
   };
 }
 
