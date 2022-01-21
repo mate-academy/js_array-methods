@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let correctedSeparator = separator;
+    const correctedSeparator = separator;
 
     if (this.length === 0) {
       return '';
@@ -23,7 +23,7 @@ function applyCustomJoin() {
       if ([null, undefined].includes(this[i])) {
         this[i] = '';
       }
-      joinedString += correctedSeparator + this[i];
+      joinedString += correctedSeparator + this[i].toString();
     }
 
     return joinedString;
