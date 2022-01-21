@@ -5,8 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const correctedSeparator = separator;
-
     if (this.length === 0) {
       return '';
     }
@@ -20,10 +18,7 @@ function applyCustomJoin() {
     let joinedString = `${this[0]}`;
 
     for (let i = 1; i < this.length; i++) {
-      if ([null, undefined].includes(this[i])) {
-        this[i] = '';
-      }
-      joinedString += correctedSeparator + this[i].toString();
+      joinedString += separator + this[i].toString();
     }
 
     return joinedString;
