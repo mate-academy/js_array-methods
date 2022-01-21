@@ -9,13 +9,13 @@ function applyCustomJoin() {
     let sep = separator;
 
     if (separator === null) {
-      sep = 'null';
+      sep = null + '';
     }
 
     for (let i = 0; i < this.length; i++) {
       let item = this[i];
 
-      if (item === undefined || item === null) {
+      if ([undefined, null].includes(item)) {
         item = '';
       }
 
