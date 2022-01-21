@@ -11,10 +11,6 @@ function applyCustomJoin() {
       return '';
     }
 
-    if (separator === null) {
-      correctedSeparator = 'null';
-    }
-
     for (let i = 0; i < this.length; i++) {
       if ([null, undefined].includes(this[i])) {
         this[i] = '';
