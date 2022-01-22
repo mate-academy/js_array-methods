@@ -9,16 +9,19 @@ function applyCustomJoin() {
       return '';
     }
 
+    let joinedString = '';
+
     for (let i = 0; i < this.length; i++) {
       if ([null, undefined].includes(this[i])) {
         this[i] = '';
       }
-    }
 
-    let joinedString = `${this[0]}`;
+      if (i === this.length - 1) {
+        joinedString += this[i].toString();
+        break;
+      }
 
-    for (let i = 1; i < this.length; i++) {
-      joinedString += separator + this[i].toString();
+      joinedString += this[i].toString() + separator;
     }
 
     return joinedString;
