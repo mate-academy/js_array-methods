@@ -7,19 +7,14 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let arrJoined = '';
 
-    arrJoined += [undefined, null].includes(this[0])
-      ? ''
-      : this[0];
-
-    for (let i = 1; i < this.length; i++) {
-      arrJoined += separator;
-
+    for (let i = 0; i < this.length; i++) {
       arrJoined += [undefined, null].includes(this[i])
         ? ''
         : this[i];
+      arrJoined += separator;
     }
 
-    return arrJoined;
+    return arrJoined.slice(0, arrJoined.length - String(separator).length);
   };
 }
 
