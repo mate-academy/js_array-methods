@@ -8,18 +8,13 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      let temp = this[i];
-
-      if (this[i] === undefined || this[i] === null) {
-        temp = '';
+      if ((this[i] !== undefined && this[i] !== null)) {
+        result += this[i];
       }
 
-      if (i === this.length - 1) {
-        result += temp;
-        break;
+      if (i !== this.length - 1) {
+        result += `${separator}`;
       }
-
-      result += temp + `${separator}`;
     }
 
     return result;
