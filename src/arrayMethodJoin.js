@@ -11,8 +11,6 @@ function applyCustomJoin() {
       return stringAfterJoin;
     }
 
-    const elementSeparator = separator;
-
     const indexOfLast = this.length - 1;
 
     for (let i = 0; i < this.length; i++) {
@@ -23,7 +21,7 @@ function applyCustomJoin() {
       if (i === indexOfLast) {
         return stringAfterJoin;
       }
-      stringAfterJoin += elementSeparator;
+      stringAfterJoin += separator;
     }
   };
 }
