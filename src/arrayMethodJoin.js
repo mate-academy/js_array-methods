@@ -11,25 +11,20 @@ function applyCustomJoin() {
       return stringAfterJoin;
     }
 
-    let elementSeparator = separator;
-
-    if (separator === null) {
-      elementSeparator = 'null';
-    }
+    const elementSeparator = separator;
 
     const indexOfLast = this.length - 1;
 
-    for (let i = 0; i < indexOfLast; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        stringAfterJoin += '' + elementSeparator;
-      } else {
-        stringAfterJoin += this[i] + elementSeparator;
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== undefined && this[i] !== null) {
+        stringAfterJoin += this[i];
       }
+
+      if (i === indexOfLast) {
+        return stringAfterJoin;
+      }
+      stringAfterJoin += elementSeparator;
     }
-
-    stringAfterJoin += this[indexOfLast] !== undefined ? this[indexOfLast] : '';
-
-    return stringAfterJoin;
   };
 }
 
