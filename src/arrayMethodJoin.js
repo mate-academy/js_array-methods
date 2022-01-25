@@ -18,7 +18,7 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        stringResult += separator === null ? 'null' : separator;
+        stringResult += separator;
       }
     }
 
