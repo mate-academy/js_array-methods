@@ -5,28 +5,29 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
+    let stringAfterJoin = '';
+
+    if (!this.length) {
+      return stringAfterJoin;
+    }
+
     let elementSeparator = separator;
 
     if (separator === null) {
       elementSeparator = 'null';
     }
 
-    let stringAfterJoin = '';
     const indexOfLast = this.length - 1;
 
     for (let i = 0; i < indexOfLast; i++) {
-      if (this[i] === null || this[i] === undefined) {
+      if (this[i] === undefined || this[i] === null) {
         stringAfterJoin += '' + elementSeparator;
       } else {
         stringAfterJoin += this[i] + elementSeparator;
       }
     }
 
-    if (this[indexOfLast] === null || this[indexOfLast] === undefined) {
-      stringAfterJoin += '';
-    } else {
-      stringAfterJoin += this[indexOfLast];
-    }
+    stringAfterJoin += this[indexOfLast] !== undefined ? this[indexOfLast] : '';
 
     return stringAfterJoin;
   };
