@@ -6,23 +6,21 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let resultOfJoin = '';
-    let sep = separator;
+    let sepAsist = separator;
 
     if (separator === null) {
-      sep = null + '';
+      sepAsist = 'null';
     }
 
     for (let i = 0; i < this.length; i++) {
       let item = this[i];
 
-      if ([undefined, null].includes(item)) {
-        item = '';
+      if (item !== undefined && item !== null) {
+        resultOfJoin += item;
       }
 
       if (i !== this.length - 1) {
-        resultOfJoin += item + sep;
-      } else {
-        resultOfJoin += item;
+        resultOfJoin += sepAsist;
       }
     }
 
