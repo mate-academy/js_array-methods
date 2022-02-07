@@ -28,7 +28,7 @@ function element(value) {
     return '';
   }
 
-  return value;
+  return value.toString();
 }
 
 module.exports = applyCustomJoin;
