@@ -6,16 +6,19 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let output = '';
-    const len = this.length;
+    const arrayLength = this.length;
 
-    for (let n = 0; n < len; n++) {
-      const curr = this[n];
+    for (let n = 0; n < arrayLength; n++) {
+      const currentElement = this[n];
 
-      output += curr === null || typeof curr === 'undefined'
-        ? ''
-        : curr;
-      output += n !== len - 1 ? separator : '';
-    }
+      if (currentElement !== null && typeof currentElement !== 'undefined') {
+        output += currentElement;
+      }
+
+      if (n !== arrayLength - 1) {
+        output += separator;
+      }
+    } // fixes applied
 
     return output;
   };
