@@ -11,6 +11,10 @@ function applyCustomJoin() {
       if (this[i] !== null && this[i] !== undefined) {
         result += this[i];
       }
+
+      if (i !== this.length - 1) {
+        result += separator;
+      }
     }
 
     return result;
