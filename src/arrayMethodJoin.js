@@ -35,14 +35,6 @@ function applyCustomJoin() {
       }
     }
 
-    // if (separator === null) {
-    //   str_ = str_.slice(0, -4);
-    // } else if (typeof separator === 'object') {
-    //   str_ = str_.slice(0, -15);
-    // } else if (separator !== '') {
-    //   str_ = str_.slice(0, -1);
-    // }
-
     return str_;
   };
 }
