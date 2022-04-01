@@ -9,27 +9,19 @@ function applyCustomJoin() {
     let res = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1) {
-        if (this[i] === null || this[i] === undefined) {
-          res += '';
-          continue;
-        }
-
+      if (this[i] !== null && this[i] !== undefined) {
         res += this[i];
+      }
+
+      if (i === this.length - 1) {
         continue;
       }
-      res += check(this[i], separator);
+
+      res += `${separator}`;
     }
 
     return res;
   };
 }
 
-function check(value, separator = ',') {
-  if (value === null || value === undefined) {
-    return `${separator}`;
-  }
-
-  return `${value}` + `${separator}`;
-}
 module.exports = applyCustomJoin;
