@@ -23,19 +23,16 @@ function separatorFilter(divider) {
 function applyCustomJoin() {
   [].__proto__.join2 = function(userSeparator = ',') {
     let resultString = '';
-    let separator = separatorFilter(userSeparator);
+    const separator = separatorFilter(userSeparator);
 
     for (const part of this) {
-      if (this.indexOf(part) === this.length - 1) {
-        separator = '';
+      if (part !== null && part !== undefined) {
+        resultString += part;
       }
 
-      if (part === null || part === undefined) {
+      if (this.indexOf(part) !== this.length - 1) {
         resultString += separator;
-        continue;
       }
-
-      resultString += part + separator;
     }
 
     return resultString;
