@@ -7,13 +7,16 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(userSeparator = ',') {
     let resultString = '';
+    const inputLength = this.length;
 
-    for (const part of this) {
+    for (let i = 0; i < inputLength; i++) {
+      const part = this[i];
+
       if (part !== null && part !== undefined) {
         resultString += part;
       }
 
-      if (this.indexOf(part) !== this.length - 1) {
+      if (i !== inputLength - 1) {
         resultString += `${userSeparator}`;
       }
     }
