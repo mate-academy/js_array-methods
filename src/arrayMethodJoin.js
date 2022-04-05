@@ -27,7 +27,8 @@ function applyCustomJoin() {
           newString += ',';
         }
       } else {
-        i === this.length - 1 ? newString += this[i]
+        i === this.length - 1
+          ? newString += this[i]
           : newString += this[i] + separ;
       }
     }
