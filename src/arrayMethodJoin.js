@@ -17,10 +17,6 @@ function applyCustomJoin() {
       resString = resString + this[0];
     }
 
-    if (this.length < 2) {
-      return resString;
-    }
-
     for (let i = 1; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
         resString = resString + separator;
