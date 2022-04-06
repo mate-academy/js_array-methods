@@ -5,8 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let str = '';
-    const CloneSeparator = separator;
+    let resStr = '';
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
@@ -14,14 +13,14 @@ function applyCustomJoin() {
       }
 
       if (!i) {
-        str += `${this[i]}`;
+        resStr += `${this[i]}`;
         continue;
       }
 
-      str += `${CloneSeparator}${this[i]}`;
+      resStr += `${separator}${this[i]}`;
     }
 
-    return str;
+    return resStr;
   };
 }
 
