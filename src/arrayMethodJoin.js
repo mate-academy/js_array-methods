@@ -4,8 +4,27 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    // write code here
+  [].__proto__.join2 = function(separator = ',') {
+    let joinedElements = '';
+    const thisLength = this.length;
+
+    if (thisLength === 0) {
+      return '';
+    }
+
+    if (thisLength === 1) {
+      return `${this[0]}`;
+    }
+
+    for (let i = 0; i < thisLength; i++) {
+      if (typeof this[i] === 'undefined' || this[i] === null) {
+        this[i] = '';
+      }
+
+      joinedElements += `${this[i]}${separator}`;
+    }
+
+    return joinedElements.substring(0, joinedElements.lastIndexOf(separator));
   };
 }
 
