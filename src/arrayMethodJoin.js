@@ -8,14 +8,6 @@ function applyCustomJoin() {
     let joinedElements = '';
     const thisLength = this.length;
 
-    if (thisLength === 0) {
-      return '';
-    }
-
-    if (thisLength === 1) {
-      return `${this[0]}`;
-    }
-
     for (let i = 0; i < thisLength; i++) {
       if (typeof this[i] === 'undefined' || this[i] === null) {
         this[i] = '';
