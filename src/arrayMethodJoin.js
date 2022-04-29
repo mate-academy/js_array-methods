@@ -22,14 +22,3 @@ function applyCustomJoin() {
 }
 
 module.exports = applyCustomJoin;
-
-// if (i === this.length - 1) {
-//   if (this[i] === undefined) {
-//   } else {
-//     word += `${this[i]}`;
-//   }
-// } else if (this[i] === null || this[i] === undefined) {
-//   word += `${separator}`;
-// } else {
-//   word += `${this[i]}${separator}`;
-// } robert
