@@ -4,24 +4,16 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let word = '';
-    let sep = separator;
-
-    if (separator === undefined) {
-      sep = ',';
-    }
 
     for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1) {
-        if (this[i] === undefined) {
-        } else {
-          word += `${this[i]}`;
-        }
-      } else if (this[i] === null || this[i] === undefined) {
-        word += `${sep}`;
-      } else {
-        word += `${this[i]}${sep}`;
+      if (this[i] !== null && this[i] !== undefined) {
+        word += `${this[i]}`;
+      }
+
+      if (i !== this.length - 1) {
+        word += `${separator}`;
       }
     }
 
@@ -30,3 +22,14 @@ function applyCustomJoin() {
 }
 
 module.exports = applyCustomJoin;
+
+// if (i === this.length - 1) {
+//   if (this[i] === undefined) {
+//   } else {
+//     word += `${this[i]}`;
+//   }
+// } else if (this[i] === null || this[i] === undefined) {
+//   word += `${separator}`;
+// } else {
+//   word += `${this[i]}${separator}`;
+// } robert
