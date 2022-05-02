@@ -6,25 +6,25 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     // write code here
-    let result = '';
+    let joinedArray = '';
 
     for (let i = 0; i < this.length; i++) {
       const elm = this[i];
 
       if (elm !== undefined && elm !== null) {
-        result += elm;
+        joinedArray += elm;
       }
 
       if (i + 1 < this.length) {
         if (separator === undefined) {
-          result += ',';
+          joinedArray += ',';
         } else {
-          result += separator;
+          joinedArray += separator;
         }
       }
     }
 
-    return result;
+    return joinedArray;
   };
 }
 
