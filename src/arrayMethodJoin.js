@@ -9,13 +9,7 @@ function applyCustomJoin() {
     let separ = separator;
     const length = this.length - 1;
 
-    if (typeof separ === 'undefined') {
-      for (let i = 0; i < this.length; i++) {
-        str += this[i];
-      }
-
-      return str;
-    } else if (separator === null) {
+    if (separator === null) {
       separ = 'null';
     }
 
@@ -23,19 +17,15 @@ function applyCustomJoin() {
       switch (this[i]) {
         case null:
         case undefined:
-          if (i === length) {
-            break;
-          } else {
+          if (i !== length) {
             str += separ;
           }
           break;
-        case '':
-          break;
         default:
-          if (i === length) {
-            str += this[i];
-          } else {
-            str += this[i] + separ;
+          str += this[i];
+
+          if (i !== length) {
+            str += separ;
           }
           break;
       }
