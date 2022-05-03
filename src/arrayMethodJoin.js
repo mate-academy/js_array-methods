@@ -14,22 +14,18 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      switch (this[i]) {
-        case null:
-        case undefined:
-          if (i !== length) {
-            str += separ;
-          }
-          break;
-        default:
-          str += this[i];
-
-          if (i !== length) {
-            str += separ;
-          }
-          break;
+      if (this[i] === null || this[i] === undefined) {
+        if (i !== length) {
+          str += separ;
+        }
+        continue;
       }
-    }
+      str += this[i];
+
+      if (i !== length) {
+        str += separ;
+      }
+    };
 
     return str;
   };
