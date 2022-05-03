@@ -11,6 +11,7 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
         res += separ;
+        continue;
       }
 
       if (this[i] !== null && typeof (this[i]) !== 'undefined') {
