@@ -5,7 +5,9 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    const a = 8;
+
+    return a;
   };
 }
 
