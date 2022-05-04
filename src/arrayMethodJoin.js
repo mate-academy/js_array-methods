@@ -9,7 +9,7 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === undefined || this[i] === null) {
-        result += `${separator}`;
+        result += separator;
       } else {
         result += `${this[i]}${separator}`;
       }
