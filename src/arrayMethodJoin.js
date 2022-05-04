@@ -6,18 +6,24 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinedString = '';
-    const lengthOfSeperator = String(separator).length;
+    let separatorCopy = separator;
+    const length = this.length;
 
-    for (const item of this) {
-      if (item === null || item === undefined) {
-        joinedString += separator;
+    for (let i = 0; i < length; i++) {
+      const element = this[i];
+
+      if (i === length - 1) {
+        separatorCopy = '';
+      }
+
+      if (element === null || element === undefined) {
+        joinedString += separatorCopy;
       } else {
-        joinedString += `${item}${separator}`;
+        joinedString += `${element}${separatorCopy}`;
       }
     }
 
-    return separator === ''
-      ? joinedString : joinedString.slice(0, -lengthOfSeperator);
+    return joinedString;
   };
 }
 
