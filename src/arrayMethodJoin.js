@@ -9,28 +9,19 @@ function applyCustomJoin() {
       return '';
     }
 
-    const separatorToString = '' + separator;
     let result = '';
 
     for (let i = 0; i < this.length - 1; i++) {
-      let char = this[i];
-
-      if (this[i] === undefined) {
-        char = '';
-      } else if (this[i] === null) {
-        char = '';
-      } else if (isNaN(this[i])) {
-        char = 'NaN';
+      if (this[i] !== null && this[i] !== undefined) {
+        result += this[i];
       }
 
-      if (this[i] === 'null') {
-        char = 'null';
+      if (i < this.length - 1) {
+        result += separator;
       }
-
-      result += char + separatorToString;
     }
 
-    if (!!this[this.length - 1]) {
+    if (this[this.length - 1]) {
       result += this[this.length - 1];
     }
 
