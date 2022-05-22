@@ -12,7 +12,7 @@ function applyCustomJoin() {
         joinedString += this[i];
       }
 
-      if (i + 1 !== this.length) {
+      if ((i + 1) !== this.length) {
         joinedString += separator;
       }
     }
