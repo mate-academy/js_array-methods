@@ -26,9 +26,7 @@ function applyCustomJoin() {
     }
 
     // remove first separator
-    if (result.includes(separator)) {
-      result = result.replace(separator, '');
-    }
+    result = result.replace(separator, '');
 
     return result;
   };
