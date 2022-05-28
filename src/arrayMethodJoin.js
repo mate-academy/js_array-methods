@@ -14,15 +14,13 @@ function applyCustomJoin() {
     }
 
     for (const key of this) {
-      switch (key) {
-        case null:
-        case undefined:
-          result += newSeperator + '';
-          break;
-        default:
-          result += newSeperator + key;
-          break;
+      let checkedKey = key;
+
+      if (key === null || key === undefined) {
+        checkedKey = '';
       }
+
+      result += newSeperator + checkedKey;
     }
 
     // remove first separator
