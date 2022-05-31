@@ -6,37 +6,32 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
-    let copySeparator = separator;
-    let firstElement = this[0];
 
-    if (separator === null) {
-      copySeparator = 'null';
-    }
-
-    if (firstElement === null) {
-      firstElement = '';
-    }
-
-    let str = '' + firstElement;
+    let str = '';
 
     if (this.length === 0) {
       return '';
     }
 
-    for (let i = 1; i < this.length; i++) {
+    for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
 
-      if (isNaN(this[i]) && this[i] !== 'null') {
+      if (this[i] === 'NaN') {
         this[i] = 'NaN';
       }
 
-      str += copySeparator + this[i];
+      if (i < this.length - 1) {
+        if (separator === null) {
+          str += this[i] + 'null';
+        } else {
+          str += this[i] + separator;
+        }
+      }
     }
 
-    return str;
+    return str + this[this.length - 1];
   };
 }
-
 module.exports = applyCustomJoin;
