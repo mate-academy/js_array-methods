@@ -5,7 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const newArr = [...this];
     let sep = separator;
     let result = '';
 
@@ -13,18 +12,14 @@ function applyCustomJoin() {
       sep = 'null';
     }
 
-    for (let i = 0; i < newArr.length; i++) {
-      let tempEl = newArr[i];
-
-      if (tempEl === null || tempEl === undefined) {
-        tempEl = '';
+    for (const char of this) {
+      if (char !== undefined && char !== null) {
+        result += char;
       }
 
-      if (i !== newArr.length - 1) {
-        tempEl += sep;
+      if (this.indexOf(char) !== this.length - 1) {
+        result += separator;
       }
-
-      result += tempEl;
     }
 
     return result;
