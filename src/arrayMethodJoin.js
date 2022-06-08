@@ -8,12 +8,22 @@ function applyCustomJoin() {
     let result = '';
 
     for (const element of this) {
-      if (this.indexOf(element) !== this.length - 1) {
-        result += typeof element === 'undefined' || element === null
-          ? '' + separator : element + '' + separator;
-      } else {
-        result += typeof element === 'undefined'
-          ? '' : element;
+      switch (true) {
+        case typeof element === 'undefined'
+        && this.indexOf(element) === this.length - 1:
+          result += '';
+          break;
+
+        case this.indexOf(element) === this.length - 1:
+          result += element;
+          break;
+
+        case element === null || typeof element === 'undefined' :
+          result += '' + separator;
+          break;
+
+        default:
+          result += element + '' + separator;
       }
     }
 
