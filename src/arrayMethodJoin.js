@@ -13,10 +13,6 @@ function applyCustomJoin() {
     }
 
     for (let index = 0; index < this.length; index++) {
-      if (this[index] === undefined || this[index] === null) {
-        join += '';
-      }
-
       if (this.length - index > 1) {
         join += `${
           this[index] === null
