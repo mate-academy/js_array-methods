@@ -13,7 +13,7 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        returnedNewString = returnedNewString + `${separator}`;
+        returnedNewString += `${separator}`;
       }
     };
 
