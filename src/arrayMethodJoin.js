@@ -8,10 +8,11 @@ function applyCustomJoin() {
     let string = '';
 
     for (let i = 0; i < this.length; i++) {
-      let el = this[i];
+      let element = this[i];
 
-      el = (el === null || el === undefined) ? '' : `${el}`;
-      string += (i === this.length - 1) ? el : el + separator;
+      element = (element === null || element === undefined) ? '' : `${element}`;
+
+      string += (i === this.length - 1) ? element : element + separator;
     }
 
     return string;
