@@ -12,9 +12,7 @@ function applyCustomJoin() {
         result += separator;
       }
 
-      if (this[i] === null || typeof this[i] === 'undefined') {
-        result += '';
-      } else {
+      if (this[i] !== null && typeof this[i] !== 'undefined') {
         result += this[i];
       }
     }
