@@ -8,12 +8,12 @@ function applyCustomJoin() {
     // write code here
     let str = '';
 
-    for (const i of this) {
-      if (i !== undefined && i !== null) {
-        str += i;
+    for (const element of this) {
+      if (element !== undefined && element !== null) {
+        str += element;
       }
 
-      if (this.indexOf(i) !== this.length - 1) {
+      if (this.indexOf(element) !== this.length - 1) {
         str += separator;
       }
     }
