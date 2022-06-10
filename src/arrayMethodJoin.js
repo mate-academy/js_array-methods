@@ -12,7 +12,7 @@ function applyCustomJoin() {
         connected += this[i];
       }
 
-      if (this.length - 1 !== i) {
+      if (i !== this.length - 1) {
         connected += separator;
       }
     }
