@@ -5,10 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    if (this.length === 0) {
-      return '';
-    }
-
     let joinedString = '';
 
     for (let i = 0; i < this.length - 1; i++) {
