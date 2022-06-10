@@ -15,9 +15,9 @@ function applyCustomJoin() {
       joinedArr += separator;
     }
 
-    const iOfLastSeparator = joinedArr.lastIndexOf(separator);
+    const indexOfLastSeparator = joinedArr.lastIndexOf(separator);
 
-    return joinedArr.slice(0, iOfLastSeparator);
+    return joinedArr.slice(0, indexOfLastSeparator);
   };
 }
 
