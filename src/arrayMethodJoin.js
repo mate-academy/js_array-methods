@@ -8,18 +8,16 @@ function applyCustomJoin() {
     let joinedArr = '';
 
     for (const element of this) {
-      if (typeof element === 'number'
-        || typeof element === 'string'
-        || typeof element === 'boolean') {
+      if (element !== null && element !== undefined) {
         joinedArr += element;
       }
 
       joinedArr += separator;
     }
 
-    const lastSeparator = joinedArr.lastIndexOf(separator);
+    const iOfLastSeparator = joinedArr.lastIndexOf(separator);
 
-    return joinedArr.slice(0, lastSeparator);
+    return joinedArr.slice(0, iOfLastSeparator);
   };
 }
 
