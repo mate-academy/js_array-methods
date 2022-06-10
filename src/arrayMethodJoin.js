@@ -8,8 +8,10 @@ function applyCustomJoin() {
     let connected = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] !== null && this[i] !== undefined) {
-        connected += this[i];
+      const addedItem = this[i];
+
+      if (addedItem !== null && addedItem !== undefined) {
+        connected += addedItem;
       }
 
       if (i !== this.length - 1) {
