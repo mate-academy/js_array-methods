@@ -9,26 +9,21 @@ function applyCustomJoin() {
       return '';
     }
 
+    let returnString = '';
     const copyArray = this;
-    let parseSeparator = separator;
+    const parseSeparator = separator === null ? 'null' : separator;
 
-    for (let q = 0; q < copyArray.length; q++) {
-      if (copyArray[q] === undefined || copyArray[q] === null) {
-        copyArray[q] = '';
+    for (let i = 0; i < copyArray.length; i++) {
+      if (copyArray[i] !== undefined && copyArray[i] !== null) {
+        returnString += copyArray[i];
+      }
+
+      if (this.length - 1 !== i) {
+        returnString += parseSeparator;
       }
     }
 
-    if (parseSeparator === null) {
-      parseSeparator = 'null';
-    }
-
-    let joinArray = '' + copyArray[0];
-
-    for (let i = 1; i < copyArray.length; i++) {
-      joinArray += parseSeparator + copyArray[i];
-    }
-
-    return joinArray;
+    return returnString;
   };
 }
 
