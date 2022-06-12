@@ -4,26 +4,20 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    let result = '';
-    const checkSep = separator === undefined ? ',' : String(separator);
+  [].__proto__.join2 = function(separator = ',') {
+    let joinSeparator = '';
 
     for (let i = 0; i < this.length; i++) {
-      const item = checkIfAcceptableValue(this[i]) ? this[i] : '';
+      if (this[i] !== undefined && this[i] !== null) {
+        joinSeparator += this[i];
+      }
 
-      if (i === this.length - 1) {
-        result += item;
-      } else {
-        result += item + checkSep;
+      if (i < this.length - 1) {
+        joinSeparator += separator;
       }
     }
 
-    return result;
+    return joinSeparator;
   };
 };
-
-function checkIfAcceptableValue(value) {
-  return value !== undefined && value !== null;
-}
-
 module.exports = applyCustomJoin;
