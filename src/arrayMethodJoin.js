@@ -7,11 +7,6 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinedStr = '';
 
-    if (separator === null) {
-      // eslint-disable-next-line no-param-reassign
-      separator = 'null';
-    }
-
     if (this.length === 0) {
       return '';
     }
