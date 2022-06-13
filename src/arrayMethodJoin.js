@@ -9,11 +9,11 @@ function applyCustomJoin() {
     const lengthOfArray = this.length - 1;
 
     for (let i = 0; i <= lengthOfArray; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        this[i] = '';
-      }
+      const currentElement = this[i];
 
-      stringFromArray += this[i];
+      if (currentElement !== undefined && currentElement !== null) {
+        stringFromArray += currentElement;
+      }
 
       if (i !== lengthOfArray) {
         stringFromArray += separator;
