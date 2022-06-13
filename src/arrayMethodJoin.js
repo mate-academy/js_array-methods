@@ -4,24 +4,14 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    let currentSeparator = separator;
-
-    if (separator === undefined) {
-      currentSeparator = ',';
-    }
 
     for (let i = 0; i < this.length; i++) {
-      const currentElement = this[i];
-
-      if (currentElement === undefined && i === this.length - 1) {
-        break;
-      }
+      let currentElement = this[i];
 
       if (currentElement === null || currentElement === undefined) {
-        result += currentSeparator;
-        continue;
+        currentElement = '';
       }
 
       if (i === this.length - 1) {
@@ -29,7 +19,7 @@ function applyCustomJoin() {
         break;
       }
 
-      result += `${currentElement}` + `${currentSeparator}`;
+      result += `${currentElement}` + `${separator}`;
     }
 
     return result;
