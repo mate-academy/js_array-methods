@@ -15,8 +15,6 @@ function applyCustomJoin() {
       if (i < this.length - 1) {
         joinedString += separator;
       }
-
-      joinedString += '';
     }
 
     return joinedString;
