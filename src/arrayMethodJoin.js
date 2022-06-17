@@ -3,14 +3,20 @@
 /**
  * Implement method join
  */
-
+/*eslint-disable*/
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator = ',') {
+  [].__proto__.join2 = function(separator ) {
     // write code here
+    let sep = separator;
+
+    if(separator === undefined) {
+      sep = ','
+    }
     let string = '';
-    let insert = '';
 
     for (const el of this) {
+      let insert = '';
+
       if (el !== null && el !== undefined) {
         insert = el;
       }
@@ -18,10 +24,8 @@ function applyCustomJoin() {
       if (el === this[this.length - 1]) {
         string += '' + insert;
       } else {
-        string += '' + insert + separator;
+        string += '' + insert + sep;
       }
-
-      insert = '';
     }
 
     return string;
