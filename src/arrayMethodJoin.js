@@ -3,15 +3,16 @@
 /**
  * Implement method join
  */
-/*eslint-disable*/
+
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator ) {
     // write code here
     let sep = separator;
 
-    if(separator === undefined) {
-      sep = ','
+    if (separator === undefined) {
+      sep = ',';
     }
+
     let string = '';
 
     for (const el of this) {
