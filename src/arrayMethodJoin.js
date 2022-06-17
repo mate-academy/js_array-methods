@@ -5,14 +5,7 @@
  */
 
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator ) {
-    // write code here
-    let sep = separator;
-
-    if (separator === undefined) {
-      sep = ',';
-    }
-
+  [].__proto__.join2 = function(separator = ',') {
     let string = '';
 
     for (const el of this) {
@@ -25,7 +18,7 @@ function applyCustomJoin() {
       if (el === this[this.length - 1]) {
         string += '' + insert;
       } else {
-        string += '' + insert + sep;
+        string += '' + insert + separator;
       }
     }
 
