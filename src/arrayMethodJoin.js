@@ -13,7 +13,11 @@ function applyCustomJoin() {
       }
 
       if (i < this.length - 1) {
-        result += separator;
+        if (separator === undefined) {
+          result += ',';
+        } else {
+          result += separator;
+        }
       }
     }
 
