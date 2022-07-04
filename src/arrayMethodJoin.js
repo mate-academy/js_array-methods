@@ -8,12 +8,17 @@ function applyCustomJoin() {
     let result = '';
     let separatorInString;
 
-    if (separator === undefined) {
-      separatorInString = ',';
-    } else if (separator === null) {
-      separatorInString = 'null';
-    } else {
-      separatorInString = separator;
+    switch (separator) {
+      case undefined:
+        separatorInString = ',';
+        break;
+
+      case null:
+        separatorInString = 'null';
+        break;
+
+      default:
+        separatorInString = separator;
     }
 
     for (let i = 0; i < this.length; i++) {
