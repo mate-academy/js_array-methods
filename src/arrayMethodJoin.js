@@ -10,8 +10,6 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       switch (this[i]) {
         case null:
-          joinedElements += '';
-          break;
         case undefined:
           joinedElements += '';
           break;
