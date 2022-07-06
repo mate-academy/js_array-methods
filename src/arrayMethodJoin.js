@@ -31,7 +31,4 @@ function applyCustomJoin() {
   };
 }
 
-applyCustomJoin();
-[0, 1, 2, 3].join2();
-
 module.exports = applyCustomJoin;
