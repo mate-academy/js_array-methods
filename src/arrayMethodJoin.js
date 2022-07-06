@@ -5,23 +5,14 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    if (this.length === 0) {
-      return '';
-    }
-
-    let divider = separator;
     let joinedString = '';
 
-    if (separator === null) {
-      divider = 'null';
-    }
-
-    if (this[0] !== null) {
+    if (this[0] !== null && this.length > 0) {
       joinedString = '' + this[0];
     }
 
     for (let i = 1; i < this.length; i++) {
-      joinedString += '' + divider;
+      joinedString += '' + separator;
 
       switch (this[i]) {
         case undefined:
@@ -30,6 +21,10 @@ function applyCustomJoin() {
 
         case NaN:
           joinedString += 'NaN';
+          break;
+
+        case false:
+          joinedString += 'false';
           break;
 
         case null:
