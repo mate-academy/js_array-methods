@@ -10,19 +10,20 @@ function applyCustomJoin() {
     if (this.length) {
       for (let i = 0; i < this.length; i++) {
         let arrEl = this[i];
+        const isLastIteration = this.length - 1 === i;
 
         if (this[i] === undefined || this[i] === null) {
           arrEl = '';
         }
 
         if (separator === '' || separator || separator === null) {
-          if (this.length - 1 === i) {
+          if (isLastIteration) {
             result += arrEl;
           } else {
             result += arrEl + '' + separator;
           }
         } else {
-          if (this.length - 1 === i) {
+          if (isLastIteration) {
             result += arrEl;
           } else {
             result += arrEl + ',';
