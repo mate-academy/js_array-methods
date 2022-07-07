@@ -4,18 +4,16 @@
  * Implement method join
  */
 
-//подставить новые сепараторы
-//перебрать массив
-//если эл ок - добавить в новую строку
-//соследний эл доб без сапаратора
+// +подставить новые сепараторы
+// +перебрать массив
+// +если эл ок - добавить в новую строку
+// +соследний эл доб без сапаратора
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let joinedItems = '';
     let divider = separator;
 
-    if (separator === undefined) {
-      divider = ',';
-    } else if (separator === null) {
+    if (separator === null) {
       divider = 'null';
     }
 
