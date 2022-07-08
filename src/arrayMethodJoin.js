@@ -4,17 +4,8 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    if (!this.length) {
-      return '';
-    }
-
+  [].__proto__.join2 = function(separator = ',') {
     let joinedItems = '';
-    let divider = separator;
-
-    if (!arguments.length || separator === undefined) {
-      divider = ',';
-    }
 
     for (let i = 0; i < this.length; i++) {
       if (i === this.length - 1 && this[i] === undefined) {
@@ -22,16 +13,16 @@ function applyCustomJoin() {
       }
 
       if (this[i] === undefined || this[i] === null) {
-        joinedItems += divider;
+        joinedItems += separator;
         continue;
       }
 
       if (i === this.length - 1) {
-        joinedItems += '' + this[i];
+        joinedItems += this[i];
         break;
       }
 
-      joinedItems += this[i] + '' + divider;
+      joinedItems += this[i] + '' + separator;
     }
 
     return joinedItems;
