@@ -4,11 +4,7 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    // write code here
-    // if (this.length < 0) {
-    //   return this;
-    // }
+  [].__proto__.join2 = function(separator = ',') {
     let sep = separator;
     let joinedText = '';
 
