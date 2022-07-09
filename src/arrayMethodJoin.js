@@ -10,8 +10,6 @@ function applyCustomJoin() {
 
     if (separator === null) {
       sep = 'null';
-    } else if (separator === undefined) {
-      sep = ',';
     }
 
     if (this.length === 1) {
