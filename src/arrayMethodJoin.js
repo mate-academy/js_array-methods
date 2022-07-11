@@ -4,11 +4,10 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    const arrLength = [...this].length;
-    const lastElem = arrLength - 1;
-    let separ = separator;
-    let string = '';
+  [].__proto__.join2 = function(separator = ',') {
+    const arrLength = this.length;
+    const lastElementIndex = arrLength - 1;
+    let result = '';
 
     if (arrLength < 1) {
       return '';
@@ -18,35 +17,24 @@ function applyCustomJoin() {
       return `${this[0]}`;
     }
 
-    if (separ === null) {
-      separ = 'null';
-    }
-
-    for (let i = 0; i < lastElem; i++) {
-      if (this[i] === null || this[i] === undefined) {
+    for (let i = 0; i < lastElementIndex; i++) {
+      if (this[i] === undefined) {
         this[i] = '';
       }
 
-      if (!separ && separ !== '') {
-        string += (this[i] + ',');
+      if (this[i] !== null) {
+        result += `${this[i]}`;
       }
-
-      if (separ === '') {
-        string += this[i];
-      }
-
-      if (separ) {
-        string += (this[i] + separ);
-      }
+      result += `${separator}`;
     }
 
-    if (this[lastElem] === null
-      || this[lastElem] === undefined) {
-      this[lastElem] = '';
+    if (this[lastElementIndex] === null
+      || this[lastElementIndex] === undefined) {
+      this[lastElementIndex] = '';
     }
-    string += this[lastElem];
+    result += this[lastElementIndex];
 
-    return string;
+    return result;
   };
 }
 
