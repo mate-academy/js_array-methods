@@ -22,7 +22,11 @@ function applyCustomJoin() {
         break;
       }
 
-      joinedItems += this[i] + '' + separator;
+      if (separator === null) {
+        joinedItems += this[i] + 'null';
+      } else {
+        joinedItems += this[i] + separator;
+      }
     }
 
     return joinedItems;
