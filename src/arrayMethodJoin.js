@@ -6,6 +6,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     const arrLength = [...this].length;
+    const lastElem = arrLength - 1;
     let separ = separator;
     let string = '';
 
@@ -21,7 +22,7 @@ function applyCustomJoin() {
       separ = 'null';
     }
 
-    for (let i = 0; i < arrLength - 1; i += 1) {
+    for (let i = 0; i < lastElem; i++) {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
@@ -39,11 +40,11 @@ function applyCustomJoin() {
       }
     }
 
-    if (this[arrLength - 1] === null
-      || this[arrLength - 1] === undefined) {
-      this[arrLength - 1] = '';
+    if (this[lastElem] === null
+      || this[lastElem] === undefined) {
+      this[lastElem] = '';
     }
-    string += this[arrLength - 1];
+    string += this[lastElem];
 
     return string;
   };
