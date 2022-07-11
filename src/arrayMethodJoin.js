@@ -12,8 +12,8 @@ function applyCustomJoin() {
       separatorToAdd = 'null';
     }
 
-    this.forEach((element, index) => {
-      let elementToAdd = element;
+    for (let i = 0; i < this.length; i++) {
+      let elementToAdd = this[i];
 
       if (elementToAdd === undefined || elementToAdd === null) {
         elementToAdd = '';
@@ -21,10 +21,10 @@ function applyCustomJoin() {
 
       string += elementToAdd;
 
-      if (index !== this.length - 1) {
+      if (i !== this.length - 1) {
         string += separatorToAdd;
       }
-    });
+    }
 
     return string;
   };
