@@ -10,12 +10,12 @@ function applyCustomJoin() {
     for (let x = 0; x < this.length; x++) {
       if (this[x] !== undefined && this[x] !== null) {
         result += this[x];
-      }
+      };
 
       if (x + 1 !== this.length) {
         result += separator;
-      }
-    }
+      };
+    };
 
     return result;
   };
