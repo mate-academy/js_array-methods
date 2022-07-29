@@ -31,13 +31,8 @@ function applyCustomJoin() {
         joinElements = separator;
     };
 
-    switch (firstElement) {
-      case null:
-        break;
-      case undefined:
-        break;
-      default:
-        stringOfArray += `${firstElement}`;
+    if (firstElement !== null & firstElement !== undefined) {
+      stringOfArray += `${firstElement}`;
     };
 
     for (let i = 1; i < this.length; i++) {
