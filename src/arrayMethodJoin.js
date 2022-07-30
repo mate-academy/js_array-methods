@@ -18,14 +18,12 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      if ((this[i] === null || this[i] === undefined)) {
-        if (i !== 0) {
-          string += sep;
-        }
-      } else if (i === 0) {
+      if (this[i] != null) {
         string += this[i];
-      } else {
-        string += (sep + this[i]);
+      }
+
+      if (i !== this.length - 1) {
+        string += sep;
       }
     }
 
