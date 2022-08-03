@@ -9,15 +9,12 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      if ((this[i] === undefined && i !== this.length - 1)
-      || this[i] === null) {
-        result += `${separator}`;
-      } else if (i === this.length - 1 && this[i] === undefined) {
-        break;
-      } else if (i === this.length - 1) {
+      if (this[i] !== null && this[i] !== undefined) {
         result += this[i];
-      } else {
-        result += this[i] + `${separator}`;
+      }
+
+      if (i !== this.length - 1) {
+        result += `${separator}`;
       }
     }
 
