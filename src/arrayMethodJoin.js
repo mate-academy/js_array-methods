@@ -5,17 +5,17 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let str = '';
+    let string = '';
 
     for (let i = 0; i < this.length; i++) {
-      str += this[i] != null ? this[i] : '';
+      string += this[i] != null ? this[i] : '';
 
       if (i !== this.length - 1) {
-        str += separator;
+        string += separator;
       }
     }
 
-    return str;
+    return string;
   };
 }
 
