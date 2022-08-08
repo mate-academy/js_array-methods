@@ -15,8 +15,7 @@ function applyCustomJoin() {
       if (typeof this[i] === 'undefined' || this[i] === null) {
         result += separator;
       } else {
-        result += this[i];
-        result += separator;
+        result = result + this[i] + separator;
       }
     }
 
