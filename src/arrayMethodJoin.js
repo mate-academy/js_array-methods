@@ -4,9 +4,31 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     // write code here
+    let joinedStr = '';
+    const normalizedSeparator = normalizeSeparator(separator);
+
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== undefined && this[i] !== null) {
+        joinedStr += this[i];
+      }
+
+      if (i < this.length - 1) {
+        joinedStr += normalizedSeparator;
+      }
+    }
+
+    return joinedStr;
   };
+}
+
+function normalizeSeparator(separator) {
+  if (separator === null) {
+    return separator;
+  }
+
+  return separator.toString();
 }
 
 module.exports = applyCustomJoin;
