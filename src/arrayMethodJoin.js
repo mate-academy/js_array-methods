@@ -26,17 +26,12 @@ function applyCustomJoin() {
 
     if (typeof separator === 'string' || typeof separator === 'object') {
       for (let i = 0; i < this.length; i++) {
-        if (this[i] === null) {
-          str += '' + separator;
-          continue;
-        } else if (i === this.length - 1 && this[i] === null) {
-          str += '';
-        }
+        if (this[i] === null || this[i] === undefined) {
+          if (i === this.length - 1) {
+            str += '';
 
-        if (this[i] === undefined && i === this.length - 1) {
-          str += '';
-          continue;
-        } else if (this[i] === undefined) {
+            return str;
+          }
           str += '' + separator;
           continue;
         }
