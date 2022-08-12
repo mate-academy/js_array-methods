@@ -29,14 +29,14 @@ function applyCustomJoin() {
         if (this[i] === null) {
           str += '' + separator;
           continue;
+        } else if (i === this.length - 1 && this[i] === null) {
+          str += '';
         }
 
-        if (this[i] === undefined) {
-          if (i === this.length - 1) {
-            str += '';
-            continue;
-          }
-
+        if (this[i] === undefined && i === this.length - 1) {
+          str += '';
+          continue;
+        } else if (this[i] === undefined) {
           str += '' + separator;
           continue;
         }
