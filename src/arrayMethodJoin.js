@@ -9,21 +9,21 @@ function applyCustomJoin() {
       return this[0].toString();
     }
 
-    let thisButStr = '';
+    let result = '';
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
-        thisButStr += '';
+        result += '';
       } else {
-        thisButStr += this[i];
+        result += this[i];
       }
 
       if (i < this.length - 1) {
-        thisButStr += separator;
+        result += separator;
       }
     }
 
-    return thisButStr;
+    return result;
   };
 }
 
