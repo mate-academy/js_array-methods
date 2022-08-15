@@ -4,42 +4,37 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     if (this.length === 1) {
       return this.toString();
     }
 
-    let str = '';
+    let arrayToString = '';
 
     if (separator === undefined) {
-      return this.toString();
+      return this;
     }
 
     for (let i = 0; i < this.length; i++) {
       if (i === this.length - 1 && this[i] !== undefined && this[i] !== null) {
-        str += this[i];
+        arrayToString += this[i];
         continue;
       }
 
       if (i === this.length - 1 && this[i] === undefined) {
-        str += '';
-        continue;
-      }
-
-      if (separator === null) {
-        str += this[i] + 'null';
+        arrayToString += '';
         continue;
       }
 
       if (this[i] === undefined || this[i] === null) {
-        str += '' + separator;
+        arrayToString += '' + separator;
         continue;
       }
 
-      str += this[i] + separator.toString();
+      arrayToString += `${this[i]}${separator}`;
     }
 
-    return str;
+    return arrayToString;
   };
 }
 module.exports = applyCustomJoin;
