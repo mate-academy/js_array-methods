@@ -13,9 +13,9 @@ function applyCustomJoin() {
 
     for (const element of this) {
       if (element === undefined || element === null) {
-        modifiedArray[modifiedArray.length] = ('');
+        modifiedArray[modifiedArray.length] = '';
       } else {
-        modifiedArray[modifiedArray.length] = (element);
+        modifiedArray[modifiedArray.length] = element;
       }
     }
 
