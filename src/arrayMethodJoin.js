@@ -11,44 +11,35 @@ function applyCustomJoin() {
 
     let str = '';
 
-    if (separator === null) {
-      for (let i = 0; i < this.length; i++) {
-        if (i === this.length - 1) {
-          str += this[i];
-          continue;
-        }
+    if (separator === undefined) {
+      return this.toString();
+    }
 
+    for (let i = 0; i < this.length; i++) {
+      if (i === this.length - 1 && this[i] !== undefined && this[i] !== null) {
+        str += this[i];
+        continue;
+      }
+
+      if (i === this.length - 1 && this[i] === undefined) {
+        str += '';
+        continue;
+      }
+
+      if (separator === null) {
         str += this[i] + 'null';
+        continue;
       }
 
-      return str;
-    }
-
-    if (typeof separator === 'string' || typeof separator === 'object') {
-      for (let i = 0; i < this.length; i++) {
-        if (this[i] === null || this[i] === undefined) {
-          if (i === this.length - 1) {
-            str += '';
-
-            return str;
-          }
-          str += '' + separator;
-          continue;
-        }
-
-        if (i === this.length - 1) {
-          str += this[i];
-          continue;
-        }
-
-        str += this[i] + separator;
+      if (this[i] === undefined || this[i] === null) {
+        str += '' + separator;
+        continue;
       }
 
-      return str;
+      str += this[i] + separator.toString();
     }
 
-    return this.toString();
+    return str;
   };
 }
-
 module.exports = applyCustomJoin;
