@@ -5,15 +5,23 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let arr = '';
-    const separatorString = separator + '';
+    let stringFromArray = '';
+
+    const endOfArray = this.length - 1;
 
     for (let i = 0; i < this.length; i++) {
-      arr += (this[i] === undefined || this[i] === null ? '' : this[i])
-      + (i < this.length - 1 ? separatorString : '');
+      if (this[i] === undefined || this[i] === null) {
+        stringFromArray += '';
+      } else {
+        stringFromArray += this[i];
+      }
+
+      if (i < endOfArray) {
+        stringFromArray += separator + '';
+      }
     }
 
-    return arr;
+    return stringFromArray;
   };
 }
 
