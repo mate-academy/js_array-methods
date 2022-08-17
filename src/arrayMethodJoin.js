@@ -11,11 +11,11 @@ function applyCustomJoin() {
       const element = this[i];
 
       if (element !== undefined && element !== null) {
-        newString += `${element}`;
+        newString += element;
       }
 
       if (i !== this.length - 1) {
-        newString += `${separator}`;
+        newString += separator;
       }
     }
 
