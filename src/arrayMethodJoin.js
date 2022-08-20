@@ -4,50 +4,38 @@
  * Implement method join
  */
 
-const source = [0, 1, 2, 3];
-
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let sep = separator;
+    let result = '';
+    const copySource = [...this];
 
-    for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
-      }
-    }
-
-    if (this.length === 0) {
+    if (copySource.length === 0) {
       return '';
     }
 
-    if (this.length === 1) {
+    if (copySource.length === 1) {
       sep = '';
     }
 
-    if (separator === null) {
+    if (sep === null) {
       sep = 'null';
     }
 
-    if (sep === undefined) {
-      sep = ',';
-    }
+    for (let i = 0; i < copySource.length; i++) {
+      if (copySource[i] === null || copySource[i] === undefined) {
+        copySource[i] = '';
+      }
 
-    let result = '';
-
-    for (let i = 1; i <= this.length; i++) {
-      if (i === this.length) {
-        result += this[i - 1];
+      if (i === copySource.length - 1) {
+        result += copySource[i];
         break;
       }
-      result += this[i - 1] + sep;
+      result += copySource[i] + sep;
     }
 
     return result;
-    // console.log(result);
   };
-
-  source.join2({});
 }
 
-applyCustomJoin();
 module.exports = applyCustomJoin;
