@@ -8,9 +8,7 @@ function applyCustomJoin() {
     let result = '';
     let separatorCopy = separator;
 
-    if (separator === undefined) {
-      separatorCopy = '';
-    } else if (separator === null) {
+    if (separator === null) {
       separatorCopy = 'null';
     }
 
