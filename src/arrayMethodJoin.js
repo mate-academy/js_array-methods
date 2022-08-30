@@ -6,32 +6,28 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    let symbol = separator;
-    const copy = [...this];
+    let separatorCopy = separator;
+    const arrayCopy = [...this];
 
-    if (copy.length === 0) {
-      return '';
+    if (arrayCopy.length === 1) {
+      separatorCopy = '';
     }
 
-    if (copy.length === 1) {
-      symbol = '';
+    if (separatorCopy === null) {
+      separatorCopy = 'null';
     }
 
-    if (symbol === null) {
-      symbol = 'null';
-    }
-
-    for (let i = 0; i < copy.length; i++) {
-      if (copy[i] === null || copy[i] === undefined) {
-        copy[i] = '';
+    for (let i = 0; i < arrayCopy.length; i++) {
+      if (arrayCopy[i] === null || arrayCopy[i] === undefined) {
+        arrayCopy[i] = '';
       }
 
-      if (i === copy.length - 1) {
-        result += copy[i];
+      if (i === arrayCopy.length - 1) {
+        result += arrayCopy[i];
         break;
       }
 
-      result += copy[i] + symbol;
+      result += arrayCopy[i] + separatorCopy;
     }
 
     return result;
