@@ -14,7 +14,10 @@ function applyCustomJoin() {
         if (i !== this.length - 1) {
           joinedStr += separator;
         }
-      } else if (i !== this.length - 1) {
+        continue;
+      }
+
+      if (i !== this.length - 1) {
         joinedStr += separator;
       }
     }
