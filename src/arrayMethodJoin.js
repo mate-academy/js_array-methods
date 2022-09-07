@@ -7,7 +7,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let result = '';
-    let newSep = separator;
+    let newSep = '';
 
     switch (separator) {
       case undefined:
@@ -17,21 +17,18 @@ function applyCustomJoin() {
       case null:
         newSep = 'null';
         break;
+
+      default:
+        if (typeof (separator) === 'object') {
+          newSep = separator.toString();
+        } else {
+          newSep = separator;
+        }
     }
 
     for (let item of this) {
-      if (this.length === 1) {
-        result += item;
-
-        return result;
-      }
-
       if (item === null || item === undefined) {
         item = '';
-      }
-
-      if (typeof (newSep) === 'object') {
-        newSep = newSep.toString();
       }
 
       result += item + newSep;
