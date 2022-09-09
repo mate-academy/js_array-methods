@@ -8,23 +8,35 @@ function applyCustomJoin() {
     let str = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        if (i !== this.length - 1) {
-          str += `${separator}`;
-        }
-      }
+      if (i !== this.length - 1) {
+        const el = checkElement(this[i], separator);
 
-      if (this[i] !== undefined && this[i] !== null) {
-        if (i !== this.length - 1) {
-          str += `${this[i]}${separator}`;
-        } else {
-          str += `${this[i]}`;
-        }
+        str += el;
+      } else {
+        const lastEl = lastElementCheck(this[i]);
+
+        str += lastEl;
       }
     }
 
     return str;
   };
+}
+
+function checkElement(el, separator) {
+  if (el === null || el === undefined) {
+    return separator;
+  } else {
+    return `${el}${separator}`;
+  }
+}
+
+function lastElementCheck(el) {
+  if (el !== null && el !== undefined) {
+    return el;
+  } else {
+    return '';
+  }
 }
 
 module.exports = applyCustomJoin;
