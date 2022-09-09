@@ -9,16 +9,14 @@
 // |-- like null could be a separator
 // |-- but not an undefined, or NaN. XD
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    let res = '';
+  [].__proto__.join2 = function(separator = ',') {
+    let result = '';
     let symbol = separator;
 
     if (separator === null) {
       symbol = 'null';
     } else if (separator === '') {
       symbol = '';
-    } else if (!separator) {
-      symbol = ',';
     }
 
     // Main loop:
@@ -30,13 +28,13 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        res += item + symbol;
+        result += item + symbol;
       } else {
-        res += item;
+        result += item;
       }
     }
 
-    return res;
+    return result;
   };
 }
 
