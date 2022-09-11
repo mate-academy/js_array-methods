@@ -11,11 +11,7 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       const arg = (this[i] === null || this[i] === undefined) ? '' : this[i];
 
-      if (i < this.length - 1) {
-        result += arg + sep;
-      } else {
-        result += arg;
-      }
+      result += (i < this.length - 1) ? arg + sep : arg;
     }
 
     return result;
