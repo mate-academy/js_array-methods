@@ -28,9 +28,9 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        result += item + symbol;
+        result += String(item) + String(symbol);
       } else {
-        result += item;
+        result += String(item);
       }
     }
 
