@@ -13,7 +13,7 @@ function applyCustomJoin() {
       const itemIsNullUndefined = (item === null || item === undefined);
       const elToJoin = itemIsNullUndefined ? '' : item;
 
-      str += `${elToJoin}`;
+      str += elToJoin;
 
       if (i !== this.length - 1) {
         str += separator;
