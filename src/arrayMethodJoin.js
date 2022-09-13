@@ -26,17 +26,17 @@ function applyCustomJoin() {
 function checkElement(el, separator) {
   if (el === null || el === undefined) {
     return separator;
-  } else {
-    return `${el}${separator}`;
   }
+
+  return `${el}${separator}`;
 }
 
 function lastElementCheck(el) {
   if (el !== null && el !== undefined) {
     return el;
-  } else {
-    return '';
   }
+
+  return '';
 }
 
 module.exports = applyCustomJoin;
