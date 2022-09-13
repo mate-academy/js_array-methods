@@ -10,8 +10,8 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       const item = this[i];
-      const itemIsNullUndefine = (item === null || item === undefined);
-      const elToJoin = itemIsNullUndefine ? '' : item;
+      const itemIsNullUndefined = (item === null || item === undefined);
+      const elToJoin = itemIsNullUndefined ? '' : item;
 
       str += `${elToJoin}`;
 
