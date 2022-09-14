@@ -7,15 +7,9 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     let inFunctionSeparator = separator;
 
-    if (separator === null) {
-      inFunctionSeparator = 'null';
-    } else if (separator === '') {
-      inFunctionSeparator = '';
-    } else if (!separator) {
-      return this.toString();
-    };
-
-    inFunctionSeparator.toString();
+    if (separator === undefined) {
+      inFunctionSeparator = ',';
+    }
 
     let result = '';
 
