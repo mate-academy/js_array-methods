@@ -16,20 +16,16 @@ function applyCustomJoin() {
       sign = 'null';
     }
 
-    for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
-        string += '' + sign;
+        string += '';
       } else {
-        string += this[i] + sign;
+        string += this[i];
       }
-    }
 
-    const lastElement = this[this.length - 1];
-
-    if (lastElement === null || lastElement === undefined) {
-      string += '';
-    } else {
-      string += lastElement;
+      if (i !== this.length - 1) {
+        string += sign;
+      }
     }
 
     return string;
