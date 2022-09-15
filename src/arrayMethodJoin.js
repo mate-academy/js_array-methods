@@ -19,11 +19,9 @@ function applyCustomJoin() {
           result += `${separator}`;
         }
       }
-
-      return result;
     };
 
-    return '';
+    return result;
   };
 }
 
