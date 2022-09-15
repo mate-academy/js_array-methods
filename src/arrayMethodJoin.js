@@ -10,8 +10,6 @@ function applyCustomJoin() {
     for (let element = 0; element < this.length; element++) {
       if ((this[element] !== null) && (this[element] !== undefined)) {
         joinedStr += this[element];
-      } else {
-        joinedStr += '';
       }
 
       if (element !== (this.length - 1)) {
