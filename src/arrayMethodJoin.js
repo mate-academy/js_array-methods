@@ -8,11 +8,11 @@ function applyCustomJoin() {
     let joinedStr = '';
 
     for (let element = 0; element < this.length; element++) {
-      if ((this[element] !== null) && (this[element] !== undefined)) {
+      if (this[element] !== null && this[element] !== undefined) {
         joinedStr += this[element];
       }
 
-      if (element !== (this.length - 1)) {
+      if (element !== this.length - 1) {
         joinedStr += separator;
       }
     }
