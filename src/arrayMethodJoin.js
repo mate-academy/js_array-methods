@@ -10,17 +10,6 @@ function applyCustomJoin() {
       return '';
     }
 
-    // we will process input separator
-    let fixedSeparator = separator;
-
-    // process separator: if it is null - change it to string 'null'
-    if (separator === null) {
-      fixedSeparator = 'null';
-    }
-
-    // convert input separator to string
-    fixedSeparator = fixedSeparator.toString();
-
     // we will return values of input array joined by separator
     // if array.length will be 1,
     // we return one value without any separators
@@ -28,7 +17,7 @@ function applyCustomJoin() {
 
     // add rest of values via separator
     for (let i = 1; i < this.length; i++) {
-      joinedString += fixedSeparator + checkValue(this[i]);
+      joinedString += separator + checkValue(this[i]);
     }
 
     return joinedString;
