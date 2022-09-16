@@ -10,12 +10,11 @@ function applyCustomJoin() {
     const length = this.length;
 
     for (let i = 0; i < length; i++) {
-      let item = this[i];
+      const item = this[i];
 
-      if (item === null || item === undefined) {
-        item = '';
+      if (item !== null && item !== undefined) {
+        join += item;
       }
-      join += item;
 
       if (i !== length - 1) {
         join += separator;
