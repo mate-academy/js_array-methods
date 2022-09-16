@@ -5,33 +5,26 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let resalt = '';
-    let step;
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
-      }
-
       if (separator === null) {
         separator = 'null';
       }
 
-      if (separator === undefined) {
-        separator = ',';
-      }
-
-      if (this.length === 1) {
-        resalt = resalt + this[i];
-      } else {
-        if (i < this.length - 1) {
-          step = this[i] + separator;
+      if (i < this.length - 1) {
+        if (this[i] === null || this[i] === undefined) {
+          resalt = resalt + '' + separator;
         } else {
-          step = this[i];
+          resalt = resalt + this[i] + separator;
         }
-
-        resalt = resalt + step;
+      } else {
+        if (this[i] === null || this[i] === undefined) {
+          resalt = resalt + '';
+        } else {
+          resalt = resalt + this[i];
+        }
       }
     }
 
