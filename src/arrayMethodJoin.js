@@ -5,10 +5,10 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let res = '';
+    let result = '';
     let sep = separator;
 
-    if (sep === undefined || isNaN(sep)) {
+    if (sep === undefined) {
       sep = ',';
     }
 
@@ -18,19 +18,19 @@ function applyCustomJoin() {
       }
 
       if (i === this.length - 1) {
-        res += this[i];
+        result += this[i];
         break;
       }
 
       if (this[i] === null || this[i] === undefined) {
-        res += sep;
+        result += sep;
         continue;
       }
 
-      res += `${this[i]}${sep}`;
+      result += `${this[i]}${sep}`;
     }
 
-    return res;
+    return result;
   };
 }
 
