@@ -4,17 +4,9 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let joinedString = '';
-    let divider = separator;
-
-    if (divider === undefined) {
-      divider = ',';
-    }
-
-    if (this.length === 0) {
-      return joinedString;
-    }
+    const divide = separator;
 
     for (let i = 0; i < this.length; i++) {
       const element = this[i];
@@ -24,7 +16,7 @@ function applyCustomJoin() {
       }
 
       if (i !== this.length - 1) {
-        joinedString += `${divider}`;
+        joinedString += `${divide}`;
       }
     }
 
