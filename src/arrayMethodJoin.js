@@ -14,23 +14,15 @@ function applyCustomJoin() {
 
     sep = (separator === '') ? '' : sep;
 
-    for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length; i++) {
       switch (this[i]) {
         case undefined:
         case null:
-          retVal += sep;
+          retVal += (i < this.length - 1) ? sep : '';
           break;
         default:
-          retVal = (retVal += this[i]) + sep;
+          retVal = (retVal += this[i]) + ((i < this.length - 1) ? sep : '');
       }
-    }
-
-    switch (this[this.length - 1]) {
-      case undefined:
-      case null:
-        break;
-      default:
-        retVal += this[this.length - 1];
     }
 
     return retVal;
