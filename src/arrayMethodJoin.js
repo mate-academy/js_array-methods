@@ -4,26 +4,22 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    const arrayLength = this.length;
-    let convertedString = '';
+[].__proto__.join2 = function(separator = ',') {
+  let str = ``;
+  for (let i = 0; i < this.length; i++) {
+    const item = this[i];
+    const itemIsNullUndefined = (item === null || item === undefined);
+    const elToJoin = itemIsNullUndefined ? '' : item;
 
-    for (let i = 0; i < arrayLength; i++) {
-      const checkUndefinedOrNull = (this[i] === undefined || this[i] === null);
+    str += elToJoin;
 
-      convertedString += checkUndefinedOrNull
-        ? ''
-        : this[i];
-
-      const checkArrayEnd = i !== arrayLength - 1;
-
-      convertedString += checkArrayEnd
-        ? separator
-        : '';
+    if (i !== this.length - 1) {
+      str += separator;
     }
+  }
 
-    return convertedString;
-  };
+  return str;
+};
 }
 
 module.exports = applyCustomJoin;
