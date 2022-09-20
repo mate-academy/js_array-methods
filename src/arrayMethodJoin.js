@@ -17,10 +17,10 @@ function applyCustomJoin() {
         this[i] = '';
       }
 
-      if (i === this.length - 1) {
-        mergedStr += this[i];
-      } else {
-        mergedStr += this[i] + separatorItem;
+      mergedStr += this[i];
+
+      if (i !== this.length - 1) {
+        mergedStr += separatorItem;
       }
     }
 
