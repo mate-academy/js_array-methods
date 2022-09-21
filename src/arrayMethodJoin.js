@@ -12,17 +12,17 @@ function applyCustomJoin() {
     let solution = '';
 
     for (let i = 0; i < this.length; i++) {
+      const sep = (i < this.length - 1)
+        ? separator
+        : '';
+
       switch (this[i]) {
         case undefined:
         case null:
-          solution += (i < this.length - 1)
-            ? separator
-            : '';
+          solution += sep;
           break;
         default:
-          solution = (solution += this[i]) + ((i < this.length - 1)
-            ? separator
-            : '');
+          solution = (solution += this[i]) + sep;
       }
     }
 
