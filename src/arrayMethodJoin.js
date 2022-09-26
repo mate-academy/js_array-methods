@@ -11,15 +11,13 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       let element = String(this[i]);
 
-      if (this[i] === null || this[i] === undefined) {
-        element = '';
+      if (this[i] !== null && this[i] !== undefined) {
+        result += element;
       }
 
-      if (i === this.length - 1) {
-        result += element;
-      } else {
-        result += (element + joinSymbol);
-      }
+      if (i !== this.length - 1) {
+        result += separator;
+      } 
     }
 
     return result;
