@@ -14,12 +14,13 @@ function applyCustomJoin() {
 
       if (i === this.length - 1) {
         joinedArr[i] = this[i];
+        break;
+      }
+
+      if (separator === null) {
+        joinedArr[i] = this[i] + 'null';
       } else {
-        if (separator === null) {
-          joinedArr[i] = this[i] + 'null';
-        } else {
-          joinedArr[i] = this[i] + separator;
-        }
+        joinedArr[i] = this[i] + separator;
       }
     }
 
