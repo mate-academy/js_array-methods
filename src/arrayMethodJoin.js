@@ -9,7 +9,7 @@ function applyCustomJoin() {
     let str = '';
 
     for (let i = 0; i < arrLength; i++) {
-      if (typeof this[i] === 'undefined' || this[i] === null) {
+      if (this[i] === undefined || this[i] === null) {
         this[i] = '';
       }
 
