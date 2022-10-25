@@ -9,7 +9,9 @@ function applyCustomJoin() {
     let joinString = '';
 
     for (let i = 0; i < arrLength; i++) {
-      if (this[i] !== undefined && this[i] !== null) {
+      if (this[i] === undefined || this[i] === null) {
+        joinString += '';
+      } else {
         joinString += this[i];
       }
 
