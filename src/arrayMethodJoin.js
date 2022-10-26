@@ -12,10 +12,10 @@ function applyCustomJoin() {
         this[i] = '';
       }
 
-      if (i === 0) {
-        resultStr += this[i];
+      if (i !== this.length - 1) {
+        resultStr += `${this[i]}${separator}`;
       } else {
-        resultStr += `${separator}${this[i]}`;
+        resultStr += this[i];
       }
     }
 
