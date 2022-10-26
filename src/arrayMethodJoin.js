@@ -8,18 +8,16 @@ function applyCustomJoin() {
     let separatedString = '';
     const lastIndex = this.length - 1;
 
-    for (let index = 0; index < this.length; index++) {
-      if (index === lastIndex && this[index] === null) {
-        separatedString += ``;
-      } else if (index === lastIndex && this[index] === undefined) {
-        separatedString += ``;
-      } else if (index === lastIndex) {
-        separatedString += `${this[index]}`;
-      } else if (this[index] === null || this[index] === undefined) {
+    for (let i = 0; i < lastIndex; i++) {
+      if (this[i] === null || this[i] === undefined) {
         separatedString += `${separator}`;
       } else {
-        separatedString += `${this[index]}${separator}`;
+        separatedString += `${this[i]}${separator}`;
       }
+    }
+
+    if (this[lastIndex] !== null && this[lastIndex] !== undefined) {
+      separatedString += `${this[lastIndex]}`;
     }
 
     return separatedString;
