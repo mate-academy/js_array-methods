@@ -11,11 +11,11 @@ function applyCustomJoin() {
       if (this[i] === null || this[i] === undefined) {
         joinedString += '';
       } else {
-        joinedString += `${this[i]}`;
+        joinedString += this[i];
       };
 
       if (i < this.length - 1) {
-        joinedString += `${separator}`;
+        joinedString += separator;
       }
     }
 
