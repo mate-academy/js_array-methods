@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let string = '';
+    let joinedString = '';
 
     if (this.length === 0) {
       return '';
@@ -13,22 +13,22 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || typeof this[i] === 'undefined') {
-        string += '';
-        string += separator;
+        joinedString += '';
+        joinedString += separator;
       } else {
-        string += this[i];
-        string += separator;
+        joinedString += this[i];
+        joinedString += separator;
       }
     }
 
     if (this[this.length - 1] === null
       || typeof this[this.length - 1] === 'undefined') {
-      string += '';
+      joinedString += '';
     } else {
-      string += this[this.length - 1];
+      joinedString += this[this.length - 1];
     }
 
-    return string;
+    return joinedString;
   };
 }
 
