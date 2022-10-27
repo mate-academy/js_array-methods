@@ -9,14 +9,12 @@ function applyCustomJoin() {
     let joined = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+      if (this[i] !== null && this[i] !== undefined) {
+        joined += this[i];
       }
 
       if (i !== this.length - 1) {
-        joined += `${this[i]}${separator}`;
-      } else {
-        joined += `${this[i]}`;
+        joined += separator;
       }
     }
 
