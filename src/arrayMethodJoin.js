@@ -8,16 +8,17 @@ function applyCustomJoin() {
     let joinedString = '';
     const separatorToString = String(separator);
 
-    for (const item of this) {
-      if (item === null || item === undefined) {
-        joinedString += '' + separatorToString;
-      } else {
-        joinedString += item + separatorToString;
+    for (let i = 0; i < this.length; ++i) {
+      if (this[i] !== undefined && this[i] !== null) {
+        joinedString += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        joinedString += separatorToString;
       }
     }
 
-    // eslint-disable-next-line max-len
-    return joinedString.slice(0, joinedString.length - separatorToString.length);
+    return joinedString;
   };
 }
 
