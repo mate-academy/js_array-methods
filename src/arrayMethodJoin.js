@@ -6,7 +6,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     const spr = `${separator}`;
-    let result = '';
+    let joinedString = '';
 
     for (let i = 0; i < this.length; i++) {
       let e = this[i];
@@ -15,10 +15,10 @@ function applyCustomJoin() {
         e = '';
       }
 
-      result += spr + e;
+      joinedString += spr + e;
     }
 
-    return result.slice(spr.length);
+    return joinedString.slice(spr.length);
   };
 }
 
