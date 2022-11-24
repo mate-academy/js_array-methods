@@ -17,15 +17,14 @@ function applyCustomJoin() {
 
     // joining the array excluding the last element
     for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] !== null && this[i] !== undefined) {
+      if (this[i] != null) {
         result += this[i];
       }
       result += sep;
     }
 
     // adding the last element
-    if (this[this.length - 1] !== null
-        && this[this.length - 1] !== undefined) {
+    if (this[this.length - 1] != null) {
       result += this[this.length - 1];
     }
 
