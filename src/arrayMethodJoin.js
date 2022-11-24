@@ -8,9 +8,7 @@ function applyCustomJoin() {
     let resultingString = '';
 
     for (const el of this) {
-      if (this.length === 0) {
-        return resultingString;
-      } else if (this.length === 1) {
+      if (this.length === 1) {
         resultingString += el;
 
         return resultingString;
