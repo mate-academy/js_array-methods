@@ -7,7 +7,7 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinResult = '';
     let element;
-    const separatorCopy = (separator === null) ? 'null' : separator;
+    const separatorCopy = separator + '';
 
     if (this.length === 0) {
       return '';
