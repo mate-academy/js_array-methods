@@ -5,29 +5,22 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let string = '';
-    const getEffectiveValue = function(value) {
-      if (value === 'null') {
-        return value;
-      }
-
-      const imValue = String(value);
-
-      return (imValue === 'null' || typeof value === 'undefined') ? ''
-        : imValue;
-    };
-
-    if (this.length <= 0) {
-      return string;
-    }
+    let joinedString = '';
+    const stringed = String(separator);
 
     for (let i = 0; i < this.length - 1; i++) {
-      const effectiveValue = getEffectiveValue(this[i]);
-
-      string += effectiveValue + (separator + '');
+      if (this[i] === null || this[i] === undefined) {
+        joinedString += stringed;
+      } else {
+        joinedString += this[i] + stringed;
+      }
     }
 
-    return string + getEffectiveValue(this[this.length - 1]);
+    if (this[this.length - 1] !== undefined) {
+      joinedString += this[this.length - 1];
+    }
+
+    return joinedString;
   };
 }
 
