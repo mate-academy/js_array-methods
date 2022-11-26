@@ -12,10 +12,13 @@ function applyCustomJoin() {
       if (this[i] !== null && this[i] !== undefined) {
         result = result + this[i];
       }
-      result = result + separator;
+
+      if (i !== this.length - 1) {
+        result += separator;
+      }
     }
 
-    return result.substring(0, result.length - String(separator).length);
+    return result;
   };
 }
 
