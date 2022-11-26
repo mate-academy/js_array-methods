@@ -6,24 +6,15 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    let sep;
-
-    // in case the passed separator is null
-    if (separator === null) {
-      sep = 'null';
-    } else {
-      sep = separator;
-    }
+    const sep = separator !== null ? separator : 'null';
 
     // joining the array excluding the last element
     for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] != null) {
-        result += this[i];
-      }
-      result += sep;
+      result += (this[i] != null ? this[i] : '') + sep;
     }
 
     // adding the last element
+    // this approach is crucial if the joined arrays are too large
     if (this[this.length - 1] != null) {
       result += this[this.length - 1];
     }
