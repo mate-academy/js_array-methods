@@ -14,7 +14,12 @@ function applyCustomJoin() {
         : '' + separator2;
     }
 
-    return separator2.length < 1 ? result : result.slice(0, -separator2.length);
+    switch (true) {
+      case separator2.length < 1:
+        return result;
+      case separator2.length >= 1:
+        return result.slice(0, -separator2.length);
+    }
   };
 }
 
