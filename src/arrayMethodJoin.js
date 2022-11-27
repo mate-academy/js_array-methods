@@ -5,27 +5,20 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let stringWithoutLastElement = '';
+    let result = '';
     const lastElement = this[this.length - 1];
-    let x = separator;
-
-    if (x === null) {
-      x = 'null';
-    }
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
 
-      stringWithoutLastElement += this[i] + x;
+      result += this[i] + String(separator);
     }
 
-    if (lastElement === undefined) {
-      return stringWithoutLastElement;
+    if (lastElement !== undefined) {
+      result = result + lastElement;
     }
-
-    const result = stringWithoutLastElement + lastElement;
 
     return result;
   };
