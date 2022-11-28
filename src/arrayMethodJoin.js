@@ -15,10 +15,10 @@ function applyCustomJoin() {
     }
 
     switch (true) {
-      case separator2.length < 1:
-        return result;
       case separator2.length >= 1:
         return result.slice(0, -separator2.length);
+      default:
+        return result;
     }
   };
 }
