@@ -5,7 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const lastElementIndex = this.length - 1;
     let string = '';
 
     for (const element of this) {
@@ -13,7 +12,7 @@ function applyCustomJoin() {
         ? element
         : '';
 
-      string += this.indexOf(element) !== lastElementIndex
+      string += this.indexOf(element) !== this.length - 1
         ? elem + `${separator}`
         : elem;
     }
