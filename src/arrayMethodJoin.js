@@ -5,11 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let newSeparator = separator;
-
-    if (separator === undefined) {
-      newSeparator = ',';
-    }
+    const newSeparator = separator === undefined ? ',' : separator;
 
     let list = '';
 
