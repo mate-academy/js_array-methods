@@ -11,7 +11,7 @@ function applyCustomJoin() {
     const dividerLength = `${divider}`.length;
 
     for (let part of this) {
-      if (part == null) { // instead of (part === null || part === undefined)
+      if (part === null || part === undefined) {
         part = '';
       }
       joined += part + `${divider}`;
