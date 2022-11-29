@@ -29,7 +29,7 @@ function applyCustomJoin() {
       if (this[i] === null || this[i] === undefined) {
         this[i] = '';
       }
-      result = result + sep + this[i];
+      result += sep + this[i];
     }
 
     return result;
