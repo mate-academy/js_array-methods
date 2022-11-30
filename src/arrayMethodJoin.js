@@ -17,7 +17,7 @@ function applyCustomJoin() {
       }
     }
 
-    if (lastSymbol !== null && lastSymbol !== undefined) {
+    if (lastSymbol !== undefined) {
       newJoin += lastSymbol;
     }
 
