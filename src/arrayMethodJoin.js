@@ -12,14 +12,18 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      // myString = myString + separator;
-
-      if (this[i] === 'null') {
-        myString = myString + 'null';
-      } else if (this[i] === false && typeof (this[i]) === 'boolean') {
-        myString = myString + 'false';
-      } else if (this[i] !== null && this[i] !== undefined && this[i] !== '') {
-        myString = myString + (+this[i]);
+      switch (true) {
+        case this[i] === 'null':
+          myString = myString + 'null';
+          break;
+        case this[i] === false && typeof (this[i]) === 'boolean':
+          myString = myString + 'false';
+          break;
+        case this[i] !== null && this[i] !== undefined && this[i] !== '':
+          myString = myString + (+this[i]);
+          break;
+        default:
+          break;
       }
 
       if (i !== this.length - 1) {
