@@ -10,7 +10,7 @@ function applyCustomJoin() {
     }
 
     let result = '' + this[0];
-    const workSepar = '' + separator;
+    const workSeparator = '' + separator;
 
     if (this.length === 0) {
       return '';
@@ -21,7 +21,7 @@ function applyCustomJoin() {
         this[i] = '';
       }
 
-      result += workSepar + this[i];
+      result += workSeparator + this[i];
     }
 
     return result;
