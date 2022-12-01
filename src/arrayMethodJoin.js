@@ -20,19 +20,19 @@ function applyCustomJoin() {
       return `${this[0]}`;
     }
 
-    function value(val) {
-      if ((val === undefined) || (val === null)) {
+    function checkValue(value) {
+      if ((value === undefined) || (value === null)) {
         return '';
       }
 
-      return val;
+      return value;
     }
 
     for (let i = 0; i < this.length - 1; i++) {
-      joinedStr += value(this[i]) + sep;
+      joinedStr += checkValue(this[i]) + sep;
     }
 
-    return joinedStr + value(this[this.length - 1]);
+    return joinedStr + checkValue(this[this.length - 1]);
   };
 }
 
