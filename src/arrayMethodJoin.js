@@ -8,18 +8,13 @@ function applyCustomJoin() {
     let joinedString = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (typeof this[i] === 'number'
-        || typeof this[i] === 'string'
-        || typeof this[i] === 'boolean'
-      ) {
+      if (this[i] !== undefined && this[i] !== null) {
         joinedString += this[i];
       }
 
       if (i !== this.length - 1) {
         joinedString += separator;
       }
-
-      continue;
     }
 
     return joinedString;
