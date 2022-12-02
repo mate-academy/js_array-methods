@@ -18,8 +18,8 @@ function applyCustomJoin() {
     }
 
     for (let i = 1; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null || this[i] === ' ') {
-        customJoin += String(separator) + '';
+      if (this[i] === undefined || this[i] === null) {
+        customJoin += String(separator);
       } else {
         customJoin += String(separator) + String(this[i]);
       }
