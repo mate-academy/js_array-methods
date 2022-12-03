@@ -22,10 +22,10 @@ function applyCustomJoin() {
         continue;
       }
 
-      if (isLast) {
-        result += this[i];
-      } else {
-        result += this[i] + String(separator);
+      result += this[i];
+
+      if (!isLast) {
+        result += separator;
       }
     }
 
