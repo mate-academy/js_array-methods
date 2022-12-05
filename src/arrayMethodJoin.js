@@ -11,7 +11,7 @@ function applyCustomJoin() {
       return '';
     }
 
-    if (this[0] === null) {
+    if (this[0] === undefined || this[0] === null) {
       customJoin += '';
     } else {
       customJoin += this[0];
