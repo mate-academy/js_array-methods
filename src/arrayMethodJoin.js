@@ -9,20 +9,11 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       const isLast = i === this.length - 1;
-      const isUndefined = this[i] === undefined;
-      const lastAnduUdefined = isUndefined && isLast;
-      const undefinedOrNull = isUndefined || this[i] === null;
+      const isNotNullish = this[i] !== undefined && this[i] !== null;
 
-      if (lastAnduUdefined) {
-        continue;
+      if (isNotNullish) {
+        result += this[i];
       }
-
-      if (undefinedOrNull) {
-        result += separator;
-        continue;
-      }
-
-      result += this[i];
 
       if (!isLast) {
         result += separator;
