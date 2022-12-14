@@ -13,9 +13,9 @@ function applyCustomJoin() {
         result += this[i];
       }
 
-      if (i !== this.length - 1 && typeof separator !== 'undefined') {
+      if (i !== this.length - 1 && separator !== undefined) {
         result += separator;
-      } else if (i !== this.length - 1 && typeof separator === 'undefined') {
+      } else if (i !== this.length - 1 && separator === undefined) {
         result += ',';
       }
     }
