@@ -5,15 +5,14 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const array = this;
     let resultString = '';
 
-    for (const item of array) {
-      if (item === null || item === undefined) { } else {
+    for (const item of this) {
+      if (item !== null && item !== undefined) {
         resultString += item;
       }
 
-      if (item !== array[array.length - 1]) {
+      if (item !== this[this.length - 1]) {
         resultString += separator;
       }
     }
