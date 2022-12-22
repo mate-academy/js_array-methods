@@ -13,14 +13,12 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        this[i] = '';
+      if (this[i] !== null && this[i] !== undefined) {
+        result += this[i];
       }
 
       if (i < this.length - 1) {
-        result += this[i] + copySeparator;
-      } else {
-        result += this[i];
+        result += copySeparator;
       }
     }
 
