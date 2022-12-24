@@ -8,12 +8,12 @@ function applyCustomJoin() {
     let tmpString = '';
     const lastKey = this.length - 1;
 
-    for (const key of this) {
-      if (key !== null && key !== undefined) {
-        tmpString += key;
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== null && this[i] !== undefined) {
+        tmpString += this[i];
       }
 
-      if (key !== this[lastKey]) {
+      if (this[i] !== this[lastKey]) {
         tmpString += separator;
       }
     }
