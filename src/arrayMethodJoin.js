@@ -8,15 +8,17 @@ function applyCustomJoin() {
     let joined = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || typeof this[i] === 'undefined') {
-        this[i] = '';
+      let current = this[i];
+
+      if (current === null || typeof current === 'undefined') {
+        current = '';
       }
 
       if (i < this.length - 1) {
-        joined += this[i]
+        joined += current
           + (separator !== null ? separator.toString() : 'null');
       } else {
-        joined += this[i];
+        joined += current;
       }
     }
 
