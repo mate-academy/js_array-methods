@@ -1,43 +1,31 @@
 'use strict';
 
-/**
- * Implement method join
- */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // const arr = [...this];
-    let res = '';
-    let separatorCopy = separator;
+    let result = '';
+    let args = separator;
 
     for (let i = 0; i < this.length; i++) {
-      // if (isNaN(this[i])) {
-      //   this[i] = '';
-      // }
-
-      if (this[i] === undefined) {
+      if (this[i] === undefined || this[i] === null) {
         this[i] = '';
       }
 
-      if (this[i] === null) {
-        this[i] = '';
+      if (args === undefined) {
+        args = ',';
       }
 
-      if (separatorCopy === undefined) {
-        separatorCopy = ',';
-      }
-
-      if (separatorCopy === null) {
-        separatorCopy = 'null';
+      if (args === null) {
+        args = 'null';
       }
 
       if (i !== this.length - 1) {
-        res += this[i] + separatorCopy;
+        result += this[i] + args;
       } else {
-        res += this[i];
+        result += this[i];
       }
     }
 
-    return res;
+    return result;
   };
 }
 
