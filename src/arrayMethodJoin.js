@@ -15,7 +15,7 @@ function applyCustomJoin() {
       }
 
       if (i < this.length - 1) {
-        result += separator !== null ? separator.toString() : 'null';
+        result += separator;
       }
     }
 
