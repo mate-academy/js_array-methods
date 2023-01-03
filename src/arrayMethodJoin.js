@@ -5,29 +5,29 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    const copyArray = [...this];
     let joinString = '';
     let stringSeparator = '';
 
-    if (separator === undefined) {
-      stringSeparator = ',';
-    } else {
-      stringSeparator = '' + separator;
-    }
+    separator === undefined
+      ? stringSeparator = ','
+      : stringSeparator = '' + separator;
 
-    for (let i = 0; i < copyArray.length; i++) {
-      if (copyArray[i] === null || copyArray[i] === undefined) {
-        copyArray[i] = '';
+    for (let i = 0; i < this.length; i++) {
+      let element = this[i];
+
+      if (element === null || element === undefined) {
+        element = '';
       }
 
-      if (i !== copyArray.length -1) {
-        joinString += copyArray[i] + stringSeparator;
+      if (i !== this.length - 1) {
+        joinString += element + stringSeparator;
       } else {
-        joinString += copyArray[i];
+        joinString += element;
       }
     }
 
     return joinString;
   };
 }
+
 module.exports = applyCustomJoin;
