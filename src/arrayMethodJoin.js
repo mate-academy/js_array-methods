@@ -3,13 +3,6 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinedArray = '';
-    let checkedSeparator;
-
-    if (separator === null) {
-      checkedSeparator = 'null';
-    } else {
-      checkedSeparator = separator;
-    }
 
     for (let element = 0; element < this.length; element++) {
       if (this[element] === null || this[element] === undefined) {
@@ -20,7 +13,7 @@ function applyCustomJoin() {
         joinedArray += this[element];
         continue;
       }
-      joinedArray += this[element] + checkedSeparator;
+      joinedArray += this[element] + String(separator);
     }
 
     return joinedArray;
