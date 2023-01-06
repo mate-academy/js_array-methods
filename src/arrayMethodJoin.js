@@ -5,8 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let arr = '';
-    let x = String(separator);
+    let joinedString = '';
 
 
     for (let i = 0; i < this.length; i++) {
