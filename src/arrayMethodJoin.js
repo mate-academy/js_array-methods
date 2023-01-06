@@ -13,11 +13,9 @@ function applyCustomJoin() {
         joinedString += this[i];
       }
 
-      if (i < (this.length - 1)) {
-        arr += this[i] + x;
-      } else {
-        arr += this[(this.length - 1)];
-      }
+         if (i < (this.length - 1)) {
+          joinedString += separator;
+        }
     }
 
     return arr;
