@@ -8,9 +8,6 @@ function applyCustomJoin() {
     let arr = '';
     let x = String(separator);
 
-    if (separator === undefined) {
-      x = ',';
-    };
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
