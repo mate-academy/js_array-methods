@@ -13,9 +13,9 @@ function applyCustomJoin() {
         joinedStr += this[i];
       }
 
-         if (i < (this.length - 1)) {
-          joinedStr += separator;
-        }
+      if (i < (this.length - 1)) {
+        joinedStr += separator;
+      }
     }
 
     return joinedStr;
