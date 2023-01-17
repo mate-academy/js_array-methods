@@ -6,14 +6,8 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     const copy = [...this];
-
     let res = '';
-
     let sep = separator + '';
-
-    if (separator === undefined) {
-      sep = ',';
-    }
 
     if (typeof separator === 'number') {
       return;
