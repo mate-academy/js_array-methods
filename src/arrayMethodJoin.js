@@ -9,9 +9,7 @@ function applyCustomJoin() {
     const last = this[this.length - 1];
 
     for (const item of this) {
-      if (item === null || item === undefined) {
-        string += '';
-      } else {
+      if (item !== null && item !== undefined) {
         string += item;
       }
 
