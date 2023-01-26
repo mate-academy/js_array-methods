@@ -8,9 +8,7 @@ function applyCustomJoin() {
     let string = '';
 
     for (const arg of this) {
-      if (arg === null || arg === undefined) {
-        string += '';
-      } else {
+      if (arg !== null && arg !== undefined) {
         string += arg;
       }
 
