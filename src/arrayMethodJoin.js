@@ -11,15 +11,14 @@ function applyCustomJoin() {
       return result;
     }
 
-    for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length; i++) {
       if (this[i] !== undefined && this[i] !== null) {
         result += this[i];
       }
-      result += separator;
-    }
 
-    if (this[this.length - 1] !== undefined && this[this.length - 1] !== null) {
-      result += this[this.length - 1];
+      if (i < this.length - 1) {
+        result += separator;
+      }
     }
 
     return result;
