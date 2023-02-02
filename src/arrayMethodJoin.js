@@ -12,7 +12,7 @@ function applyCustomJoin() {
         result += this[i];
       }
 
-      if (i + 1 < this.length) {
+      if (i !== this.length - 1) {
         result += separator;
       }
     }
