@@ -14,9 +14,7 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       const element = this[i];
 
-      if (element === null || element === undefined) {
-        result += '';
-      } else {
+      if (element !== null && element !== undefined) {
         result += element;
       }
 
