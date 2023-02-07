@@ -6,15 +6,15 @@ BAD EXAMPLE:
 ```
 let a = 1;
 
-a = a + 2;
+a = a + 1;
 ```
 
 GOOD EXAMPLE: 
 ```
 let a = 1;
 
-a += 2;
+a += 1;
 ```
 
-4. [CODE STYLE] - avoid using nested `if` statements, we are sure that you can do it without them :)
+4. [CODE STYLE] - avoid using nested `if` statements, we sure that you can do it without them :)
 5. [CODE STYLE] - don't write loops inside `if` statement. It's making your code too complicated. Remember that loop with `false` condition simply will iterate 0 times.
