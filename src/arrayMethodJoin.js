@@ -12,13 +12,13 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      let element = this[i];
+      const element = this[i];
 
       if (element === null || element === undefined) {
-        element = '';
+        result += '';
+      } else {
+        result += element;
       }
-
-      result += element;
 
       if (i < this.length - 1) {
         result += separator;
