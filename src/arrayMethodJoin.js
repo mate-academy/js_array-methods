@@ -5,6 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
+    // write code here
     const lastItem = this.length - 1;
     let joinString = '';
 
