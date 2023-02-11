@@ -7,10 +7,6 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let string = '';
 
-    if (typeof separator === 'number') {
-      return this;
-    }
-
     if (this.length === 0) {
       return string;
     }
