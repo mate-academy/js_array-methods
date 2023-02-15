@@ -7,14 +7,10 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joined = '';
 
-    if (this.length === 0) {
-      return joined;
-    }
-
     for (let i = 0; i < this.length; i++) {
       const element = this[i] === undefined || this[i] === null
         ? ''
-        : this[i].toString();
+        : this[i];
 
       joined += i !== this.length - 1
         ? element + String(separator)
