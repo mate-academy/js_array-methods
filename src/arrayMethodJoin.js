@@ -12,33 +12,23 @@ function applyCustomJoin() {
       return '';
     };
 
-    for (let i = 0; i < this.length; i++) {
+    if (separators === null) {
+      separators = 'null';
+    };
+
+    if (this[0] === null) {
+      this[0] = '';
+    }
+
+    str += this[0];
+
+    for (let i = 1; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
         this[i] = '';
       };
+
+      str += separators + this[i];
     };
-
-    if (separators === null) {
-      separators = 'null';
-    }
-
-    str = this[0] + '';
-
-    if (separators) {
-      for (let i = 1; i < this.length; i++) {
-        if (this[i] || isNaN(this[i]) || this[i] === 0) {
-          str += separators + this[i];
-        } else {
-          str += separators;
-        };
-      }
-    } else {
-      for (let i = 1; i < this.length; i++) {
-        if (this[i] || isNaN(this[i]) || this[1] === 0) {
-          str += this[i];
-        }
-      };
-    }
 
     return str;
   };
