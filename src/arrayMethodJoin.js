@@ -14,7 +14,7 @@ function applyCustomJoin() {
         element = '';
       }
 
-      if (i !== this.length - 1) {
+      if (i < this.length - 1) {
         result += element + String(separator);
 
         continue;
