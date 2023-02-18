@@ -8,11 +8,10 @@ function applyCustomJoin() {
     let joinedToString = '';
 
     for (let i = 0; i < this.length; i++) {
-      let itemOfThis = this[i];
-
-      if (itemOfThis === null || itemOfThis === undefined) {
-        itemOfThis = '';
-      }
+      const itemOfThis
+        = this[i] === undefined || this[i] === null
+          ? ''
+          : this[i];
 
       joinedToString += itemOfThis;
 
