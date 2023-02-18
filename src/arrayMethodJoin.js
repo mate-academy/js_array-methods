@@ -11,20 +11,14 @@ function applyCustomJoin() {
       return '';
     }
 
-    let fixedSeparator = separator;
-
-    if (separator === null) {
-      fixedSeparator = 'null';
-    }
-
     for (let i = 0; i < this.length - 1; i++) {
-      let element = this[i];
+      const element = this[i];
 
-      if (element === undefined || element === null) {
-        element = '';
+      if (element !== undefined && element !== null) {
+        strJoin += element;
       }
 
-      strJoin += element + fixedSeparator;
+      strJoin += separator;
     }
 
     if (this[this.length - 1]) {
