@@ -1,7 +1,7 @@
 'use strict';
 
-const nullString = 'null';
-const emptyString = '';
+const NULL_STRING = 'null';
+const EMPTY_STRING = '';
 /**
  * Implement method join
  */
@@ -11,31 +11,31 @@ function applyCustomJoin() {
     // write code here
 
     if (this.length === 0) {
-      return emptyString;
-    } else if (this.length === 1) {
-      return this[0].toString();
-    }
+      return EMPTY_STRING;
+    };
 
     let character = separator;
 
     if (character === null) {
-      character = nullString;
+      character = NULL_STRING;
     }
 
     let result = this[0];
 
     if (result === null) {
-      result = emptyString;
+      result = EMPTY_STRING;
     }
 
     for (let i = 1; i < this.length; i++) {
+      let inputElement = this[i];
+
       if (this[i] === null || this[i] === undefined) {
-        this[i] = emptyString;
+        inputElement = EMPTY_STRING;
       }
-      result += character + this[i];
+      result += character + inputElement;
     }
 
-    return result;
+    return result.toString();
   };
 }
 
