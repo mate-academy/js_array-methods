@@ -5,15 +5,9 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    if (this.length === 0) {
-      return '';
-    }
-
     let joinedArray = '';
 
     for (let i = 0; i < this.length; i++) {
-      joinedArray += '';
-
       if (this[i] !== null && this[i] !== undefined) {
         joinedArray += this[i];
       }
