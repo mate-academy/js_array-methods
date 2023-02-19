@@ -13,7 +13,7 @@ function applyCustomJoin() {
       };
 
       if (this[i] !== null
-        && this[i] !== undefined) {
+      && this[i] !== undefined) {
         title += this[i];
       };
     };
