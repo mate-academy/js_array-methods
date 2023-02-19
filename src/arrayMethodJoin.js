@@ -8,14 +8,12 @@ function applyCustomJoin() {
     const strSeparator = String(separator);
     let result = '';
 
-    for (const el of this) {
-      let strEl = el;
-
-      if (el === undefined || el === null) {
-        strEl = '';
+    for (const str of this) {
+      if (str === undefined || str === null) {
+        result += strSeparator;
+      } else {
+        result += str + strSeparator;
       }
-
-      result += strEl + strSeparator;
     }
 
     return result.slice(0, result.length - strSeparator.length);
