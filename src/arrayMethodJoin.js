@@ -5,44 +5,51 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
+    let string = '';
     let result = '';
 
     switch (separator) {
       case undefined:
         for (let i = 0; i < this.length; i++) {
-          result += this[i] + ',';
+          string += this[i] + ',';
         }
 
-        result = result.slice(0, -1);
+        for (let i = 0; i < string.length - 1; i++) {
+          result += string[i];
+        }
 
         return result;
 
       case '':
         for (let i = 0; i < this.length; i++) {
-          result += this[i];
+          string += this[i];
         }
 
-        return result;
+        return string;
 
       case null:
         for (let i = 0; i < this.length; i++) {
-          result += this[i] + 'null';
+          string += this[i] + 'null';
         }
 
-        result = result.slice(0, -4);
+        for (let i = 0; i < string.length - 4; i++) {
+          result += string[i];
+        }
 
         return result;
 
       default:
         for (let i = 0; i < this.length; i++) {
           if (this[i] === undefined || this[i] === null) {
-            result += '' + separator;
+            string += '' + separator;
             continue;
           }
-          result += this[i] + separator;
+          string += this[i] + separator;
         }
 
-        result = result.slice(0, 0 - separator.toString().length);
+        for (let i = 0; i < string.length - separator.toString().length; i++) {
+          result += string[i];
+        }
 
         return result;
     }
