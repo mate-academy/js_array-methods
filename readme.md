@@ -1,4 +1,4 @@
-# Custom implementation of Array.prototype.join()
+# Custom implementation of Array.prototype.join()/
 
 **Read the guideline before start**
 
