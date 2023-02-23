@@ -1,24 +1,20 @@
 'use strict';
 
-/**
- * Implement method join
- */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // write code here
-    let result = '';
+    let joinedArray = '';
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== undefined && this[i] !== null) {
-        result += this[i];
+        joinedArray += this[i];
       }
 
-      if (i !== this.length - 1) {
-        result += separator;
+      if (i < this.length - 1) {
+        joinedArray += separator;
       }
     }
 
-    return result;
+    return joinedArray;
   };
 }
 
