@@ -11,29 +11,19 @@ function applyCustomJoin() {
       return '';
     }
 
-    if (separator !== '' && separator !== undefined) {
-      for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length - 1; i++) {
+      if (separator !== '' && separator !== undefined) {
         if (this[i] === undefined || this[i] === null) {
           this[i] = '';
         }
         str += `${this[i]}${separator}`;
       }
-    }
 
-    if (separator === '') {
-      for (let i = 0; i < this.length - 1; i++) {
-        if (this[i] === undefined || this[i] === null) {
-          this[i] = '';
-        }
+      if (separator === '') {
         str += `${this[i]}`;
       }
-    }
 
-    if (separator === undefined) {
-      for (let i = 0; i < this.length - 1; i++) {
-        if (this[i] === undefined || this[i] === null) {
-          this[i] = '';
-        }
+      if (separator === undefined) {
         str += `${this[i]},`;
       }
     }
