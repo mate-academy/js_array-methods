@@ -5,22 +5,19 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let joinWord = '';
-    const arrCopy = [...this];
+    let joined = '';
 
-    for (let i = 0; i < arrCopy.length; i++) {
+    for (let i = 0; i < this.length; i++) {
       if (i !== 0) {
-        joinWord += separator;
+        joined += separator;
       }
 
-      if (arrCopy[i] === undefined || arrCopy[i] === null) {
-        arrCopy[i] = '';
+      if (this[i] !== undefined && this[i] !== null) {
+        joined += this[i];
       }
-
-      joinWord += arrCopy[i];
     }
 
-    return joinWord;
+    return joined;
   };
 }
 
