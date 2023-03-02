@@ -13,8 +13,7 @@ function applyCustomJoin() {
       }
 
       if (idx < this.length - 1) {
-        result += `${el}${separator}`;
-        continue;
+        result += separator;
       }
     }
 
