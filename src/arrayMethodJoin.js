@@ -4,7 +4,7 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
 
     if (separator === null) {
@@ -13,54 +13,18 @@ function applyCustomJoin() {
       };
 
       return result.slice(0, -4);
-    }
-
-    if (separator === '') {
-      for (const elem of this) {
-        result += elem;
-      };
-
-      return result;
-    }
-
-    if (separator === ' ') {
-      for (const elem of this) {
-        result += elem + ' ';
-      };
-
-      return result.slice(0, -1);
-    };
-
-    if (separator === undefined || !separator) {
-      for (const elem of this) {
-        result += elem + ',';
-      };
-
-      return result.slice(0, -1);
-    };
-
-    if (typeof separator === 'object') {
-      for (let i = 0; i < this.length; i++) {
-        if (i === this.length - 1) {
-          result += i;
-          break;
-        }
-
-        result += i + separator;
-      }
-
-      return result;
     } else {
-      for (const elem of this) {
-        if (elem === null || elem === undefined) {
-          result += ',';
-          continue;
+      for (let i = 0; i < this.length; i++) {
+        if (this[i] !== null && this[i] !== undefined) {
+          result += this[i];
         }
 
-        result += elem + separator;
+        if (i !== this.length - 1) {
+          result += separator;
+        };
       }
 
-      return result.slice(0, -1);
+      return result;
     }
   };
 }
