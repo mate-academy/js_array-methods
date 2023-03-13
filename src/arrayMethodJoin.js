@@ -6,6 +6,12 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
     const newArr = [];
+    let result = [];
+    let newSep = `${separator}`;
+
+    if (separator === undefined) {
+      newSep = ',';
+    }
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
@@ -13,24 +19,19 @@ function applyCustomJoin() {
       } else {
         newArr[i] = this[i];
       }
-    }
 
-    let result = `${newArr[0]}`;
-    let newSep = separator;
-
-    if (separator === undefined) {
-      newSep = ',';
-    }
-
-    for (let i = 1; i < this.length; i++) {
-      result += `${newSep}`+ `${newArr[i]}`;
+      result += `${newArr[i]}` + newSep;
     }
 
     if (this.length === 0) {
       result = '';
     }
 
-    return result;
+    if (separator === '') {
+      return result;
+    }
+
+    return result.slice(0, newSep.length * -1);
   };
 }
 
