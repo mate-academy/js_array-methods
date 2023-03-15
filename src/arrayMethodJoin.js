@@ -23,9 +23,8 @@ function applyCustomJoin() {
       }
     }
 
-    return result.trim();
+    return result;
   };
 }
 
 module.exports = applyCustomJoin;
-
