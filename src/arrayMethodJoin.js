@@ -8,12 +8,11 @@ function applyCustomJoin() {
     let joinedElements = '';
 
     for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        joinedElements += String(separator);
-        continue;
+      if (this[i] !== undefined && this[i] !== null) {
+        joinedElements += this[i];
       }
 
-      joinedElements += this[i] + String(separator);
+      joinedElements += separator;
     }
 
     const lastElement = this[this.length - 1];
