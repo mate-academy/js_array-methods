@@ -5,24 +5,10 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let joinedStr = '';
+    let joinedStr = this[0] === null || this[0] === undefined ? '' : `${this[0]}`;// eslint-disable-line
 
-    for (let i = 0; i < this.length; i++) {
-      // for last symbol without separator
-      if (i === (this.length - 1) && (this[i] === null || this[i] === undefined)) { // eslint-disable-line
-        joinedStr += ``;
-        break;
-      } else if (i === (this.length - 1)) {
-        joinedStr += `${this[i]}`;
-        break;
-      }
-
-      if (this[i] === null || this[i] === undefined) {
-        joinedStr += '' + `${separator}`;
-        continue;
-      }
-
-      joinedStr += `${this[i]}` + `${separator}`;
+    for (let i = 1; i < this.length; i++) {
+      joinedStr += `${separator}` + (this[i] === null || this[i] === undefined ? '' : `${this[i]}`);// eslint-disable-line
     }
 
     return joinedStr;
