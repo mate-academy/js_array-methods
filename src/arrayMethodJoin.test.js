@@ -16,10 +16,12 @@ test(`join2 doesn't call default join`, () => {
 });
 
 it(`should not modify original array`, () => {
-  source.join2(2);
+  const sourceWithFalsyValues = [1, null, 2, undefined, 3];
 
-  expect(source)
-    .toEqual([0, 1, 2, 3]);
+  sourceWithFalsyValues.join2(2);
+
+  expect(sourceWithFalsyValues)
+    .toEqual([1, null, 2, undefined, 3]);
 });
 
 test(`Should work with special character as a separator`, () => {
