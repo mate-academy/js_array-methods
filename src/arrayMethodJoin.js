@@ -13,6 +13,8 @@ function applyCustomJoin() {
 
       if (element === undefined || element === null) {
         joinedStr += '';
+      } else if (element === 'null') {
+        joinedStr += 'null';
       } else {
         joinedStr += element;
       }
