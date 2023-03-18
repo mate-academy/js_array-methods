@@ -1,16 +1,19 @@
 'use strict';
 
-/**
- * Implement method join
- */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
 
-    for (let i = 0; i < this.length; i++) {
-      result += this[i].toString();
+    const copy = [...this];
 
-      if (i < this.length - 1) {
+    for (let i = 0; i < copy.length; i++) {
+      if (copy[i] === null || copy[i] === undefined) {
+        copy[i] = '';
+      }
+
+      result += copy[i].toString();
+
+      if (i < copy.length - 1) {
         result += separator;
       }
     }
@@ -18,10 +21,5 @@ function applyCustomJoin() {
     return result;
   };
 }
-applyCustomJoin();
 
-const myArray = [1, 2, 3];
-
-myArray.join2('-');
-
-// module.exports = applyCustomJoin;
+module.exports = applyCustomJoin;
