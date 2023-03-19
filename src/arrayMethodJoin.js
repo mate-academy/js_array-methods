@@ -1,32 +1,26 @@
-/* eslint-disable use-isnan */
-/* eslint-disable no-console */
 'use strict';
 
 /**
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
     const sep = String(separator);
 
     for (let i = 0; i < this.length; i++) {
       switch (true) {
-        case (i + 1) !== this.length && this[i] === undefined:
-        case (i + 1) !== this.length && this[i] === null:
-        case (i + 1) !== this.length && this[i] === NaN:
-          result += ',';
-          break;
+        case i === (this.length - 1) && !this[i]:
+          return result;
+        case this[i] === null:
         case this[i] === undefined:
-          break;
-        case (i + 1) !== this.length && separator === undefined:
-          result += String(this[i]) + ',';
+          result += sep;
           break;
         case (i + 1) !== this.length:
-          result += String(this[i]) + sep;
+          result += this[i] + sep;
           break;
         default:
-          result += String(this[i]);
+          result += this[i];
       }
     }
 
