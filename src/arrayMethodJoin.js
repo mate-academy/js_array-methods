@@ -14,8 +14,6 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       const stringItem = this[i];
 
-      // debugger;
-
       stringFromArray += stringItem === undefined || stringItem === null
         ? '' : stringItem;
 
