@@ -9,11 +9,7 @@ function applyCustomJoin() {
 
     for (const one of this) {
       if (one === this[this.length - 1]) {
-        if (one === undefined) {
-          continue;
-        }
-
-        str += one;
+        str += one !== undefined && one !== null ? one : '';
         continue;
       } else {
         str += one !== undefined && one !== null ? one : '';
