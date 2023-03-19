@@ -18,7 +18,7 @@ function applyCustomJoin() {
         ? '' : stringItem;
 
       if (i !== this.length - 1) {
-        stringFromArray += String(separator);
+        stringFromArray += separator;
       }
     }
 
