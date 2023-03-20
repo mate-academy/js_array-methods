@@ -12,7 +12,8 @@ function applyCustomJoin() {
         const stringItem = this[i];
 
         stringFromArray += stringItem === undefined || stringItem === null
-          ? '' : stringItem;
+          ? ''
+          : stringItem;
 
         if (i !== this.length - 1) {
           stringFromArray += separator;
