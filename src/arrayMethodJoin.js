@@ -5,25 +5,19 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // Who invented this task.. i want to cry
-    const copyThis = [...this];
-    let str = '';
+    let joinString = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (copyThis[i] === null || copyThis[i] === undefined) {
-        copyThis[i] = '';
+      if (this[i] !== null && this[i] !== undefined) {
+        joinString += this[i];
       }
 
-      if (i === this.length - 1) {
-        str += copyThis[i];
-        continue;
+      if (i < this.length - 1) {
+        joinString += separator;
       }
-
-      str += copyThis[i];
-      str += separator;
     }
 
-    return str;
+    return joinString;
   };
 }
 
