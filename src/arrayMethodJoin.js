@@ -5,10 +5,20 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let joinedStr = this[0] === null || this[0] === undefined ? '' : `${this[0]}`;// eslint-disable-line
+    let joinedStr;
+
+    if (this[0] === null || this[0] === undefined) {
+      joinedStr = '';
+    } else {
+      joinedStr = `${this[0]}`;
+    }
 
     for (let i = 1; i < this.length; i++) {
-      joinedStr += `${separator}` + (this[i] === null || this[i] === undefined ? '' : `${this[i]}`);// eslint-disable-line
+      if (this[i] === null || this[i] === undefined) {
+        joinedStr += `${separator}` + '';
+      } else {
+        joinedStr += `${separator}` + `${this[i]}`;
+      }
     }
 
     return joinedStr;
