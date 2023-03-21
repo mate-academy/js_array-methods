@@ -6,7 +6,6 @@
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
@@ -23,5 +22,4 @@ function applyCustomJoin() {
   };
 }
 
-[false, null, 1, undefined, 0, NaN, ''].join2(',');
 module.exports = applyCustomJoin;
