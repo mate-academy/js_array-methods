@@ -1,11 +1,7 @@
 'use strict';
 
-/**
- * Implement method join
- */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // write code here
 
     let result = '';
 
@@ -23,4 +19,5 @@ function applyCustomJoin() {
   };
 }
 
+[false, null, 1, undefined, 0, NaN, ''].join2(',');
 module.exports = applyCustomJoin;
