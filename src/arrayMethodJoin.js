@@ -9,24 +9,21 @@ function applyCustomJoin() {
       return '';
     }
 
-    let str = '';
+    let joinedString = '';
 
     for (let i = 0; i < this.length; i += 1) {
-      let item = this[i];
+      const item = this[i];
 
-      if (item === undefined || item === null) {
-        item = '';
+      if (item !== undefined && item !== null) {
+        joinedString += item;
       }
 
-      if (i !== this.length - 1) {
-        str += item;
-        str += separator;
-      } else {
-        str += item;
+      if (i < this.length - 1) {
+        joinedString += separator;
       }
     }
 
-    return str;
+    return joinedString;
   };
 }
 
