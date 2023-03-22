@@ -11,7 +11,8 @@ function applyCustomJoin() {
       const element = this[i];
 
       joinedString += element === null || element === undefined
-        ? '' : element;
+        ? ''
+        : element;
 
       if (i + 1 !== this.length) {
         joinedString += separator;
