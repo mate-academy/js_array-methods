@@ -5,11 +5,11 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    if (this.length < 1) {
-      return '';
-    }
-
     let joinedString = '';
+
+    if (this.length < 1) {
+      return joinedString;
+    }
 
     for (let i = 0; i < this.length; i += 1) {
       const item = this[i];
