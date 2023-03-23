@@ -11,12 +11,10 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       const item = this[i];
 
-      if (typeof item === 'string'
-        || typeof item === 'number'
-        || typeof item === 'boolean') {
+      if (item !== null && item !== undefined) {
         str += '' + separator + item;
       } else {
-        str += '' + separator;
+        str += separator;
       }
     }
 
