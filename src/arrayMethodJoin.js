@@ -6,28 +6,14 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
-    let elem;
-    let joinSymb = separator;
-
-    if (typeof joinSymb === 'undefined') {
-      joinSymb = ',';
-    }
-
-    if (joinSymb === null) {
-      joinSymb = 'null';
-    }
 
     for (let i = 0; i < this.length; i++) {
-      elem = this[i];
-
-      if (this[i] === null || typeof this[i] === 'undefined') {
-        elem = '';
+      if (this[i] !== null || typeof this[i] !== 'undefined') {
+        result += this[i];
       }
 
-      if (i === this.length - 1) {
-        result += elem;
-      } else {
-        result += elem + joinSymb;
+      if (i !== this.length - 1) {
+        result += separator;
       }
     }
 
