@@ -5,19 +5,19 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let result = '';
+    let str = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] !== null || typeof this[i] !== 'undefined') {
-        result += this[i];
+      if (this[i] !== null && typeof this[i] !== 'undefined') {
+        str += this[i];
       }
 
       if (i !== this.length - 1) {
-        result += separator;
+        str += separator;
       }
     }
 
-    return result;
+    return str;
   };
 }
 
