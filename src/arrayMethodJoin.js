@@ -12,11 +12,8 @@ function applyCustomJoin() {
         result += String(separator);
       }
 
-      if (this[i] !== 'null'
-      && (String(this[i]) === 'null' || String(this[i]) === 'undefined')) {
-        result += '';
-      } else {
-        result += String(this[i]);
+      if (this[i] !== null && this[i] !== undefined) {
+        result += this[i];
       }
     }
 
