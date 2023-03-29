@@ -17,7 +17,7 @@ function applyCustomJoin() {
 
     for (let i = 1; i < this.length; i++) {
       if (this[i] === null || this[i] === undefined) {
-        res += String(separator) + '';
+        res += separator + '';
         continue;
       }
       res += String(separator) + this[i];
