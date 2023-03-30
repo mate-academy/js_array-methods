@@ -8,33 +8,26 @@ function applyCustomJoin() {
     // write code here
     let newString = '';
 
-    switch (this) {
-      case this.length === 1:
-        newString = this;
+    if (this.length === '0') {
+      newString = this;
 
-        return;
-      default:
-        for (let i = 0; i < this.length; i++) {
-          switch (true) {
-            case typeof this[i] === 'undefined':
-              newString += '';
-              break;
-            case this[i] === null:
-              newString += '';
-              break;
-            default:
-              newString += this[i];
-          }
+      return newString;
+    }
 
-          if (i < this.length - 1) {
-            newString += separator;
-          }
-        };
-        break;
+    for (let i = 0; i < this.length; i++) {
+      if (typeof this[i] === 'undefined' || this[i] === null) {
+        newString += '';
+      } else {
+        newString += this[i];
+      }
+
+      if (i < this.length - 1) {
+        newString += separator;
+      }
     }
 
     return newString;
   };
-}
+};
 
 module.exports = applyCustomJoin;
