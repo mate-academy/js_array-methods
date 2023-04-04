@@ -10,9 +10,7 @@ function applyCustomJoin() {
     const arrLength = this.length;
 
     for (let i = 0; i < arrLength; i++) {
-      const type = typeof (this[i]);
-
-      if (type === 'number' || type === 'string' || type === 'boolean') {
+      if (this[i] !== undefined && this[i] !== null) {
         joinedStr += this[i];
       }
 
