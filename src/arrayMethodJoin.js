@@ -13,12 +13,12 @@ function applyCustomJoin() {
     let joinedExpression = '';
 
     for (let i = 0; i < this.length - 1; i++) {
-      if (this[i] === null || this[i] === undefined) {
+      if (this[i] !== null && this[i] !== undefined) {
+        joinedExpression += this[i];
         joinedExpression += separator;
-        continue;
+      } else {
+        joinedExpression += separator;
       }
-      joinedExpression += this[i];
-      joinedExpression += separator;
     }
 
     if (this[this.length - 1] !== undefined) {
