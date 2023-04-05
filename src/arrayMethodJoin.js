@@ -9,11 +9,9 @@ function applyCustomJoin() {
       return '';
     }
 
-    let separateSign = separator;
+    let separateSign = separator === undefined ? ',' : separator;
 
-    if (separateSign === undefined) {
-      separateSign = ',';
-    } else if (separateSign === null) {
+    if (separateSign === null) {
       separateSign = 'null';
     } else if (typeof separateSign === 'object') {
       separateSign = '[object Object]';
@@ -22,8 +20,9 @@ function applyCustomJoin() {
     let returnedValue = '';
 
     for (let i = 0; i < this.length; i++) {
+
       if (this[i] === undefined || this[i] === null) {
-        returnedValue += (i === this.length - 1) ? '' : separateSign;
+        returnedValue += i === this.length - 1 ? '' : separateSign;
       } else if (i === this.length - 1) {
         returnedValue += this[i];
       } else {
