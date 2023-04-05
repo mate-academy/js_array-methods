@@ -11,7 +11,7 @@ function applyCustomJoin() {
     for (let i = 0; i < arrayLength; i++) {
       const cellInput = this[i];
 
-      if (cell !== null && cell !== undefined) {
+      if (cellInput !== null && cellInput !== undefined) {
         joinedText += cellInput;
       }
 
