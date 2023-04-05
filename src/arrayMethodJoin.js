@@ -4,32 +4,24 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     // write code here
 
-    let result = '';
-    let comma = separator;
-
-    if (comma === undefined) {
-      comma = ',';
-    } else if (comma === null) {
-      comma = 'null';
-    }
+    let concatinatedString = '';
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] === undefined || this[i] === null) {
-        result += '';
+        concatinatedString += '';
       } else {
-        result += this[i];
+        concatinatedString += this[i];
       }
 
       if (i < this.length - 1) {
-        result += comma;
+        concatinatedString += separator;
       }
     }
 
-    return result;
+    return concatinatedString;
   };
 }
-
 module.exports = applyCustomJoin;
