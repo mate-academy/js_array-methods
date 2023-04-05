@@ -4,35 +4,11 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    // write code here
-    let safeSeparator = '';
+  [].__proto__.join2 = function (separator = ',') {
     let joinedString = '';
-
-    function replaceNullAndUndefinedWithEmptyString(elementToCheck) {
-      let element = elementToCheck;
-
-      if (element === undefined || element === null) {
-        element = '';
-      }
-
-      return element;
-    }
 
     if (this.length === 0) {
       return '';
-    }
-
-    if (separator === undefined) {
-      safeSeparator = ',';
-    }
-
-    if (separator === null) {
-      safeSeparator = 'null';
-    }
-
-    if (separator) {
-      safeSeparator = separator;
     }
 
     if (this.length === 0) {
@@ -49,12 +25,16 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       joinedString += ''
-        + replaceNullAndUndefinedWithEmptyString(this[i])
-        + '' + (safeSeparator || '');
+        + ((this[i] === undefined || this[i] === null)
+          ? ''
+          : this[i])
+        + '' + ((separator === null ? 'null' : separator) || '');
     }
 
     joinedString += ''
-      + replaceNullAndUndefinedWithEmptyString(this[this.length - 1]);
+      + ((this[this.length - 1] === undefined || this[this.length - 1] === null)
+        ? ''
+        : this[this.length - 1]);
 
     return joinedString;
   };
