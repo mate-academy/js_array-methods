@@ -8,15 +8,13 @@ function applyCustomJoin() {
     let str = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1 && (this[i] == null || this[i] === undefined)) {
-        str += '';
-      } else if (i === this.length - 1) {
+      if (this[i] !== undefined && this[i] !== null) {
         str += this[i];
-      } else if (this[i] == null || this[i] === undefined) {
+      };
+
+      if (i !== this.length - 1) {
         str += separator;
-      } else {
-        str = str + this[i] + separator;
-      }
+      };
     }
 
     return str;
