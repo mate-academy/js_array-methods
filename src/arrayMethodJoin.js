@@ -5,6 +5,10 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
+    if (this.length === 0) {
+      return '';
+    }
+
     let joinedArray = '';
 
     if (this[0] !== null) {
@@ -23,10 +27,6 @@ function applyCustomJoin() {
       } else {
         joinedArray += tool + '';
       }
-    }
-
-    if (this.length === 0) {
-      joinedArray = '';
     }
 
     return joinedArray;
