@@ -9,16 +9,12 @@ function applyCustomJoin() {
     let currentElement;
 
     for (let i = 0; i < this.length; i++) {
-      currentElement = this[i];
-
-      if (currentElement === null || currentElement === undefined) {
-        currentElement = '';
-      }
+      currentElement = this[i] === null || this[i] === undefined ? '' : this[i];
 
       if (i === this.length - 1) {
         linkedStringParts += currentElement;
       } else {
-        linkedStringParts += currentElement + '' + separator;
+        linkedStringParts += `${currentElement}${separator}`;
       }
     }
 
