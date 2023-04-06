@@ -10,21 +10,17 @@ function applyCustomJoin() {
       return '';
     }
 
-    let separateSign = separator;
-
-    if (separateSign === null) {
-      separateSign = 'null';
-    }
-
     let returnedValue = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        returnedValue += (i === this.length - 1) ? '' : separateSign;
+      if (i === this.length - 1 && this[i] === undefined) {
+        continue;
+      } else if (this[i] === undefined || this[i] === null) {
+        returnedValue += `${separator}`;
       } else if (i === this.length - 1) {
-        returnedValue += this[i];
+        returnedValue += `${this[i]}`;
       } else {
-        returnedValue += this[i] + separateSign;
+        returnedValue += `${this[i]}${separator}`;
       }
     }
 
