@@ -14,8 +14,7 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] !== null && this[i] !== undefined) {
-        joinedExpression += this[i];
-        joinedExpression += separator;
+        joinedExpression += `${this[i]}${separator}`;
       } else {
         joinedExpression += separator;
       }
