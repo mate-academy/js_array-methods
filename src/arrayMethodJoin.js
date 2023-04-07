@@ -11,22 +11,16 @@ function applyCustomJoin() {
 
     let joinedArray = '';
 
-    if (this[0] !== null) {
-      joinedArray += this[0];
-    }
-
-    let tool = separator;
-
-    if (tool === null) {
-      tool = 'null';
-    }
-
-    for (let i = 1; i < this.length; i++) {
+    for (let i = 0; i < this.length - 1; i++) {
       if (this[i] !== undefined && this[i] !== null) {
-        joinedArray += tool + this[i];
+        joinedArray += `${this[i]}${separator}`;
       } else {
-        joinedArray += tool + '';
+        joinedArray += separator;
       }
+    }
+
+    if (this[this.length - 1] !== undefined && this[this.length - 1] !== null) {
+      joinedArray += this[this.length - 1];
     }
 
     return joinedArray;
