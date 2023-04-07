@@ -1,4 +1,4 @@
-1.  [CODE STYLE] - don't mutate original array elements - it will cause unexpected results later on. 
+1.  [CODE STYLE] - don't mutate original array elements - it will cause unexpected joinWithSeparators later on.
 2.  [CODE STYLE] - avoid creating needless copies of arrays, you can iterate existing array
 3.  [CODE STYLE] - use `plus` operator with assignment operator `=` if you want to add something to existing value
 
@@ -9,7 +9,7 @@ let a = 1;
 a = a + 2;
 ```
 
-GOOD EXAMPLE: 
+GOOD EXAMPLE:
 ```
 let a = 1;
 
