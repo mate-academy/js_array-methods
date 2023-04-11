@@ -5,18 +5,10 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const mergedArray = [];
-    let counter = 0;
-
-    for (const string of this) {
-      mergedArray[counter] = string;
-      counter++;
-    }
-
     let result = '';
     let firstLoop = true;
 
-    for (let string of mergedArray) {
+    for (let string of this) {
       if (string === undefined || string === null) {
         string = '';
       }
