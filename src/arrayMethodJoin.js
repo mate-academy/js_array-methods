@@ -14,12 +14,6 @@ function applyCustomJoin() {
         case undefined:
           arr[i] = '';
           break;
-        case NaN:
-          arr[i] = 'NaN';
-          break;
-        case false:
-          arr[i] = 'false';
-          break;
         case null:
           arr[i] = '';
           break;
