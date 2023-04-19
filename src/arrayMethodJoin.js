@@ -9,10 +9,6 @@ function applyCustomJoin() {
     let arrJoin = '';
     let sep = separator;
 
-    if (sep === undefined) {
-      sep = ',';
-    }
-
     if (sep === null) {
       sep = 'null';
     }
