@@ -1,11 +1,11 @@
-# Custom implementation of Array.prototype.join()
+# Спеціальна реалізація Array.prototype.join ()
 
-**Read the guideline before start**
+** Прочитайте керівництво перед початком **
 
-[Guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md)
+[Керівництво] (https://github.com/mate-academy/js_task-guidel/blob/master/readme.md)
 
-## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/js_array-method-join/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
+## ❗ Не забудьте прочитати свій код за допомогою [контрольного списку] (https://github.com/mate-academy/js_array-method-join/blob/master/checklist.md), перш ніж надсилати запит на тягання❗❗
 
-Read more about [Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+Детальніше про [array.prototype.join ()] (https://developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/array/join)
 
-> Using Array methods is prohibited in this task. Use loops, index access, and array length if needed.
+> Використання методів масиву заборонено в цьому завданні.Використовуйте петлі, індекс доступу та довжину масиву, якщо потрібно.
