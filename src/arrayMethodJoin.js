@@ -5,7 +5,25 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    let verifiedSeparator = separator;
+
+    if (typeof separator === 'undefined') {
+      verifiedSeparator = ',';
+    }
+
+    let string = '';
+
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== null && typeof this[i] !== 'undefined') {
+        string += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        string += verifiedSeparator;
+      }
+    }
+
+    return string;
   };
 }
 
