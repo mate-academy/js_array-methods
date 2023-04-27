@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * Implement method join
- */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let result = '';
@@ -12,7 +9,7 @@ function applyCustomJoin() {
         result += separator;
       }
 
-      if (this[i] !== null && this[i] !== undefined) {
+      if (this[i] !== undefined && this[i] !== null) {
         result += this[i];
       }
     }
