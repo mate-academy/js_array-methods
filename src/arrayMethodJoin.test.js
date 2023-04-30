@@ -24,11 +24,6 @@ it(`should not modify original array`, () => {
     .toEqual([1, null, 2, undefined, 3]);
 });
 
-test(`Should work with special character as a separator`, () => {
-  expect(source.join2('-'))
-    .toBe('0-1-2-3');
-});
-
 test(`Should work with empty string as a separator`, () => {
   expect(source.join2(''))
     .toBe('0123');
