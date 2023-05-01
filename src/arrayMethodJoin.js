@@ -8,16 +8,8 @@ function applyCustomJoin() {
     let outString = '';
 
     for (let i = 0; i < this.length; i++) {
-      switch (this[i]) {
-        case undefined:
-          outString += '';
-          break;
-        case null:
-          outString += '';
-          break;
-        default:
-          outString += this[i];
-          break;
+      if (this[i] !== undefined && this[i] !== null) {
+        outString += this[i];
       }
 
       if (i !== this.length - 1) {
