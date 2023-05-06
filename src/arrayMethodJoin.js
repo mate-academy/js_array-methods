@@ -4,8 +4,34 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    // write code here
+  [].__proto__.join2 = function(separator = ',') {
+    const arrayCopy = [...this];
+    const len = this.length;
+
+    let newSeparator = '' + separator;
+    let result = '';
+
+    if (Number.isInteger(newSeparator)) {
+      newSeparator = ',';
+    }
+
+    for (let i = 0; i < len; i++) {
+      if (i === len - 1) {
+        newSeparator = '';
+      }
+
+      if (this[i] === null) {
+        arrayCopy[i] = '';
+      }
+
+      if (this[i] === undefined) {
+        arrayCopy[i] = '';
+      }
+
+      result += arrayCopy[i] + newSeparator;
+    }
+
+    return result;
   };
 }
 
