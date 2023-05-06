@@ -11,10 +11,6 @@ function applyCustomJoin() {
     let newSeparator = '' + separator;
     let result = '';
 
-    if (Number.isInteger(newSeparator)) {
-      newSeparator = ',';
-    }
-
     for (let i = 0; i < len; i++) {
       if (i === len - 1) {
         newSeparator = '';
