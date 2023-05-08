@@ -8,7 +8,7 @@ function applyCustomJoin() {
     const arrayCopy = [...this];
     const len = this.length;
 
-    let newSeparator = '' + separator;
+    let newSeparator = String(separator);
     let result = '';
 
     for (let i = 0; i < len; i++) {
