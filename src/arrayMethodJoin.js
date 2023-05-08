@@ -6,20 +6,19 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let str = '';
-    const arr = [...this];
     const chengeddArr = [];
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === undefined || this[i] === null) {
-        arr[i] = '';
+      if (this[i] !== null && this[i] !== undefined) {
+        str += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        str += separator;
       }
     }
 
-    if (!this.length) {
-      return '';
-    }
-
-    for (const item of arr) {
+    for (const item of this) {
       if (separator === null) {
         chengeddArr.push(item);
         chengeddArr.push('null');
@@ -27,12 +26,6 @@ function applyCustomJoin() {
         chengeddArr.push(item);
         chengeddArr.push(separator);
       }
-    }
-
-    chengeddArr.length = chengeddArr.length - 1;
-
-    for (const item of chengeddArr) {
-      str += item;
     }
 
     return str;
