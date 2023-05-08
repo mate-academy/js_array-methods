@@ -16,19 +16,17 @@ function applyCustomJoin() {
       arr.push(elem);
     }
 
-    for (let i = 0; arr.length - 1 > i; i++) {
+    for (let i = 0; arr.length > i; i++) {
       if (arr[i] === null || arr[i] === undefined) {
         arr[i] = '';
       }
 
-      string = `${string}${arr[i]}${separator}`;
+      if (i >= arr.length - 1) {
+        string = `${string}${arr[i]}`;
+      } else {
+        string = `${string}${arr[i]}${separator}`;
+      }
     }
-
-    if (arr[arr.length - 1] === null || arr[arr.length - 1] === undefined) {
-      arr[arr.length - 1] = '';
-    }
-
-    string = `${string}${arr[arr.length - 1]}`;
 
     return string;
   };
