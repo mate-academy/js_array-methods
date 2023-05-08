@@ -16,11 +16,8 @@ function applyCustomJoin() {
         newSeparator = '';
       }
 
-      if (this[i] === null) {
-        arrayCopy[i] = '';
-      }
-
-      if (this[i] === undefined) {
+      if (this[i] === null
+          || this[i] === undefined) {
         arrayCopy[i] = '';
       }
 
