@@ -4,7 +4,7 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator = ',') {
+  [].__proto__.join2 = function(separator) {
     // write code here
     let str = '';
     const arr = [...this];
@@ -16,9 +16,7 @@ function applyCustomJoin() {
       }
     }
 
-    if (this.length === 0
-      || this === undefined
-      || this === null) {
+    if (!this.length) {
       return '';
     }
 
@@ -26,6 +24,9 @@ function applyCustomJoin() {
       if (separator === null) {
         chengeddArr.push(item);
         chengeddArr.push('null');
+      } else if (separator === undefined) {
+        chengeddArr.push(item);
+        chengeddArr.push(',');
       } else {
         chengeddArr.push(item);
         chengeddArr.push(separator);
