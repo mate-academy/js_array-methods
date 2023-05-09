@@ -2,13 +2,26 @@
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let result = '';
-
-    for (const element of this) {
-      result += element + separator;
+    if (this.length === 0) {
+      return '';
     }
 
-    return result.slice(0, -separator.length); ;
+    let result = '';
+
+    for (let i = 0; i < this.length; i++) {
+      if (typeof this[i] === 'number' || typeof this[i] === 'string'
+        || typeof this[i] === 'boolean') {
+        result += this[i];
+      } else {
+        result += '';
+      }
+
+      if (i < this.length - 1) {
+        result += separator;
+      }
+    }
+
+    return result;
   };
 }
 
