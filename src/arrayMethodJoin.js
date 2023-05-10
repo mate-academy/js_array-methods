@@ -4,7 +4,7 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     if (this.length === 0) {
       return '';
     }
@@ -18,17 +18,10 @@ function applyCustomJoin() {
       resultString = this[0].toString();
     }
 
-    switch (newSeparator) {
-      case (undefined):
-        newSeparator = ',';
-        break;
-
-      case (null):
-        newSeparator = 'null';
-        break;
-
-      default:
-        newSeparator = separator.toString();
+    if (newSeparator === null) {
+      newSeparator = 'null';
+    } else {
+      newSeparator = separator.toString();
     }
 
     for (let i = 1; i < this.length; i++) {
