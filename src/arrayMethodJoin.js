@@ -14,7 +14,7 @@ function applyCustomJoin() {
       const current = isValidItem(this[i])
         ? this[i]
         : '';
-      const part = isLastIndex(this, i)
+      const part = !isLastIndex(this, i)
         ? current + delimiter
         : current;
 
