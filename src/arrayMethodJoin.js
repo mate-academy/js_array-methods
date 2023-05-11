@@ -22,8 +22,4 @@ function applyCustomJoin() {
   };
 }
 
-// applyCustomJoin();
-
-// ['test', 'test'].join2('--');
-
 module.exports = applyCustomJoin;
