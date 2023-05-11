@@ -10,7 +10,7 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       let copyElement = this[i];
 
-      if (this[i] == null) {
+      if (this[i] === undefined || this[i] === null) {
         copyElement = '';
       }
 
