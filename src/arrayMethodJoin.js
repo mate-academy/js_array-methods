@@ -4,18 +4,16 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     // write code here
-    const delimiter = getDelimiter(separator);
+    const delimiter = separator;
 
     let output = '';
 
     for (let i = 0; i < this.length; i++) {
-      const current = isValidItem(this[i])
-        ? this[i]
-        : '';
-      const part = !isLastIndex(this, i)
-        ? current + delimiter
+      const current = _isValidItem(this[i]) ? this[i] : '';
+      const part = !_isLastIndex(this, i)
+        ? current.toString() + delimiter
         : current;
 
       output += part;
@@ -25,27 +23,11 @@ function applyCustomJoin() {
   };
 }
 
-function getDelimiter(separator) {
-  if (separator) {
-    return separator.toString();
-  }
-
-  if (separator === '') {
-    return separator;
-  }
-
-  if (separator === null) {
-    return 'null';
-  }
-
-  return ',';
-}
-
-function isValidItem(item) {
+function _isValidItem(item) {
   return item !== undefined && item !== null;
 }
 
-function isLastIndex(array, index) {
+function _isLastIndex(array, index) {
   return index === array.length - 1;
 }
 
