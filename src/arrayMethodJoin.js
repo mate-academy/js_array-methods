@@ -6,28 +6,29 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     // write code here
-    const delimiter = separator;
+    // const delimiter = separator;
 
     let output = '';
 
     for (let i = 0; i < this.length; i++) {
-      const current = _isValidItem(this[i]) ? this[i] : '';
-      const part = !_isLastIndex(this, i)
-        ? current.toString() + delimiter
-        : current;
+      if (isItemValid(this[i])) {
+        output += this[i].toString();
+      }
 
-      output += part;
+      if (!isLastIndex(this, i)) {
+        output += separator;
+      }
     }
 
     return output;
   };
 }
 
-function _isValidItem(item) {
+function isItemValid(item) {
   return item !== undefined && item !== null;
 }
 
-function _isLastIndex(array, index) {
+function isLastIndex(array, index) {
   return index === array.length - 1;
 }
 
