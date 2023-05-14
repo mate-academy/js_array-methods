@@ -7,17 +7,17 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinedString = '';
-    const lastIndexOfElement = this.length - 1;
-    const emptyValues = [null, undefined];
+    const lastIndex = this.length - 1;
+    const ignoredValues = [null, undefined];
 
-    for (const element of this) {
-      const indexOfElement = this.indexOf(element);
+    for (let i = 0; i <= lastIndex; i++) {
+      const character = this[i];
 
-      if (!emptyValues.includes(element)) {
-        joinedString += element;
+      if (!ignoredValues.includes(character)) {
+        joinedString += character;
       }
 
-      if (indexOfElement !== lastIndexOfElement) {
+      if (i !== lastIndex) {
         joinedString += separator;
       }
     }
