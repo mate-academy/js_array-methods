@@ -5,13 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // if (separator === undefined) {
-    //   // eslint-disable-next-line no-param-reassign
-    //   separator = ',';
-    // }
-    // // eslint-disable-next-line no-param-reassign
-    // separator = String(separator);
-
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
