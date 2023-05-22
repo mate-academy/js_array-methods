@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let stringFromArray = '';
+    let string = '';
 
     let workingSeparator = separator;
 
@@ -20,14 +20,14 @@ function applyCustomJoin() {
         element = '';
       }
 
-      if (i === this.length - 1) {
-        stringFromArray += element;
+      if (i !== this.length - 1) {
+        string += element + workingSeparator;
       } else {
-        stringFromArray += element + workingSeparator;
+        string += element;
       }
     }
 
-    return stringFromArray;
+    return string;
   };
 }
 
