@@ -11,16 +11,19 @@ function applyCustomJoin() {
 
     const arr = [...this];
 
+    let str = '';
+
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] === undefined || arr[i] === null) {
         arr[i] = '';
       }
-    }
 
-    let str = `${arr[0]}`;
+      if (i === arr.length - 1) {
+        str += `${arr[i]}`;
+        break;
+      }
 
-    for (let i = 1; i < arr.length; i++) {
-      str += `${separator}${arr[i]}`;
+      str += `${arr[i]}${separator}`;
     }
 
     return str;
