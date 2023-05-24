@@ -9,40 +9,17 @@ function applyCustomJoin() {
     let str = '';
 
     for (let i = 0; i < this.length; i++) {
-      switch (this.length - 1) {
-        case i:
-          if (this[i] !== undefined) {
-            str += this[i];
-          }
-
-          continue;
+      if (this[i] !== null && this[i] !== undefined) {
+        str += this[i];
       }
 
-      switch (this[i]) {
-        case null:
+      if (i < this.length - 1) {
+        if (separator === undefined) {
+          str += ',';
+        } else if (separator !== undefined) {
           str += separator;
-
-          continue;
-
-        case undefined:
-          str += separator;
-
-          continue;
+        }
       }
-
-      switch (separator) {
-        case undefined:
-          str += this[i] + ',';
-
-          continue;
-
-        case null:
-          str += this[i] + 'null';
-
-          continue;
-      }
-
-      str += this[i] + separator;
     }
 
     return str;
