@@ -5,12 +5,12 @@ function applyCustomJoin() {
     let resultString = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (i !== this.length && i !== 0) {
-        resultString += separator;
-      }
-
       if (this[i] !== undefined && this[i] !== null) {
         resultString += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        resultString += separator;
       }
     }
 
