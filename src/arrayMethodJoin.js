@@ -10,7 +10,7 @@ function applyCustomJoin() {
     for (let i = 0; i < this.length; i++) {
       let element = this[i];
 
-      if (Object.is(element, undefined) || Object.is(element, null)) {
+      if (element === undefined || element === null) {
         element = '';
       }
 
