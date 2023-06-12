@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    let result = '';
+    let resultString = '';
 
     const separate = `${separator}`;
 
@@ -15,11 +15,11 @@ function applyCustomJoin() {
         : this[i];
 
       i === this.length - 1
-        ? result += element
-        : result += element + separate;
+        ? resultString += element
+        : resultString += element + separate;
     }
 
-    return result;
+    return resultString;
   };
 }
 
