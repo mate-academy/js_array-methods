@@ -9,16 +9,11 @@ function applyCustomJoin() {
     let skipSeparator = true;
 
     for (const item of this) {
-      let newPart = '';
+      resultString += skipSeparator
+        ? nextElement(item)
+        : separator + nextElement(item);
 
-      if (skipSeparator) {
-        newPart += nextElement(item);
-        skipSeparator = false;
-      } else {
-        newPart += separator + nextElement(item);
-      }
-
-      resultString += newPart;
+      skipSeparator = false;
     }
 
     return resultString;
@@ -28,7 +23,7 @@ function applyCustomJoin() {
 function nextElement(item) {
   let resultItem = item;
 
-  if ([null, undefined].includes(resultItem)) {
+  if (resultItem === null || resultItem === undefined) {
     resultItem = '';
   }
 
