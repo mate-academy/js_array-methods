@@ -9,21 +9,15 @@ function applyCustomJoin() {
       return this.toString();
     }
 
-    let sep = separator;
-
-    if (sep === null) {
-      sep = 'null';
-    }
-
     let str = '';
 
     for (let i = 0; i < this.length; i++) {
-      const sepCurrent = i === this.length - 1 ? '' : sep;
+      if (this[i] !== null && this[i] !== undefined) {
+        str += this[i];
+      }
 
-      if (this[i] === null || this[i] === undefined) {
-        str += '' + sepCurrent;
-      } else {
-        str += this[i] + sepCurrent;
+      if (i !== this.length - 1) {
+        str += separator;
       }
     }
 
