@@ -27,16 +27,12 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
+      if (this[i] !== undefined && this[i] !== null) {
+        result += this[i];
+      }
+
       if (i !== this.length - 1) {
-        if (this[i] === undefined || this[i] === null) {
-          result += modSeparator;
-        } else {
-          result += this[i] + modSeparator;
-        }
-      } else {
-        if (this[i] !== undefined) {
-          result += this[i];
-        }
+        result += modSeparator;
       }
     }
 
