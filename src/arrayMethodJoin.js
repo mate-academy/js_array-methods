@@ -8,19 +8,13 @@ function applyCustomJoin() {
     let stringFromArray = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (i === this.length - 1 && typeof this[i] !== 'undefined') {
-        stringFromArray += `${this[i]}`;
-
-        return stringFromArray;
-      } else if (i === this.length - 1) {
-        return stringFromArray;
+      if (typeof this[i] !== 'undefined' && this[i] !== null) {
+        stringFromArray += this[i];
       }
 
-      if (typeof this[i] !== 'undefined' && typeof this[i] !== 'object') {
-        stringFromArray += `${this[i]}${separator}`;
-        continue;
+      if (i !== this.length - 1) {
+        stringFromArray += separator;
       }
-      stringFromArray += `${separator}`;
     }
 
     return stringFromArray;
