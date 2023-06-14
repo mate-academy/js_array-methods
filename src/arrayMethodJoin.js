@@ -8,9 +8,11 @@ function applyCustomJoin() {
     let resultString = '';
 
     for (let i = 0; i < this.length; i++) {
-      resultString += i === 0
-        ? nextElement(this[i])
-        : separator + nextElement(this[i]);
+      if (i < this.length - 1) {
+        resultString += nextElement(this[i]) + separator;
+      } else {
+        resultString += nextElement(this[i]);
+      }
     }
 
     return resultString;
@@ -18,13 +20,11 @@ function applyCustomJoin() {
 }
 
 function nextElement(item) {
-  let resultItem = item;
-
-  if (resultItem === null || resultItem === undefined) {
-    resultItem = '';
+  if (item === null || item === undefined) {
+    return '';
   }
 
-  return resultItem + '';
+  return item + '';
 }
 
 module.exports = applyCustomJoin;
