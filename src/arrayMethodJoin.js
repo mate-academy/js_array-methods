@@ -8,22 +8,14 @@ function applyCustomJoin() {
     let strFromArr = '';
 
     for (let i = 0; i < this.length; i++) {
-      const lastCheckSeparator = this[this.length - 1] === undefined
-      || this[this.length - 1] === null;
-
-      if (this[i] === null || this[i] === undefined) {
-        if (lastCheckSeparator) {
-          continue;
-        }
-        strFromArr += separator;
-        continue;
+      if (this[i] !== null && this[i] !== undefined) {
+        strFromArr += this[i];
       }
 
-      if (i === this.length - 1) {
-        strFromArr += `${this[i]}`;
+      if (i !== this.length - 1) {
+        strFromArr += `${separator}`;
         continue;
       }
-      strFromArr += `${this[i]}${separator}`;
     }
 
     return strFromArr;
