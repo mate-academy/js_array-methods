@@ -14,7 +14,6 @@ function applyCustomJoin() {
 
       if (i !== this.length - 1) {
         result += `${separator}`;
-        continue;
       }
     }
 
