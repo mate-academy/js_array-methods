@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 'use strict';
 
 /**
@@ -5,7 +6,19 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    separator = separator !== undefined ? separator : ',';
+
+    return this.reduce((result, element, index) => {
+      if (element !== null && element !== undefined) {
+        result += element;
+      }
+
+      if (index < this.length - 1) {
+        result += separator;
+      }
+
+      return result;
+    }, '');
   };
 }
 
