@@ -5,21 +5,21 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    separator = separator !== undefined ? separator : ',';
+  [].__proto__.join2 = function(separator = ',') {
+    let joinedString = '';
 
-    return this.reduce((result, element, index) => {
-      if (element !== null && element !== undefined) {
-        result += element;
+    for (let element = 0; element < this.length; element++) {
+      if (typeof this[element] !== 'undefined' && this[element] !== null) {
+        joinedString += this[element];
       }
 
-      if (index < this.length - 1) {
-        result += separator;
+      if (element !== this.length - 1) {
+        joinedString += separator;
       }
+    }
 
-      return result;
-    }, '');
+    return joinedString;
   };
-}
+};
 
 module.exports = applyCustomJoin;
