@@ -5,11 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    let separatorElement = separator;
-
-    if (separatorElement === undefined) {
-      separatorElement = ',';
-    }
+    const separatorElement = separator !== undefined ? separator : ',';
 
     const copyArray = [...this];
     let result = '';
@@ -18,6 +14,7 @@ function applyCustomJoin() {
       if (copyArray[i] === undefined || copyArray[i] === null) {
         copyArray[i] = '';
       }
+
       result += copyArray[i];
 
       if (i !== copyArray.length - 1) {
