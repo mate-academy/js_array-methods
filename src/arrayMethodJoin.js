@@ -1,3 +1,5 @@
+// @@ -1,11 +1,28 @@
+
 'use strict';
 
 function applyCustomJoin() {
@@ -16,9 +18,11 @@ function applyCustomJoin() {
 
     for (let i = 0; i < this.length; i++) {
       if (this[i] !== null && this[i] !== undefined) {
-        str += i + 1 !== this.length ? this[i] + addition : this[i];
-      } else {
-        str += i + 1 !== this.length ? addition : '';
+        str += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        str += addition;
       }
     }
 
