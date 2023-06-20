@@ -12,10 +12,8 @@ function applyCustomJoin() {
         (i === this.length - 1)
           ? result = result + this[i]
           : result = result + this[i] + separator;
-      } else {
-        (i === this.length - 1)
-          ? result += ''
-          : result += '' + separator;
+      } else if (i !== this.length - 1) {
+        result += '' + separator;
       }
     }
 
