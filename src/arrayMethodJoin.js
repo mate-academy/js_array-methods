@@ -5,7 +5,18 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    const result = [...this].toString();
+
+    switch (separator) {
+      case null:
+        return result.replaceAll(',', 'null');
+      case '':
+        return result.replaceAll(',', '');
+      case undefined:
+        return result;
+      default:
+        return result.replaceAll(',', `${separator}`);
+    }
   };
 }
 
