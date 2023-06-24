@@ -5,7 +5,7 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    const sep = separator === undefined || separator === undefined
+    const sep = separator === undefined
       ? ',' : separator === null ? 'null' : separator.toString();
     let str = '';
 
