@@ -13,12 +13,9 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      let item = this[i];
-
-      if (item === undefined || item === null) {
-        item = '';
+      if (this[i] !== undefined && this[i] !== null) {
+        result += this[i];
       }
-      result += item;
 
       if (i !== this.length - 1) {
         result += separatorSign;
