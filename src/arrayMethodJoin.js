@@ -9,9 +9,9 @@ function applyCustomJoin() {
     let result = '';
 
     for (let i = 0; i < this.length; i++) {
-      const current = this[i] === null || this[i] === undefined ? '' : this[i];
+      const res = this[i] === null || this[i] === undefined ? '' : this[i];
 
-      result += current;
+      result += res;
 
       if (i < this.length - 1) {
         result += separator;
