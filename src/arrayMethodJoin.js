@@ -4,9 +4,9 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     // write code here
-    const sep = separator !== undefined ? separator : ',';
+    const sep = separator;
 
     return this.reduce((acc, curr, index) => {
       let currElement = curr;
@@ -17,9 +17,9 @@ function applyCustomJoin() {
 
       if (index === this.length - 1) {
         return acc + String(currElement);
-      } else {
-        return acc + String(currElement) + String(sep);
       }
+
+      return acc + String(currElement) + String(sep);
     }, '');
   };
 }
