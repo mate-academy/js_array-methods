@@ -8,17 +8,16 @@ function applyCustomJoin() {
     let result = '';
     const length = this.length;
     const lastElementIndex = length - 1;
+    const defSeparator = ',';
 
     for (let i = 0; i < length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        result += '';
-      } else {
+      if (this[i] !== null && this[i] !== undefined) {
         result += this[i];
       }
 
       if (i !== lastElementIndex) {
         if (separator === undefined) {
-          result += ',';
+          result += defSeparator;
         } else {
           result += separator;
         }
