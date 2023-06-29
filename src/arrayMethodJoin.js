@@ -9,16 +9,14 @@ function applyCustomJoin() {
     const lastIndex = this.length - 1;
 
     for (let i = 0; i < this.length; i++) {
-      let temp = this[i];
+      const result = this[i];
 
-      if (this[i] === null || this[i] === undefined) {
-        temp = '';
+      if (result !== null && result !== undefined) {
+        separatedString += result;
       }
 
-      if (i !== lastIndex) {
-        separatedString += temp + String(separator);
-      } else {
-        separatedString += temp;
+      if (i < lastIndex) {
+        separatedString += separator;
       }
     }
 
