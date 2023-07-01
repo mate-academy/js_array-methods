@@ -8,26 +8,12 @@ function applyCustomJoin() {
     let complete = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        complete += '';
+      if (i > 0) {
+        complete += separator !== undefined ? separator : ',';
+      }
 
-        if (i < this.length - 1) {
-          if (separator === undefined) {
-            complete += ',';
-          } else {
-            complete += separator;
-          }
-        }
-      } else {
+      if (this[i] !== null && this[i] !== undefined) {
         complete += this[i];
-
-        if (i < this.length - 1) {
-          if (separator === undefined) {
-            complete += ',';
-          } else {
-            complete += separator;
-          }
-        }
       }
     }
 
