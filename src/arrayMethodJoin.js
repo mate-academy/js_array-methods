@@ -8,11 +8,11 @@ function applyCustomJoin() {
     let newstr = '';
     let newseparator = separator;
 
-    for (let i = 0; i < this.length; i++) {
-      if (this.length === 0) {
-        return '';
-      }
+    if (this.length === 0) {
+      return '';
+    }
 
+    for (let i = 0; i < this.length; i++) {
       if (newseparator === null) {
         newseparator = 'null';
       }
