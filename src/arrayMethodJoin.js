@@ -4,25 +4,16 @@
  * Implement method join
  */
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
-    let sep = separator;
+  [].__proto__.join2 = function(separator = ',') {
     let result = '';
 
-    if (separator === undefined) {
-      sep = ',';
-    }
-
     for (let i = 0; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        if (i !== this.length - 1) {
-          result += sep;
-        }
-        continue;
+      if (this[i] !== undefined && this[i] !== null) {
+        result += this[i];
       }
-      result += this[i];
 
       if (i !== this.length - 1) {
-        result += sep;
+        result += separator;
       }
     }
 
