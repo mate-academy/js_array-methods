@@ -6,14 +6,14 @@
 function applyCustomJoin(arr, separator) {
   let result = '';
 
-  if (arr !== undefined && arr.length > 0) {
-    result += arr[0];
-  }
+  const length = arr.length;
 
-  for (let i = 1; i < arr.length; i++) {
+  for (let i = 0; i < length; i++) {
     const currentElement = arr[i];
 
-    result += separator !== undefined ? separator : ',';
+    if (i !== 0) {
+      result += separator !== undefined ? separator : ',';
+    }
 
     if (currentElement !== null && currentElement !== undefined) {
       result += currentElement;
