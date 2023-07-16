@@ -3,17 +3,19 @@
 /**
  * Implement method join
  */
-function applyCustomJoin(arr, separator = ',') {
+function applyCustomJoin(arr, separator) {
   let result = '';
 
-  for (let i = 0; i < arr.length; i++) {
+  if (arr.length > 0) {
+    result += arr[0];
+  }
+
+  for (let i = 1; i < arr.length; i++) {
     const currentElement = arr[i];
 
-    if (i !== 0) {
-      result += separator;
-    }
+    result += separator !== undefined ? separator : ',';
 
-    if (currentElement != null) {
+    if (currentElement !== null && currentElement !== undefined) {
       result += currentElement;
     }
   }
