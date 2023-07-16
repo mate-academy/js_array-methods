@@ -6,7 +6,7 @@
 function applyCustomJoin(arr, separator) {
   let result = '';
 
-  if (arr.length > 0) {
+  if (arr !== undefined && arr.length > 0) {
     result += arr[0];
   }
 
@@ -22,4 +22,5 @@ function applyCustomJoin(arr, separator) {
 
   return result;
 }
+
 module.exports = applyCustomJoin;
