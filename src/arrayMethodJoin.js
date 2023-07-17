@@ -1,25 +1,29 @@
+/* eslint-disable no-extend-native */
 'use strict';
 
 /**
  * Implement method join
  */
-function applyCustomJoin(arr, separator) {
-  let result = '';
-  const length = arr.length;
+function applyCustomJoin() {
+  [].__proto__.join2 = function(separator) {
+    let result = '';
 
-  for (let i = 0; i < length; i++) {
-    const currentElement = arr[i];
+    const length = this.length;
 
-    if (i !== 0) {
-      result += separator !== undefined ? separator : ',';
+    for (let i = 0; i < length; i++) {
+      const currentElement = this[i];
+
+      if (i !== 0) {
+        result += separator !== undefined ? separator : ',';
+      }
+
+      if (currentElement !== null && currentElement !== undefined) {
+        result += currentElement;
+      }
     }
 
-    if (currentElement !== null && currentElement !== undefined) {
-      result += currentElement;
-    }
-  }
-
-  return result;
+    return result;
+  };
 }
 
 module.exports = applyCustomJoin;
