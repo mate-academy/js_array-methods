@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
 'use strict';
 
@@ -6,20 +7,16 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const result = this.slice();
-
     let joinedString = '';
 
-    for (let i = 0; i < result.length; i++) {
-      const value = result[i];
+    for (let i = 0; i < this.length; i++) {
+      const value = this[i];
 
-      if (value === null || value === undefined) {
-        joinedString += '';
-      } else {
+      if (value !== null && value !== undefined) {
         joinedString += value;
       }
 
-      if (i < result.length - 1) {
+      if (i < this.length - 1) {
         joinedString += separator;
       }
     }
