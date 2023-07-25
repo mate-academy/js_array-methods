@@ -9,8 +9,11 @@ function applyCustomJoin() {
     let joinString = '';
 
     for (let i = 0; i < this.length; i++) {
-      joinString += separator + (this[i] === null || this[i] === undefined
-        ? '' : this[i]);
+      if (this[i] != null) {
+        joinString += separator + this[i];
+        continue;
+      }
+      joinString += separator + '';
     }
 
     const result = joinString.substring(separator.length);
