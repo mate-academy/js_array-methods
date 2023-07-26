@@ -12,7 +12,7 @@ function applyCustomJoin() {
     }
 
     for (const element of this) {
-      if (element !== null && element !== undefined) {
+      if (element !== null && element !== undefined && element !== '') {
         resultString += element;
       }
 
