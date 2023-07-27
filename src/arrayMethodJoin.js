@@ -13,7 +13,7 @@ function applyCustomJoin() {
         result += this[i];
       }
 
-      if (this.length - 1 !== i) {
+      if (i !== arrLength - 1) {
         result += separator;
       }
     };
