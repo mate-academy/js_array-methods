@@ -8,6 +8,8 @@ function applyCustomJoin() {
     // write code here
     let returnString = '';
     let separatorCopy = separator;
+    const thisCopy = [...this];
+
     // Check if our separator is undefined or null,
     // so we change it to value we need
 
@@ -22,12 +24,10 @@ function applyCustomJoin() {
       // f.e undefined or empty string, but exclude false, null, NaN)
       if (!this[item] && typeof this[item] !== 'number'
       && this[item] !== false) {
-        const thisCopy = [...this];
-
         thisCopy[item] = separatorCopy;
         returnString += thisCopy[item];
       } else {
-        returnString += this[item].toString() + separatorCopy;
+        returnString += thisCopy[item].toString() + separatorCopy;
       }
     }
 
