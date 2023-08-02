@@ -5,7 +5,6 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    // Helper function to handle empty elements
     function stringifyElement(element) {
       return element === null || element === undefined ? '' : String(element);
     }
