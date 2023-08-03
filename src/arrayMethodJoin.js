@@ -9,10 +9,6 @@ function applyCustomJoin() {
     const newSeparator = separator;
     let lastElement = this[this.length - 1];
 
-    if (this.length === 0) {
-      return string;
-    }
-
     for (let i = 0; i < this.length - 1; i++) {
       if (this[i] === null || this[i] === undefined) {
         string += newSeparator;
