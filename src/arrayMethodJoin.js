@@ -13,15 +13,15 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      const a = this[i] === undefined
+      const arrayValue = this[i] === undefined
         || this[i] === null
         ? ''
         : this[i];
 
       if (i < this.length - 1) {
-        str += a + valueSeparatore;
+        str += arrayValue + valueSeparatore;
       } else {
-        str += a;
+        str += arrayValue;
       }
     }
 
