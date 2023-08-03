@@ -9,23 +9,19 @@ function applyCustomJoin() {
       return '';
     }
 
-    let res = '';
+    let joinedString = '';
 
-    if (this[0] === null) {
-      res += ``;
-    } else {
-      res += `${this[0]}`;
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== null && this[i] !== undefined) {
+        joinedString += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        joinedString += separator;
+      }
     }
 
-    for (let i = 1; i < this.length; i++) {
-      if (this[i] === null || this[i] === undefined) {
-        res += `${separator}`;
-      } else {
-        res += `${separator}${this[i]}`;
-      };
-    }
-
-    return res;
+    return joinedString;
   };
 }
 
