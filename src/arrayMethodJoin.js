@@ -9,6 +9,11 @@ const isNotIgnoredEl = (el) => ![null, undefined].includes(el);
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     const currentArray = this;
+
+    if (!(currentArray instanceof Array)) {
+      return '';
+    }
+
     const INDEX_OF_LAST_ELEMENT = currentArray.length - 1;
 
     let concatedString = '';
