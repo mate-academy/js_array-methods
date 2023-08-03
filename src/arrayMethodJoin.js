@@ -4,30 +4,28 @@
  * Implement method join
  */
 
-const isIgnoredEl = (el) => [null, undefined].includes(el);
+const isNotIgnoredEl = (el) => ![null, undefined].includes(el);
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const INDEX_OF_LAST_ELEMENT = this.length - 1;
-    // if empty array return empty string
-    const lastElement = this[INDEX_OF_LAST_ELEMENT] || '';
+    const currentArray = this;
+    const INDEX_OF_LAST_ELEMENT = currentArray.length - 1;
 
     let concatedString = '';
 
-    for (let curIndex = 0; curIndex < this.length; curIndex++) {
-      const curElement = this[curIndex];
+    for (let curIndex = 0; curIndex < currentArray.length; curIndex++) {
+      const curElement = currentArray[curIndex];
 
-      if (isIgnoredEl(curElement) && curIndex !== INDEX_OF_LAST_ELEMENT) {
-        concatedString += ',';
-        continue;
+      if (isNotIgnoredEl(curElement)) {
+        concatedString += curElement;
       }
 
       if (curIndex !== INDEX_OF_LAST_ELEMENT) {
-        concatedString += curElement + String(separator);
+        concatedString += separator;
       }
     }
 
-    return concatedString + lastElement;
+    return concatedString;
   };
 }
 
