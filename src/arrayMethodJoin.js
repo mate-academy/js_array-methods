@@ -31,11 +31,6 @@ function applyCustomJoin() {
         : this[i] + separ;
     }
 
-    // joinedString += this[this.length - 1] === null
-    // || this[this.length - 1] === undefined
-    //   ? ''
-    //   : this[this.length - 1];
-
     return joinedString;
   };
 }
