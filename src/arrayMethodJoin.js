@@ -21,6 +21,5 @@ function applyCustomJoin() {
   };
 }
 
-applyCustomJoin([0, 1, 2, 3]);
 
 module.exports = applyCustomJoin;
