@@ -6,7 +6,7 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     const currentArrayLength = this.length;
-    const joinSeparator = separator + '';
+    const joinSeparator = String(separator);
     let resultingString = '';
 
     if (!currentArrayLength) {
@@ -14,15 +14,17 @@ function applyCustomJoin() {
     }
 
     this.forEach((item, index) => {
-      /* const stringCharacter = item ?? '' is the best choice,
-      but I couldn`t disable eslint for the nullish operator */
-      const stringCharacter = item === null || item === undefined
-        ? ''
-        : item;
+      let stringCharacter = item;
 
-      currentArrayLength - 1 === index
-        ? resultingString += stringCharacter
-        : resultingString += stringCharacter + joinSeparator;
+      if (item === null || item === undefined) {
+        stringCharacter = '';
+      }
+
+      if (currentArrayLength - 1 === index) {
+        resultingString += stringCharacter;
+      } else {
+        resultingString += stringCharacter + joinSeparator;
+      }
     });
 
     return resultingString;
