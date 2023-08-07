@@ -8,7 +8,7 @@ function applyCustomJoin() {
     let result = '';
     let newSeparator = separator;
 
-    if (this === undefined || this.length === 0) {
+    if (this.length === 0) {
       return result;
     }
 
@@ -20,24 +20,22 @@ function applyCustomJoin() {
       newSeparator = 'null';
     }
 
-    for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length; i++) {
+      if (i === this.length - 1) {
+        if (this[i] === undefined) {
+          return result;
+        }
+
+        return result + this[i];
+      }
+
       if (this[i] === null || this[i] === undefined) {
         result += newSeparator;
       } else {
         result += this[i] + newSeparator;
       }
     }
-
-    if (this[this.length - 1] === undefined) {
-      return result;
-    }
-
-    return result + this[this.length - 1];
   };
-
-  [].__proto__.join2('-');
 }
-
-applyCustomJoin();
 
 module.exports = applyCustomJoin;
