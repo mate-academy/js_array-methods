@@ -13,10 +13,11 @@ function applyCustomJoin() {
     }
 
     for (let i = 0; i < this.length; i++) {
-      const arrayElement = this[i] === undefined
-        || this[i] === null
+      const part = this[i];
+      const arrayElement = part === undefined
+        || part === null
         ? ''
-        : this[i];
+        : part;
 
       if (i < this.length - 1) {
         returnString += arrayElement + valueSeparatore;
