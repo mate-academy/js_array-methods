@@ -12,13 +12,11 @@ function applyCustomJoin() {
         string += separator;
       }
 
-      let item = this[i];
+      const item = this[i];
 
-      if (item === null || item === undefined) {
-        item = '';
+      if (item !== null && item !== undefined) {
+        string += item;
       }
-
-      string += item;
     }
 
     return string;
