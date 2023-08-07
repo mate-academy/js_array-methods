@@ -8,8 +8,10 @@ function applyCustomJoin() {
     let resultString = '';
 
     for (let i = 0; i < this.length; i++) {
-      if (this[i] !== undefined && this[i] !== null) {
-        resultString += this[i];
+      const currentValue = this[i];
+
+      if (currentValue !== undefined && currentValue !== null) {
+        resultString += currentValue;
       }
 
       if (i !== this.length - 1) {
