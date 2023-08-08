@@ -12,7 +12,9 @@ function applyCustomJoin() {
         result += separator;
       }
 
-      const element = this[i] === null || this[i] === undefined ? '' : this[i];
+      const item = this[i];
+      const isValid = item === null || item === undefined;
+      const element = isValid ? '' : item;
 
       result += element;
     }
