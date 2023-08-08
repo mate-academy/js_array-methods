@@ -8,24 +8,18 @@ const isNotIgnoredEl = (el) => ![null, undefined].includes(el);
 
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
-    const currentArray = this;
-
-    if (!(currentArray instanceof Array)) {
-      return '';
-    }
-
-    const INDEX_OF_LAST_ELEMENT = currentArray.length - 1;
+    const indexOfLastElement = this.length - 1;
 
     let concatedString = '';
 
-    for (let curIndex = 0; curIndex < currentArray.length; curIndex++) {
-      const curElement = currentArray[curIndex];
+    for (let curIndex = 0; curIndex < this.length; curIndex++) {
+      const curElement = this[curIndex];
 
       if (isNotIgnoredEl(curElement)) {
         concatedString += curElement;
       }
 
-      if (curIndex !== INDEX_OF_LAST_ELEMENT) {
+      if (curIndex !== indexOfLastElement) {
         concatedString += separator;
       }
     }
