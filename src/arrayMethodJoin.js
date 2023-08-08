@@ -9,8 +9,10 @@ function applyCustomJoin() {
     let joinedString = '';
 
     for (let i = 0; i < arrLength; i++) {
-      if (this[i] !== null && this[i] !== undefined) {
-        joinedString += this[i];
+      const arrayElement = this[i];
+
+      if (arrayElement !== null && arrayElement !== undefined) {
+        joinedString += arrayElement;
       }
 
       if (i !== arrLength - 1) {
