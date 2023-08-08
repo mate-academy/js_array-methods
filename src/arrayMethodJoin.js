@@ -8,13 +8,11 @@ function applyCustomJoin() {
     // write code here
     let stringJoin = '';
 
-    if (this.length === 0) {
-      return stringJoin;
-    }
-
     for (let i = 0; i < this.length; i++) {
-      if (this[i] !== null && this[i] !== undefined) {
-        stringJoin += `${this[i]}`;
+      const THIS_ITEM = this[i];
+
+      if (THIS_ITEM !== null && THIS_ITEM !== undefined) {
+        stringJoin += `${THIS_ITEM}`;
       }
 
       if (i !== this.length - 1) {
