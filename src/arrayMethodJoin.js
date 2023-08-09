@@ -6,9 +6,9 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     const arrCopy = [ ...this ];
-    let ConcatenatedStr = '';
+    let concatenatedStr = '';
 
-    if (arrCopy.length === 0) {
+    if (!arrCopy.length) {
       return '';
     }
 
@@ -25,12 +25,12 @@ function applyCustomJoin() {
         arrCopy[i] += 'null';
       }
 
-      ConcatenatedStr += arrCopy[i];
+      concatenatedStr += arrCopy[i];
     }
 
-    ConcatenatedStr += arrCopy[arrCopy.length - 1];
+    concatenatedStr += arrCopy[arrCopy.length - 1];
 
-    return ConcatenatedStr;
+    return concatenatedStr;
   };
 }
 
