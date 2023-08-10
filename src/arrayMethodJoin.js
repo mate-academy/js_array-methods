@@ -7,17 +7,16 @@ function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinedString = '';
 
-    joinedString += this[0] !== undefined && this[0] !== null
-      ? this[0]
-      : '';
-
-    for (let i = 1; i < this.length; i++) {
-      joinedString += separator;
-
+    for (let i = 0; i < this.length; i++) {
       joinedString += this[i] !== undefined && this[i] !== null
         ? this[i]
         : '';
+
+      joinedString += separator;
     }
+
+    joinedString = joinedString
+      .slice(0, joinedString.length - ('' + separator).length);
 
     return joinedString;
   };
