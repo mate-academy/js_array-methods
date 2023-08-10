@@ -19,11 +19,7 @@ function applyCustomJoin() {
       result += separator;
     }
 
-    if (this.length === 1) {
-      result += this[0];
-    }
-
-    if (this[this[this.length - 1]]) {
+    if (this[this.length - 1]) {
       result += this[this.length - 1];
     }
 
