@@ -16,7 +16,7 @@ function applyCustomJoin() {
         result += separator;
       }
     }
-
+    
     return result;
   };
 }
