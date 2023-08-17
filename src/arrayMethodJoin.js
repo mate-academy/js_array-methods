@@ -6,13 +6,12 @@
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator = ',') {
     let joinedString = '';
-    let value = [];
 
     for (let i = 0; i < this.length; i++) {
-      value = this[i];
+      const valueOfArray = this[i];
 
-      if (value !== null && value !== undefined) {
-        joinedString += value;
+      if (valueOfArray !== null && valueOfArray !== undefined) {
+        joinedString += valueOfArray;
       }
 
       if (i !== this.length - 1) {
