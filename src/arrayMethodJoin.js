@@ -34,17 +34,6 @@ function applyCustomJoin() {
         case undefined:
           temp = '';
           break;
-        case true:
-          temp = 'true';
-          break;
-        case false:
-          temp = 'false';
-          break;
-        case NaN:
-          temp = 'NaN';
-          break;
-        default:
-          break;
       }
 
       joined += temp;
