@@ -9,16 +9,14 @@ function applyCustomJoin() {
     const readySeparator = separator !== undefined ? String(separator) : ',';
 
     for (let i = 0; i < this.length; i++) {
-      let value = this[i];
+      const value = this[i];
 
-      if (value === undefined || value === null) {
-        value = '';
+      if (value !== undefined && value !== null) {
+        result += value;
       }
 
-      if (i === 0) {
-        result += value;
-      } else {
-        result += readySeparator + value;
+      if (i !== this.length - 1) {
+        result += readySeparator;
       }
     }
 
