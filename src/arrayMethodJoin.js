@@ -5,7 +5,19 @@
  */
 function applyCustomJoin() {
   [].__proto__.join2 = function(separator) {
-    // write code here
+    let adjoined = '';
+
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] !== undefined && this[i] !== null) {
+        adjoined += this[i];
+      }
+
+      if (i !== this.length - 1) {
+        adjoined += `${separator === undefined ? ',' : String(separator)}`;
+      }
+    }
+
+    return adjoined;
   };
 }
 
