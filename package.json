@@ -1,4 +1,7 @@
 {
+  "jest": {
+    "testEnvironment": "node"
+  },
   "name": "array-method-join",
   "version": "1.0.0",
   "description": "Custom implementation of Array.prototype.join()",
